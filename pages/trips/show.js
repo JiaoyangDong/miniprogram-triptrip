@@ -2,12 +2,7 @@
 const app = getApp()
 Page({
   data: {
-    date: "",
-    time: "",
-    showBookingModal: false,
     booking: {},
-    // isAdopter: false,
-    // isCreater: false,
   },
   onLoad(options) {
 
@@ -27,16 +22,11 @@ Page({
         if (res.statusCode === 200) {
           console.log("From show.js - onshow: booking", res.data.my_booking);
           console.log("From show.js - onshow: trip's user_id", res.data.trip.user_id)
-         
           const trip = res.data.trip;
           const booking = res.data.my_booking;
-          
-          // const date = new Date()
-          // const date = Date(booking.date_and_time)
           page.setData({
             trip: trip,
             isCreater: app.globalData.user.id === trip.user_id,
-            // isAdopter: app.globalData.user.id !== pet.user_id,
             isBooker: booking, 
             booking: booking,
           });
@@ -47,8 +37,6 @@ Page({
   },
   submitBooking(e){
     console.log("From show.js - submitBooking: e", e)
-    // const dateAndTime = new Date(`${this.data.date} ${this.data.time}`)
-    // console.log(dateAndTime)
     let page = this
     wx.request({
       url: `${app.globalData.baseURL}/trips/${this.data.trip.id}/bookings`,
@@ -67,7 +55,6 @@ Page({
           wx.redirectTo({
             url: `/pages/users/profile?id=${page.options.id}`,
           })
-          // console.log("test date: ", page.data.date)
         } else {
           console.log("From show.js: status code is", res.statusCode)
           console.log("From show.js: error message", res.data.errors)
@@ -105,6 +92,13 @@ Page({
   onShareAppMessage() {
 
   }, 
+  book(e) {
+    console.log("book ", e)
+    wx.switchTab({
+      header: app.globalData.header,
+      url: 'pages/users/form',
+    })
+  },
   edit(e) {
     wx.setStorageSync('editedId', this.data.trip.id)
     console.log(this.data.trip)
@@ -113,7 +107,6 @@ Page({
       url: 'pages/trips/form',
     })
   },
-
   delete(e) {
     let id = this.data.pet.id
     wx.showModal({

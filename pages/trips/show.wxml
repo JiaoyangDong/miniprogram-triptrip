@@ -16,11 +16,10 @@
       <view class="h1">Title: {{trip.name}}</view>
       <textarea class="description" placeholder="text here">{{trip.description}}</textarea>
 
-      <!-- wx:if="{{isCreater}}" -->
-      <!-- <button bindtap="edit"></button> -->
-       
+      
+      <button class="btn" wx:if="{{isCreater}}" bindtap="edit"> Edit</button>
       <!-- wx:if="{{isBooker}}" -->
-      <button class="btn">Wanna Go!</button>
+      <button class="btn" open-type="getUserInfo" bindgetuserinfo="book">Wanna Go!</button>
   </view>
 </view>
 
