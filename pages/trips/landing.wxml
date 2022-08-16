@@ -1,0 +1,27 @@
+<!--pages/trips/landing.wxml-->
+<view class="header">
+  <view class="header-content-box">
+    <view class="logo-box"><image class="logo" src="/images/logo-E15B99.png"></image></view>
+    <view class="header-text">triptrip</view>
+  </view>
+</view>
+
+<view class="trip-cards-box">
+  <!-- <block wx:if="{{!trips.length}}">
+    <view class="no-trips-message">Oops, there aren't any trips listed yet!</view>
+  </block> -->
+  <!-- <block wx:else> -->
+      <view wx:for="{{trips}}" wx:for-item="trip" bindtap="goToTrip" data-id="{{trip.id}}" class="trip-card">
+        <view class="filter"></view>
+        <image class="trip-image" style="width: 100%;" src="{{trip.image_url}}" mode="widthFix"></image>
+        <view><image class="favorite-icon" src="/images/like-red.png"></image></view>
+        <view class="trip-info">
+          <view class="trip-title">{{trip.title}}</view>
+          <view class="trip-length">{{trip.end-date - trip.start-date}} days</view>
+        </view>
+        <view class="trip-location">📍 {{trip.location}}</view>
+      </view>
+  <!-- </block>   -->
+</view>
+
+<view style="color: red;font-size: 48px;">Here's some text!</view>

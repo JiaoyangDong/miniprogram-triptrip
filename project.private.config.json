@@ -1,24 +1,24 @@
 {
-  "projectname": "triptrip",
-  "setting": {
-    "compileHotReLoad": true
-  },
   "condition": {
     "miniprogram": {
       "list": [
         {
           "name": "",
-          "pathName": "pages/index/index",
+          "pathName": "pages/trips/landing",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
           "name": "",
-          "pathName": "pages/index/index",
+          "pathName": "pages/trips/landing",
           "query": "",
           "launchMode": "default",
-          "scene": null
+          "scene": null,
+          "partialCompile": {
+            "enabled": true,
+            "pages": []
+          }
         },
         {
           "name": "",
