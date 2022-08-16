@@ -1,1 +1,88 @@
 /* pages/trips/landing.wxss */
+
+.header {
+  height: 250rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.header-content-box {
+  display: flex;
+  flex-direction: column;
+  color: #E15B99;
+  /* color: black; */
+  margin-top: 80rpx;
+}
+
+.logo {
+  height: 100rpx;
+  width: 120rpx;
+  overflow: hidden;
+  margin-left: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.trip-cards-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+  margin: 30rpx;
+}
+
+
+.trip-card {
+  position: relative;
+  /* overflow: hidden; */
+  /* width: 45%;  */
+  box-sizing: border-box;
+  border-radius: 20rpx;
+
+}
+
+/* .trip-cards-box .trip-card:nth-child(1) {
+  margin-top: 10rpx;
+} */
+
+.trip-image {
+  border-radius: 20px;
+  box-shadow: 0 0 15rpx rgba(0,0,0,0.2);
+  /* position: absolute; */
+  width: 90%;
+}
+.trip-info {
+  position: absolute;
+  color: black;
+  font-weight: bold;
+  font-size: 30rpx;
+  top: 15rpx;
+  left: 20rpx;
+  width: 210rpx;
+  /* display: flex; */
+}
+
+.trip-location {
+  position: absolute;
+  color: black;
+  font-size: 24rpx;
+  /* font-weight: bold; */
+  bottom: 20rpx;
+  left: 15rpx;
+  width: 240rpx;
+}
+
+.favorite-icon {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* .filter {
+  position: absolute;
+  background-color: black;
+  opacity: 25%;
+  width: 100%;
+  height: calc(100% - 5px);
+  border-radius: 5px;
+} */
