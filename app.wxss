@@ -1,5 +1,5 @@
 /**app.wxss**/
-/* @import "/style/font.wxss"; */
+@import "/style/font.wxss";
 
 .container {
   height: 100%;
