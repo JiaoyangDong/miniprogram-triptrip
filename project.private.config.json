@@ -1,6 +1,19 @@
 {
-  "projectname": "triptrip",
+  "projectname": "miniprogram-triptrip",
   "setting": {
     "compileHotReLoad": true
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "",
+          "pathName": "pages/trips/landing",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
   }
 }
