@@ -96,7 +96,7 @@ Page({
     console.log("book ", e)
     wx.switchTab({
       header: app.globalData.header,
-      url: 'pages/users/form',
+      url: 'users/form',
     })
   },
   edit(e) {
@@ -104,7 +104,7 @@ Page({
     console.log(this.data.trip)
     wx.switchTab({
       header: app.globalData.header,
-      url: 'pages/trips/form',
+      url: 'trips/form',
     })
   },
   delete(e) {
