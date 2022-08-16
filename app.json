@@ -1,7 +1,9 @@
 {
   "pages":[
-    "pages/index/index",
     "pages/trips/landing",
+    "pages/users/profile",
+    "pages/users/mytrips",
+    "pages/index/index",
     "pages/logs/logs"
   ],
   "window":{
@@ -9,6 +11,28 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#FFD6E0",
+    "selectedColor": "#E15B99",
+    "backgroundColor": "#ffffff",
+    "list": [{
+      "pagePath": "pages/trips/landing",
+      "text": "Home",
+      "iconPath": "images/homeempty-lightpink.png",
+      "selectedIconPath": "images/homefill-pink.png"
+    }, {
+      "pagePath": "pages/users/mytrips",
+      "text": "My Trips",
+      "iconPath": "images/mytrips-lightpink.png",
+      "selectedIconPath": "images/mytrips-pink.png"
+    }, {
+      "pagePath": "pages/users/profile",
+      "text": "Me",
+      "iconPath": "images/meempty-lightpink.png",
+      "selectedIconPath": "images/mefill-pink.png"
+    }]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
