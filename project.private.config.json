@@ -1,4 +1,8 @@
 {
+  "projectname": "miniprogram-triptrip",
+  "setting": {
+    "compileHotReLoad": true
+  },
   "condition": {
     "miniprogram": {
       "list": [
