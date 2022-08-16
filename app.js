@@ -14,6 +14,9 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null, 
+    header: null, 
+    user: null,
+    // baseURL: "http://localhost:3000/api/v1"
   }
 })

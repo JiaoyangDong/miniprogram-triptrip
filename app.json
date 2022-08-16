@@ -4,7 +4,8 @@
     "pages/users/profile",
     "pages/users/mytrips",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs", 
+    "pages/trips/show"
   ],
   "window":{
     "backgroundTextStyle":"light",
