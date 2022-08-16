@@ -1,0 +1,27 @@
+<!--pages/trips/show.wxml-->
+
+<view class="main">
+      <!-- Trip-image  -->
+    <view class="trip-image">
+      <image mode="aspectFill" src="{{trip.image}}"></image>
+    </view>
+
+      <!-- Trip-info -->
+  <view class="trip-info">
+    <view class="icons">
+      <image class="icon" src="/images/map.png">location{{trip.location}} </image>
+      <image class="icon" src="/images/moon.png">{{trip.end_date - trip.start_date}} days</image>
+      <image class="icon" src="/images/share.png">Share</image>    
+    </view>
+      <view class="h1">Title: {{trip.name}}</view>
+      <textarea class="description" placeholder="text here">{{trip.description}}</textarea>
+
+      <!-- wx:if="{{isCreater}}" -->
+      <!-- <button bindtap="edit"></button> -->
+       
+      <!-- wx:if="{{isBooker}}" -->
+      <button class="btn">Wanna Go!</button>
+  </view>
+</view>
+
+
