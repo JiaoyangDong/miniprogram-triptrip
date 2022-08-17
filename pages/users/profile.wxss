@@ -1,36 +1,29 @@
 /* pages/users/profile.wxss */
-.profile-bg {
-  position: absolute;
-  width: 100px;
-  height: 100px;
+.container {
+  padding: 200rpx 30rpx;
+}
+.profile-img {
+  width: 64px;
+  height: 64px;
+  margin: 10rpx 50rpx auto;
   background: #FFD6E0;
   border-radius: 150rpx;
-}
-.profile-img { 
-  position: absolute;
-  width: 64px;
-  height: 54px;
+  padding: 50rpx;
 }
 .page-title{
-  position: absolute;
-  width: 117px;
-  height: 30px;
+  margin: 40rpx auto;
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 400; 
+  font-weight: 400;
   font-size: 25px;
   line-height: 30px;
   color: #000000;
 }
 
 .title-create {
-  position: absolute;
-
   width: 164px;
   height: 24px;
-  left: 30px;
-  top: 269px;
-  
+
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
@@ -39,35 +32,29 @@
   color: #000000;
 }
 
+.option {
+  align-self: flex-start;
+  margin: 30rpx 40rpx;
+}
 .active {
-  position: absolute;
-  width: 87px;
-  height: 22px;
-  left: 220px;
-  top: 271px;
-
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 25px;
+  line-height: 24px;
   color: #E15B99;
+  text-decoration: underline;
+  margin: 10rpx;
 }
-
-
-.inactive { 
-position: absolute;
-width: 31px;
-height: 18px;
-left: 314px;
-top: 273px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 15px;
-line-height: 18px;
-color: #000000;
+.inactive {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  margin: 10rpx;
+  border-radius: 16rpx;
 }
 
 .create-card {
@@ -81,12 +68,6 @@ color: #000000;
 }
 
 .card-title {
-  position: absolute;
-  left: 9.87%;
-  right: 29.6%;
-  top: 60.22%;
-  bottom: 33.87%;
-
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
@@ -95,13 +76,12 @@ color: #000000;
   color: #000000;
 }
 
-.footer {
-  position: fixed;
-  margin-bottom: 10rpx;
-  bottom: 0rpx;
-  padding: 10rpx;
-  height: 100rpx;
-  width: 250rpx;
+.notrip {
+  background-color:#FFD6E0;
+  width: 590rpx;
+  height: 90rpx;
+  margin: 20rpx;
+  padding: 20rpx;
 }
 
 .secondary-btn {
@@ -115,7 +95,6 @@ color: #000000;
 .btn-text {
   width: 180px;
   height: 24px;
-
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
