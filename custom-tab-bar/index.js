@@ -2,22 +2,22 @@
 let app = getApp();
 Component({
   data: {
-    selected: 0,
-    color: "#FFD6E0",
+    selectedID: 0,
+    color: "#E15B99",
     selectedColor: "#E15B99",
     list: [{
       pagePath: "/pages/trips/landing",
-      iconPath: "/images/homeempty-lightpink.png",
-      selectedIconPath: "/images/homefill-pink.png",
-      text: "Home"
+      iconPath: "/images/exploreempty-pink.png",
+      selectedIconPath: "/images/explorefill-pink.png",
+      text: "Explore"
     }, {
       pagePath: "/pages/users/mytrips",
-      iconPath: "/images/mytrips-lightpink.png",
+      iconPath: "/images/mytrips-pink.png",
       selectedIconPath: "/images/mytrips-pink.png",
       text: "My Trips"
       }, {
       pagePath: "/pages/users/profile",
-      iconPath: "/images/meempty-lightpink.png",
+      iconPath: "/images/meempty-pink.png",
       selectedIconPath: "/images/mefill-pink.png",
       text: "Me"
       }]
@@ -26,12 +26,14 @@ Component({
   },
   methods: {
     switchTab(e) {
+      console.log('selectedTabIndex: ', this.data.selectedTabIndex)
       const data = e.currentTarget.dataset
+      console.log('switching to tab ',data)
       const url = data.path
-      wx.switchTab({url})
       this.setData({
-        selected: data.index
+        selectedTabIndex: data.index
       })
+      wx.switchTab({url: url})
     }
   }
 })

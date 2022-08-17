@@ -3,8 +3,10 @@ const app = getApp()
 Page({
   data: {
     booking: {},
+    id: options.id
   },
   onLoad(options) {
+
 
   },
   onReady() {
@@ -13,7 +15,7 @@ Page({
   onShow() {
     let page = this
     console.log('From show.js - onshow: options ', this.options)
-    let id = this.options.id
+    let id = this.data.id
     wx.request({
       header: app.globalData.header,
       url: `${app.globalData.baseURL}/trips/${id}`,
