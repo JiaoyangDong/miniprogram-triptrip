@@ -9,12 +9,22 @@
 
   <view class="create-cards">
     <text class="title-create">trips i've created</text>
-    <text class="upcoming">upcoming</text>
-    <text class="past">past</text>
-    <view class="create-card">
-      <image mode="aspectFit" src="https://ts1.cn.mm.bing.net/th/id/R-C.d1f5d906112a1bcbb1735734551b6758?rik=0bOcvY6rER4ejQ&riu=http%3a%2f%2fwww.shwfjz.com%2fimgs%2fimage%2f20200930%2f20200930153097389738.jpg&ehk=gY0UjK6A2FitAekUgqhVkcRqGbyUtcI3d4IOifgAIQA%3d&risl=&pid=ImgRaw&r=0" class="create-img">
+    <!-- upcoming -->
+    <text class="{{active_tab === 'upcoming' ? 'active': 'inactive'}}" bindtap="active_upcoming">upcoming</text>
+    <view wx:if="{{!upcoming_trips.length}}"> no trip yet</view>
+    <view class="create-card" wx:for="{{upcoming_trips}}" wx:if="{{active_tab === 'upcoming'}}">
+      test
+      <image mode="aspectFit" src="{{item.image}}" class="create-img" >
       </image>
-      <view class="card-title">Historic city walk in Shanghai</view>
+      <view class="card-title">{{item.title}}</view>
+    </view>
+    <!-- past -->
+    <text class="{{active_tab === 'past' ? 'active': 'inactive'}}" bindtap="active_past">past</text>
+    <view wx:if="{{!past_trips.length}}"> no trip yet</view>
+    <view class="create-card" wx:for="{{past_trips}}" wx:if="{{active_tab === 'past'}}">
+      <image mode="aspectFit" src="{{item.image}}" class="create-img">
+      </image>
+      <view class="card-title">{{item.title}}</view>
     </view>
   </view>
 

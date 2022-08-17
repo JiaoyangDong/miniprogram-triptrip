@@ -6,7 +6,7 @@ Page({
    * Page initial data
    */
   data: {
-
+    active_tab: "upcoming",
   },
 
   /**
@@ -47,8 +47,8 @@ Page({
         console.log("From profile.js: res",res)
         if (res.statusCode === 200) {
           page.setData({
-            // pets: res.data.pets,
-            // booked_pets: res.data.booked_pets,
+            past_trips: res.data.past,
+            upcoming_trips: res.data.upcomming
             // user_id: user_id
           })
         } else {
@@ -91,5 +91,15 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  active_upcoming(){
+    this.setData({
+      active_tab: "upcoming"
+    })
+  },
+  active_past(){
+    this.setData({
+      active_tab: "past"
+    })
   }
 })

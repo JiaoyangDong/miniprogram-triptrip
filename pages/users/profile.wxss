@@ -45,7 +45,7 @@
   color: #000000;
 }
 
-.upcoming {
+.active {
   position: absolute;
   width: 87px;
   height: 22px;
@@ -60,7 +60,8 @@
   color: #E15B99;
 }
 
-.past { 
+
+.inactive { 
 position: absolute;
 width: 31px;
 height: 18px;
