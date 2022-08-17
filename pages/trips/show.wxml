@@ -9,9 +9,11 @@
       <!-- Trip-info -->
   <view class="trip-info">
     <view class="icons">
+      <!-- bindtap="showMap" -->
       <image class="icon" src="/images/map.png">location{{trip.location}} </image>
       <image class="icon" src="/images/moon.png">{{trip.end_date - trip.start_date}} days</image>
-      <image class="icon" src="/images/share.png">Share</image>    
+      <!-- bindtap="share" -->
+      <image class="icon"  src="/images/share.png">Share</image>    
     </view>
       <view class="h1">Title: {{trip.name}}</view>
       <textarea class="description" placeholder="text here">{{trip.description}}</textarea>
