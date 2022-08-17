@@ -164,4 +164,9 @@ Page({
       }
     })
   }, 
+  goToHome(e) {
+    wx.navigateTo({
+      url: 'pages/trips/landing',
+    })
+  }
 })

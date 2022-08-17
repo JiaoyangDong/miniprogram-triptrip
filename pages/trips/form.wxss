@@ -1,8 +1,8 @@
-.main {
-  padding: 60rpx 60rpx;
-}
 .navigation {
   height: 160rpx;
+}
+.main {
+  padding: 60rpx 60rpx;
 }
 
 .form-item {
@@ -16,19 +16,16 @@
   font-size: 50rpx;
   line-height: 60rpx;
   color: #000000;
+  margin-bottom: 50rpx;
+  text-align: center;
 }
 
 .h2 {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 700;
-  font-size: 40rpx;
+  font-weight: 400;
+  font-size: 35rpx;
   line-height: 48rpx;
-}
-
-image {
-  width: 200rpx;
-  height: 250rpx;
 }
 
 .picker {

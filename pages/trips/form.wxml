@@ -1,45 +1,46 @@
 <view class="navigation">
-  <image src="/images/homefill-pink.png" style="height: 50rpx; width: 50rpx;"></image>
+  <image src="/images/homeempty-lightpink.png" style="height: 60rpx; width: 60rpx; position: fixed; top: 50px; left: 30px;" bindtap="goToHome"></image>
 </view>
 
 <view class="main">
-  <view class="h1" style="margin-bottom: 80rpx"> Create my next trip</view>
+  <view class="h1"> Create my next trip</view>
     <form bindsubmit="create">
-      <view class="form-item"> 
+      <view class="form-item" style="display: flex; flex-direction: column; align-items: center;">
+        <image style="height: 250rpx; width: 250rpx;" src="{{src}}" mode="aspectFill"  bindtap="listenerBtnChooseImage"/>
         <text class="h2">Upload a beautiful photo</text>
       </view>
-      <view class="form-item" style="text-align: center">
-        <image src="{{src}}" mode="aspectFill"  bindtap="listenerBtnChooseImage"/>
-      </view>
-      <view class="form-item">Title
-        <input bindinput="setInputData" data-field="title" name="title" value="{{formData.title}}"/>
+      <view class="form-item">
+        <view class="title">Title</view>
+        <input style="border: 2rpx solid #E15B99; border-radius: 30rpx; padding: 10rpx;"bindinput="setInputData" data-field="title" name="title" value="{{formData.title}}" />
       </view>
 
-      <view class="form-item" style="display: flex; justify-content: space-between;"> Date
-        <picker mode="date" value="{{formData.start_date}}" data-field="start_date" bindchange="bindDateChange">
-          <view class="picker" style="border: 1px solid #E15B99; border-radius: 30px; padding: 4rpx 40rpx; min-width: 184rpx; display: flex; align-items: center;">
-            {{formData.start_date}}
-          </view>
-        </picker>
-        <picker mode="date" data-field="end_date" value="{{formData.end_date}}" bindchange="bindDateChange">
-          <view class="picker" style="border: 1px solid #E15B99; border-radius: 30px; padding: 4rpx 40rpx; min-width: 184rpx; display: flex; align-items: center;">
-             {{formData.end_date}}
-          </view>
-        </picker>
+      <view class="form-item"> 
+        <view class="picker-title">Date</view>
+        <view style="display: flex; justify-content: space-between; margin-top: 10rpx;">
+          <picker mode="date" value="{{formData.start_date}}" data-field="start_date" bindchange="bindDateChange"> from:
+            <view class="picker" style="border: 1px solid #E15B99; border-radius: 30px; padding: 4rpx 40rpx; min-width: 184rpx; display: flex; align-items: center;">
+              {{formData.start_date}}
+            </view>
+            </picker>
+          <picker mode="date" data-field="end_date" value="{{formData.end_date}}" bindchange="bindDateChange"> to:
+            <view class="picker" style="border: 1px solid #E15B99; border-radius: 30px; padding: 4rpx 40rpx; min-width: 184rpx; display: flex; align-items: center;">
+              {{formData.end_date}}
+            </view>
+              </picker>
+        </view>
       </view>
 
-
-      <view class="form-item" style="display: flex;">
-        <view class="picker__title">Location</view>
-        <picker style="padding-left: 30rpx;" mode="region" bindchange="bindRegionChange" data-field="location" value="{{formData.location}}">
-          <view class="picker">
-            Current selection: {{formData.location}}
-          </view>
-        </picker>
+        <view class="form-item">
+          <view class="picker__title">Location</view>
+          <picker style="padding-left: 30rpx;" mode="region" bindchange="bindRegionChange" data-field="location" value="{{formData.location}}">
+            <view class="picker">
+              Current selection: {{formData.location}}
+            </view>
+          </picker>
       </view>
 
       <view class="form-item">
-        <textarea name="description" rows="4" style="border: 1px solid #E15B99; border-radius: 30px; padding: 20rpx; width: 95%; height: 200rpx;" placeholder="describe your trip.."></textarea>
+        <textarea name="description" rows="4" style="border: 1px solid #E15B99; border-radius: 30px; padding: 20rpx; width: 95%; height: 200rpx;" placeholder="add more info about the trip ..."></textarea>
       </view>
     </form>
 </view>
