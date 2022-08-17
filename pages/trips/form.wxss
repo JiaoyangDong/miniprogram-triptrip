@@ -16,7 +16,7 @@
   font-size: 50rpx;
   line-height: 60rpx;
   color: #000000;
-  margin-bottom: 50rpx;
+  margin-bottom: 20rpx;
   text-align: center;
 }
 

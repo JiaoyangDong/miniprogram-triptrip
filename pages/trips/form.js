@@ -141,7 +141,7 @@ Page({
             page.setData({resetForm: true})
             page.upload(id)
               wx.switchTab({
-                url: '/pages/trips/landing'
+                url: 'landing'
             })
           }
         },
@@ -164,9 +164,14 @@ Page({
       }
     })
   }, 
-  goToHome(e) {
-    wx.navigateTo({
-      url: 'pages/trips/landing',
+  goToHome() {
+    wx.switchTab({
+      url: 'landing',
+    })
+  },
+  goToSurvey(e) {
+    wx.switchTab({
+      url: 'survey',
     })
   }
 })
