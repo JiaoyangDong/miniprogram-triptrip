@@ -1,2 +1,32 @@
 <!--pages/users/mytrips.wxml-->
-<text>pages/users/mytrips.wxml</text>
+<!-- <text>pages/users/mytrips.wxml</text> -->
+<view class="container">
+  <view class="mytrip">
+    <image class="mytrips-bg"></image>
+    <image class="mytrips-img" src="/images/mytrips-pink.png"></image>
+    <text class="page-title">my trips</text>
+  </view>
+
+  <view class="join-cards">
+    <text class="title-join">trips i've joined</text>
+    <text class="upcoming">upcoming</text>
+    <text class="past">past</text>
+
+      <view class="join-card">
+        <image mode="aspectFit" class="join-img" src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80">
+        <view class="join-card-title">Meili Hiking - Sacred  Mountain Range in Yunnan</view>
+        </image>
+      </view>
+
+  </view>
+
+  <view class="bookmark-cards">
+    <text class="title-bookmark">trips i've bookmarked</text>
+      <view class="bookmark-card">
+        <image mode="aspectFit" class="bookmark-img" src="https://images.unsplash.com/photo-1482192505345-5655af888cc4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80">
+        <view class="bookmark-card-title">Relaxing yoga retreat in Moganshan</view>
+        </image>
+      </view>
+  </view>
+
+</view>

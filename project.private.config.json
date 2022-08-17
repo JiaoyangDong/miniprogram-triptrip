@@ -8,7 +8,21 @@
       "list": [
         {
           "name": "",
+          "pathName": "pages/users/profile",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
           "pathName": "pages/trips/landing",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/users/mytrips",
           "query": "",
           "launchMode": "default",
           "scene": null

@@ -1,2 +1,25 @@
 <!--pages/users/profile.wxml-->
-<text>pages/users/profile.wxml</text>
+<!-- <text>pages/users/profile.wxml</text> -->
+<view class="container">
+  <view class="profile">
+    <image class="profile-bg"></image>
+    <image class="profile-img" src="/images/profile-kiwibird.png"></image>
+    <text class="page-title">my profile</text>
+  </view>
+
+  <view class="create-cards">
+    <text class="title-create">trips i've created</text>
+    <text class="upcoming">upcoming</text>
+    <text class="past">past</text>
+    <view class="create-card">
+      <image mode="aspectFit" src="https://ts1.cn.mm.bing.net/th/id/R-C.d1f5d906112a1bcbb1735734551b6758?rik=0bOcvY6rER4ejQ&riu=http%3a%2f%2fwww.shwfjz.com%2fimgs%2fimage%2f20200930%2f20200930153097389738.jpg&ehk=gY0UjK6A2FitAekUgqhVkcRqGbyUtcI3d4IOifgAIQA%3d&risl=&pid=ImgRaw&r=0" class="create-img">
+      </image>
+      <view class="card-title">Historic city walk in Shanghai</view>
+    </view>
+  </view>
+
+  <view class="footer">
+    <button style="width:220px; height:47px" class="secondary-btn"><text class="btn-text">create my own trip</text></button>
+  </view>
+
+</view>

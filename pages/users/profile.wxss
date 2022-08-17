@@ -1,1 +1,141 @@
 /* pages/users/profile.wxss */
+.profile-bg {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 138px;
+  top: 92px;
+  background: #FFD6E0;
+  border-radius: 150rpx;
+}
+.profile-img { 
+  position: absolute;
+  width: 64px;
+  height: 54px;
+  left: 156px;
+  top: 110px;
+}
+.page-title{
+  position: absolute;
+  width: 117px;
+  height: 30px;
+  left: 129px;
+  top: 207px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400; 
+  font-size: 25px;
+  line-height: 30px;
+  color: #000000;
+}
+
+.title-create {
+  position: absolute;
+
+  width: 164px;
+  height: 24px;
+  left: 30px;
+  top: 269px;
+  
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.upcoming {
+  position: absolute;
+  width: 87px;
+  height: 22px;
+  left: 220px;
+  top: 271px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #E15B99;
+}
+
+.past { 
+position: absolute;
+width: 31px;
+height: 18px;
+left: 314px;
+top: 273px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 18px;
+color: #000000;
+}
+
+.create-img {
+  box-sizing: border-box;
+  position: absolute;
+
+  width: 208px;
+  height: 150px;
+  left: 30px;
+  top: 317px;
+
+  border: 1px solid #E786B4;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+}
+
+.card-title {
+  position: absolute;
+  left: 9.87%;
+  right: 29.6%;
+  top: 60.22%;
+  bottom: 33.87%;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.footer {
+  position: absolute;
+  /* left: 89px; */
+  top: 665px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.secondary-btn {
+  box-sizing: border-box;
+  position: absolute;
+  /* width: 250rpx;
+  height: 60px; */
+  /* left: 89px;
+  top: 665px; */
+  background: #FFFFFF;
+  border: 1px solid #E15B99;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  }
+  
+  .btn-text {
+  /* position: absolute; */
+  width: 180px;
+  height: 24px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 24px;
+  color: #E15B99;
+  }
+  
