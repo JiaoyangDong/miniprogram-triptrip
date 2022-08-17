@@ -19,15 +19,25 @@
           "pathName": "pages/trips/landing",
           "query": "",
           "launchMode": "default",
-          "scene": null,
-          "partialCompile": {
-            "enabled": true,
-            "pages": []
-          }
+          "scene": null
         },
         {
           "name": "",
           "pathName": "pages/trips/show",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/trips/landing",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/trips/landing",
           "query": "",
           "launchMode": "default",
           "scene": null

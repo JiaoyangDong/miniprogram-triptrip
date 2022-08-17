@@ -92,41 +92,15 @@ Page({
   onShareAppMessage() {
 
   }, 
-  book(e) {
-    console.log("book ", e)
-    wx.switchTab({
-      header: app.globalData.header,
-      url: 'users/form',
-    })
-  },
-  edit(e) {
-    wx.setStorageSync('editedId', this.data.trip.id)
-    console.log(this.data.trip)
-    wx.switchTab({
-      header: app.globalData.header,
-      url: 'trips/form',
-    })
-  },
-  delete(e) {
-    let id = this.data.pet.id
-    wx.showModal({
-      title: 'Are you sure?',
-      content: 'Are you sure to delete this trip?',
-      success(res) {
-        if (res.confirm) {
-          wx.request({
-            header: app.globalData.header,
-            url: `${app.globalData.baseURL}/trips/${id}`,
-            method: 'DELETE',
-            success(res){
-              wx.switchTab({
-                url: '/pages/trips/landing',
-              })
-            }
-          })
-        } else {
-        }
-      }
-    })
-  },
+  // bookmark(e) {
+  //   console.log("book ", e)
+  //   let page = this 
+  //   wx.request({
+  //     url: 'url',
+  //   })
+  //   wx.switchTab({
+  //     header: app.globalData.header,
+  //     url: 'users/mytrips',
+  //   })
+  // }
 })

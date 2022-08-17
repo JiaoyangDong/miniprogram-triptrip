@@ -11,17 +11,15 @@
     <view class="icons">
       <!-- bindtap="showMap" -->
       <image class="icon" src="/images/map.png">location{{trip.location}} </image>
-      <image class="icon" src="/images/moon.png">{{trip.end_date - trip.start_date}} days</image>
+      <image class="icon" src="/images/heart.png" bindtap="bookmark">{{trip.end_date - trip.start_date}} days</image>
       <!-- bindtap="share" -->
       <image class="icon"  src="/images/share.png">Share</image>    
     </view>
       <view class="h1">Title: {{trip.name}}</view>
       <textarea class="description" placeholder="text here">{{trip.description}}</textarea>
 
-      
-      <button class="btn" wx:if="{{isCreater}}" bindtap="edit"> Edit</button>
-      <!-- wx:if="{{isBooker}}" -->
-      <button class="btn" open-type="getUserInfo" bindgetuserinfo="book">Wanna Go!</button>
+      <!-- Wanna go!-->
+      <button wx:if="{{isBooker}}" class="btn" open-type="getUserInfo" bindgetuserinfo="submitBooking">Wanna Go!</button>
   </view>
 </view>
 
