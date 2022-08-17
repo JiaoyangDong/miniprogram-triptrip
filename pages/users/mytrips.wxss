@@ -1,28 +1,16 @@
 /* pages/users/mytrips.wxss */
-.mytrips-bg {
-position: absolute;
-width: 100px;
-height: 100px;
-left: 138px;
-top: 92px;
-background: #FFD6E0;
-border-radius: 150rpx;
-}
-
 .mytrips-img {
-position: absolute;
-width: 64px;
-height: 64px;
-left: 156px;
-top: 110px;
+  width: 64px;
+  height: 64px;
+  margin: 90rpx 50rpx auto;
+  background: #FFD6E0;
+  border-radius: 150rpx;
+  padding: 50rpx;
 }
-
 .page-title{
-  position: absolute;
   width: 95px;
   height: 30px;
-  left: 140px;
-  top: 207px;
+  margin: 40rpx auto;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
@@ -31,30 +19,31 @@ top: 110px;
   color: #000000;
 }
 
+.join-cards-text {
+  display: flex;
+  justify-content: space-between;
+  margin: 10rpx auto;
+}
+
 .join-img {
-  position: absolute;
   width: 205px;
   height: 150px;
-  left: 30px;
-  top: 317px;
-  
-  /* background: #FFD6E0; */
+  margin: 20rpx;
   border: 1px solid #E786B4;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
 }
 .title-join {
-  position: absolute;
-  width: 149px;
-  height: 24px;
-  left: 30px;
-  top: 269px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   color: #000000;
+  margin: 20rpx;
+}
+.option {
+  margin: 20rpx;
 }
 
 .active {
@@ -67,8 +56,9 @@ top: 110px;
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
-  line-height: 22px;
+  line-height: 24px;
   color: #E15B99;
+  margin: 10rpx;
 }
 .inactive {
   position: absolute;
@@ -80,17 +70,16 @@ top: 110px;
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
-  line-height: 18px;
+  line-height: 24px;
   color: #000000;
+  margin: 20rpx;
 }
 
 .join-card-title {
-  position: absolute;
   left: 6.34%;
   right: 6.34%;
   top: 42%;
   bottom: 8.67%;
-
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
@@ -100,7 +89,6 @@ top: 110px;
 }
 
 .title-bookmark {
-  position: absolute;
   width: 212px;
   height: 24px;
   left: 30px;
@@ -115,26 +103,20 @@ top: 110px;
 
 .bookmark-img {
   box-sizing: border-box;
-  position: absolute;
-  
   width: 205px;
   height: 150px;
   left: 30px;
   top: 537px;
-
-  /* background: #FFD6E0; */
   border: 1px solid #E786B4;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
 }
 
 .bookmark-card-title {
-  position: absolute;
   left: 6.34%;
   right: 6.34%;
   top: 43.33%;
   bottom: 8.67%;
-
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;

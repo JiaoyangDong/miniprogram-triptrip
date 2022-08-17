@@ -1,11 +1,8 @@
 <!--pages/users/mytrips.wxml-->
 <!-- <text>pages/users/mytrips.wxml</text> -->
 <view class="container">
-  <view class="mytrip">
-    <image class="mytrips-bg"></image>
-    <image class="mytrips-img" src="/images/mytrips-pink.png"></image>
-    <text class="page-title">my trips</text>
-  </view>
+  <image class="mytrips-img" src="/images/mytrips-pink.png"></image>
+  <text class="page-title">my trips</text>
 
   <view class="join-cards">
     <text class="title-join">trips i've joined</text>
@@ -26,8 +23,13 @@
       <view class="join-card-title">{{item.title}}</view>
       </image>
     </view>
+    
+  </view>
 
-
+  <view class="join-card">
+    <image mode="aspectFit" class="join-img" src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80">
+      <view class="join-card-title">Meili Hiking - Sacred  Mountain Range in Yunnan</view>
+    </image>
   </view>
 
   <!-- bookmark -->

@@ -1,11 +1,10 @@
 <!--pages/users/profile.wxml-->
 <!-- <text>pages/users/profile.wxml</text> -->
 <view class="container">
-  <view class="profile">
     <image class="profile-bg"></image>
     <image class="profile-img" src="/images/profile-kiwibird.png"></image>
     <text class="page-title">my profile</text>
-  </view>
+
 
   <view class="create-cards">
     <text class="title-create">trips i've created</text>
