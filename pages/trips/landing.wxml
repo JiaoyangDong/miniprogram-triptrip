@@ -6,22 +6,74 @@
   </view>
 </view>
 
+<scroll-view scroll-x="true" style="width: 100%; white-space: nowrap;" class="tags-scroll-view">
+  <view class="tag-button tag1" bindtap="selectTag" data-index="1" style="background: {{selectedIndex === index ? 'white' : '#FFD6E0'}};" >
+    <view class="inner-tag-view">
+      <image class="tag-img" src="/images/tags/oneday.png"></image>
+      <view>Day trips</view>
+    </view>
+  </view>
+    <view class="tag-button tag2" bindtap="selectTag" data-index="2" style="background: {{selectedIndex === index ? 'white' : '#FFD6E0'}};">
+      <view class="inner-tag-view">
+        <image class="tag-img" src="/images/tags/weekend.png"></image>
+        <view>Weekend</view>
+      </view>
+    </view>
+  <view class="tag-button tag3" bindtap="selectTag" data-index="3" style="background: {{selectedIndex === index ? 'white' : '#FFD6E0'}};">
+      <view class="inner-tag-view"> 
+      <image class="tag-img" src="/images/tags/petfriendly.png"></image>
+      <view>Pet-friendly</view>
+    </view>
+  </view>
+  <view class="tag-button tag4" bindtap="selectTag" data-index="4" style="background: {{selectedIndex === index ? 'white' : '#FFD6E0'}};">
+    <view class="inner-tag-view"> 
+      <image class="tag-img" src="/images/tags/hiking.png"></image>
+      <view>Hiking</view>
+    </view>
+  </view>
+  <view class="tag-button tag5" bindtap="selectTag" data-index="25" style="background: {{selectedIndex === index ? 'white' : '#FFD6E0'}};">
+    <view class="inner-tag-view"> 
+      <image class="tag-img" src="/images/tags/relaxing.png"></image>
+      <view>Relaxing</view>
+    </view>
+  </view>
+  <view class="tag-button tag6" bindtap="selectTag" data-index="6" style="background: {{selectedIndex === index ? 'white' : '#FFD6E0'}};">
+    <view class="inner-tag-view"> 
+      <image class="tag-img" src="/images/tags/family.png"></image>
+      <view>Family</view>
+    </view>
+  </view>
+  <view class="tag-button tag7" bindtap="selectTag" data-index="7" style="background: {{selectedIndex === index ? 'white' : '#FFD6E0'}};">
+    <view class="inner-tag-view"> 
+      <image class="tag-img" src="/images/tags/adventure.png"></image>
+      <view>Adventure</view>
+    </view>
+  </view>
+  <view class="tag-button tag8" bindtap="selectTag" data-index="8" style="background: {{selectedIndex === index ? 'white' : '#FFD6E0'}};">
+    <view class="inner-tag-view"> 
+      <image class="tag-img" src="/images/tags/biking.png"></image>
+      <view>Biking</view>
+    </view>
+  </view>
+</scroll-view>
+
 <view class="trip-cards-box">
   <!-- <block wx:if="{{!trips.length}}">
     <view class="no-trips-message">Oops, there aren't any trips listed yet!</view>
   </block> -->
   <!-- <block wx:else> -->
       <view wx:for="{{trips}}" wx:for-item="trip" bindtap="goToTrip" data-id="{{trip.id}}" class="trip-card">
-        <view class="filter"></view>
-        <image class="trip-image" style="width: 100%;" src="{{trip.image_url}}" mode="widthFix"></image>
-        <view><image class="favorite-icon" src="/images/like-red.png"></image></view>
+        <!-- <view class="filter"></view> -->
+        <view class="image-box"><image class="trip-image"src="{{trip.image}}" mode="aspectFill"></image></view>
+        <image class="favorite-icon" src="/images/like-red.png"></image>
         <view class="trip-info">
           <view class="trip-title">{{trip.title}}</view>
           <view class="trip-length">{{trip.end-date - trip.start-date}} days</view>
         </view>
-        <view class="trip-location">📍 {{trip.location}}</view>
+        <view class="trip-location-box">
+          <image class="location-icon" src="/images/location.png"></image>
+          <view class="trip-location-name">{{trip.location}}</view>
+        </view>
       </view>
   <!-- </block>   -->
 </view>
-
-<view style="color: red;font-size: 48px;">Here's some text!</view>

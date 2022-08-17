@@ -4,29 +4,67 @@
   height: 250rpx;
   display: flex;
   justify-content: center;
+  font-family: Fira Sans;
 }
 
 .header-content-box {
   display: flex;
   flex-direction: column;
-  color: #E15B99;
-  /* color: black; */
+  /* color: #E15B99; */
+  color: black;
   margin-top: 80rpx;
+  font-weight: bold;
+  font-size: 48rpx;
 }
 
 .logo {
   height: 100rpx;
   width: 120rpx;
   overflow: hidden;
-  margin-left: 10rpx;
-  margin-bottom: 10rpx;
+  margin-left: 20rpx;
+}
+
+.tags-scroll-view {
+  margin-top: 30rpx;
+  height: 160rpx;
+  /* background-color: blue; */
+  /* gap: 40rpx 40rpx; */
+  /* display: flex; */
+  font-family: Fira Sans;
+}
+
+.inner-tag-view {
+  display: flex;
+  flex-direction: column;
+  /* align-content: center; */
+  align-items: center;
+}
+
+.tag-button {
+  box-shadow: 0 0 15rpx rgba(0,0,0,0.2);
+  height: 120rpx;
+  width: 120rpx;
+  margin: 5rpx 24rpx;
+  border: 1px solid #E15B99;
+  border-radius: 30rpx;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: #E15B99;
+  margin-top: 16rpx;
+}
+
+.tag-img {
+  height: 80rpx;
+  width: 80rpx;
 }
 
 .trip-cards-box {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 30px;
-  margin: 30rpx;
+  grid-gap: 50rpx;
+  margin: 50rpx;
 }
 
 
@@ -34,8 +72,13 @@
   position: relative;
   /* overflow: hidden; */
   /* width: 45%;  */
-  box-sizing: border-box;
-  border-radius: 20rpx;
+  border-radius: 24rpx;
+  width: 300rpx;
+  height: 450rpx;
+  /* padding: 20rpx; */
+  box-shadow: 0 0 15rpx rgba(0,0,0,0.2);
+  font-family:'Fira Sans', sans-serif;
+  /* font-family: FiraSans-Regular; */
 
 }
 
@@ -43,39 +86,60 @@
   margin-top: 10rpx;
 } */
 
-.trip-image {
-  border-radius: 20px;
-  box-shadow: 0 0 15rpx rgba(0,0,0,0.2);
-  /* position: absolute; */
-  width: 90%;
+.image-box {
+  display: flex;
+  justify-content: center;
 }
+
+.trip-image {
+  border-radius: 24rpx;
+  box-shadow: 0 0 15rpx rgba(0,0,0,0.2);
+  width: 300rpx;
+  height: 300rpx;
+  /* margin: 20rpx; */
+}
+
 .trip-info {
-  position: absolute;
+  /* position: absolute; */
   color: black;
   font-weight: bold;
-  font-size: 30rpx;
-  top: 15rpx;
-  left: 20rpx;
-  width: 210rpx;
+  font-size: 25rpx;
+  margin-top: 18rpx;
+  margin-left: 18rpx;
+  /* width: 210rpx; */
   /* display: flex; */
 }
 
-.trip-location {
-  position: absolute;
-  color: black;
+.trip-location-box {
+  /* position: absolute; */
+  color: #404040;
   font-size: 24rpx;
   /* font-weight: bold; */
-  bottom: 20rpx;
-  left: 15rpx;
+  /* bottom: 20rpx;
+  left: 15rpx; */
+  margin-top: 18rpx;
+  margin-left: 18rpx;
   width: 240rpx;
+  display: flex;
+  align-items: center;
+  
+}
+
+.location-icon {
+  height: 30rpx;
+  width: 30rpx;
+  margin-right: 5rpx;
 }
 
 .favorite-icon {
   position: absolute;
-  top: 20rpx;
-  right: 20rpx;
-  width: 40rpx;
-  height: 40rpx;
+  top: 24rpx;
+  right: 24rpx;
+  width: 30rpx;
+  height: 30rpx;
+  padding: 8rpx;
+  background-color: rgba(255, 214, 224, 1) ;
+  border-radius: 50%;
 }
 
 /* .filter {
