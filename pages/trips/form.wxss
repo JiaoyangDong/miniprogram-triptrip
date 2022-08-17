@@ -1,8 +1,15 @@
-.h1 {
-  position: absolute;
-  left: 146rpx;
-  top: 60rpx;
+.main {
+  padding: 60rpx 60rpx;
+}
+.navigation {
+  height: 160rpx;
+}
 
+.form-item {
+  margin-bottom: 30rpx;
+}
+
+.h1 {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 800;
@@ -12,9 +19,6 @@
 }
 
 .h2 {
-  position: absolute;
-  left: 60rpx;
-  top: 188rpx;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
@@ -23,15 +27,11 @@
 }
 
 image {
-  position: absolute;
-  left: 42.13%;
-  right: 41.87%;
-  top: 19.7%;
-  bottom: 74.14%;
-  width: 120rpx;
-  height: 110rpx;
+  width: 200rpx;
+  height: 250rpx;
 }
 
-picker {
-
+.picker {
+  height: 60rpx;
+  font-weight: 300;
 }

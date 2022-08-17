@@ -37,6 +37,12 @@
       "selectedIconPath": "images/mefill-pink.png"
     }]
   },
+  "plugins": {
+    "chooseLocation": {
+    "version": "1.0.9",
+    "provider": "wx76a9a06e5b4e693e"
+    }
+  },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
