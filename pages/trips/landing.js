@@ -22,7 +22,8 @@ Page({
         location: "Bali",
         image: "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
       }
-    ]
+    ],
+    selectedIndex: ''
   },
 
   /**
@@ -79,5 +80,11 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  selectTag(e) {
+    this.setData({
+      selectedIndex: e.currentTarget.dataset.index
+    })
+    console.log(e)
   }
 })
