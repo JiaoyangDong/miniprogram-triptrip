@@ -34,7 +34,7 @@
 
 .option {
   align-self: flex-start;
-  margin: 30rpx 40rpx;
+  margin: 30rpx 10rpx;
 }
 .active {
   font-family: 'Inter';
@@ -57,23 +57,32 @@
   border-radius: 16rpx;
 }
 
-.create-card {
-  width: 300rpx;
-  height: 300rpx;
+.create-img {
   box-sizing: border-box;
-  position: absolute;
+  margin: 10rpx;
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+  width: 450rpx;
+  /* height: 300rpx; */
   border: 1px solid #E786B4;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
 }
-
+.card-info {
+  width: 550rpx;
+  margin: 20rpx;
+}
 .card-title {
+  margin-bottom: 10rpx;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
   color: #000000;
+}
+.card-description {
+  margin-bottom: 10rpx;
 }
 
 .notrip {
@@ -102,4 +111,3 @@
   line-height: 24px;
   color: #E15B99;
   }
-  

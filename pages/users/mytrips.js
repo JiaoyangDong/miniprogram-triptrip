@@ -48,7 +48,7 @@ Page({
         if (res.statusCode === 200) {
           page.setData({
             past_trips: res.data.past,
-            upcoming_trips: res.data.upcomming,
+            upcoming_trips: res.data.upcoming,
             bookmarked_trips: res.data.bookmarks
             // pets: res.data.pets,
             // booked_pets: res.data.booked_pets,

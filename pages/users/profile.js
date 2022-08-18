@@ -48,7 +48,7 @@ Page({
         if (res.statusCode === 200) {
           page.setData({
             past_trips: res.data.past,
-            upcoming_trips: res.data.upcomming
+            upcoming_trips: res.data.upcoming
             // user_id: user_id
           })
         } else {

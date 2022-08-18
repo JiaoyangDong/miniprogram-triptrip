@@ -28,12 +28,16 @@
 }
 
 .join-img {
-  width: 205px;
-  height: 150px;
-  margin: 20rpx;
+  box-sizing: border-box;
   border: 1px solid #E786B4;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
+}
+.join-info {
+  position: absolute;
+  width: 160px;
+  top: 30rpx;
+  left: 20rpx;
 }
 
 .active {
@@ -56,9 +60,6 @@
   margin: 10rpx;
   border-radius: 16rpx;
 }
-.join-card {
-  margin: 20rpx;
-}
 .notrip {
   background-color:#FFD6E0;
   width: 590rpx;
@@ -72,7 +73,7 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
-  color: #FFFFFF;
+  color: white;
 }
 
 .title-bookmark {
@@ -85,18 +86,25 @@
   line-height: 20px;
   color: #000000;
 }
-
+.filter {
+  position: absolute;
+  background-color: black;
+  opacity: 25%;
+  width: 95%;
+  height: 95%;
+  border-radius: 16px;
+}
 .bookmark-img {
   box-sizing: border-box;
-  width: 205px;
-  height: 150px;
   border: 1px solid #E786B4;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
 }
-
-.bookmark-card {
-  margin: 40rpx auto;
+.bookmark-info{
+  position: absolute;
+  width: 160px;
+  top: 30rpx;
+  left: 20rpx;
 }
 
 .bookmark-card-title {
@@ -105,5 +113,16 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
-  color: #FFFFFF;
+  color: white;
+}
+swiper {
+  width: 600rpx;
+}
+.trips-swiper {
+  height: 400rpx;
+  margin: 10rpx;
+}
+.swiper-item{
+  width: 90%;
+  margin: 20rpx 0;
 }
