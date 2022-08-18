@@ -1,14 +1,14 @@
 /* pages/users/mytrips.wxss */
 .container {
-  padding: 200rpx 30rpx;
+  padding: 100rpx 30rpx;
 }
 .mytrips-img {
-  width: 64px;
-  height: 64px;
+  width: 54px;
+  height: 54px;
   margin: 10rpx 50rpx auto;
   background: #FFD6E0;
   border-radius: 150rpx;
-  padding: 50rpx;
+  padding: 40rpx;
 }
 .page-title{
   width: 95px;
@@ -29,14 +29,20 @@
 
 .join-img {
   box-sizing: border-box;
-  border: 1px solid #E786B4;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
   border-radius: 16px;
+}
+.join-arrow {
+  position: absolute;
+  top: 50rpx;
+  right: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
 }
 .join-info {
   position: absolute;
   width: 160px;
-  top: 30rpx;
+  top: 40rpx;
   left: 20rpx;
 }
 
@@ -61,11 +67,15 @@
   border-radius: 16rpx;
 }
 .notrip {
-  background-color:#FFD6E0;
-  width: 590rpx;
+  background-color:white;
+  width: 450rpx;
   height: 90rpx;
-  margin: 20rpx;
+  /* margin: 20rpx; */
   padding: 20rpx;
+  border: 1px solid #E786B4;
+  border-radius: 16rpx;
+  margin-top: 80rpx;
+  margin-bottom: 100rpx;
 }
 .join-card-title {
   font-family: 'Inter';
@@ -73,6 +83,9 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
+  color: white;
+}
+.card-description {
   color: white;
 }
 
@@ -89,14 +102,14 @@
 .filter {
   position: absolute;
   background-color: black;
-  opacity: 25%;
-  width: 95%;
-  height: 95%;
+  opacity: 20%;
+  width: 100%;
+  height: 100%;
   border-radius: 16px;
 }
 .bookmark-img {
   box-sizing: border-box;
-  border: 1px solid #E786B4;
+  /* border: 1px solid #E786B4; */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
 }
@@ -116,13 +129,15 @@
   color: white;
 }
 swiper {
-  width: 600rpx;
+  width: 660rpx;
+  height: 400rpx;
 }
 .trips-swiper {
+  width: 640rpx;
   height: 400rpx;
-  margin: 10rpx;
+  /* margin: 10rpx 10rpx 20rpx 20rpx; */
 }
 .swiper-item{
-  width: 90%;
-  margin: 20rpx 0;
+  background-color: transparent;
+  width: 100%;
 }

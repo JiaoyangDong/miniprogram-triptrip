@@ -10,14 +10,17 @@
   </view>
   <!-- upcoming -->
   <view wx:if="{{active_tab === 'upcoming'}}">
-    <view class="notrip" wx:if="{{!upcoming_trips.length}}"><text>your next trip is ahead!</text></view>
-    <swiper class="trips-swiper"> 
+    <view class="notrip" wx:if="{{!upcoming_trips.length}}"><text>waiting to add your next trip!</text></view>
+    <swiper class="trips-swiper" wx:if="{{upcoming_trips.length}}"> 
       <swiper-item class="swiper-item"
                   wx:for="{{upcoming_trips}}" wx:key="*this" data-id="{{item.id}}">
         <view class="filter"></view>
-        <image class="join-img" style="width: 95%;" src="{{item.image}}" mode="widthFix"></image>
+        <image class="join-img" style="height: 100%;" src="{{item.image}}" mode="aspectFill"></image>
+        <view><image class="join-arrow" src="/images/arrowpink.png"></image></view>
         <view class="join-info">
           <view class="join-card-title">{{item.title}}</view>
+          <view class="card-description">{{item.start_date}}</view>
+          <view class="card-description">{{item.location}}</view>
         </view>
       </swiper-item>
     </swiper>
@@ -25,11 +28,12 @@
   <!-- past -->
   <view wx:if="{{active_tab === 'past'}}">
     <view class="notrip" wx:if="{{!past_trips.length}}">you have not joined any trip in the past</view>
-    <swiper class="trips-swiper"> 
+    <swiper class="trips-swiper" wx:if="{{past_trips.length}}"> 
       <swiper-item class="swiper-item"
                   wx:for="{{past_trips}}" wx:key="*this" data-id="{{item.id}}">
         <view class="filter"></view>
-        <image class="join-img" style="width: 95%;" src="{{item.image}}" mode="widthFix"></image>
+        <view><image class="join-arrow" src="/images/arrowpink.png"></image></view>
+        <image class="join-img" style="height: 100%;" src="{{item.image}}" mode="aspectFill"></image>
         <view class="join-info">
           <view class="join-card-title">{{item.title}}</view>
         </view>
@@ -37,16 +41,20 @@
     </swiper>
   </view>
 
+  <!-- <view class="notrip">no trips to be displayed.. find one now!</view> -->
   <!-- bookmark -->
   <text class="title-bookmark">my bookmarks</text>
-  <view wx:if="{{!bookmarked_trips.length}}">no bookmarked trips yet</view>
-  <swiper class="trips-swiper"> 
+  <view class="notrip" wx:if="{{!bookmarked_trips.length}}">no bookmarked trips yet</view>
+  <swiper class="trips-swiper" wx:if="{{bookmarked_trips.length}}"> 
     <swiper-item class="swiper-item"
                 wx:for="{{bookmarked_trips}}" wx:key="*this" data-id="{{item.id}}">
       <view class="filter"></view>
-      <image class="bookmark-img" style="width: 95%;" src="{{item.image}}" mode="widthFix"></image>
+      <image class="bookmark-img" style="width: 100%;" src="{{item.image}}" mode="aspectFill"></image>
+      <view><image class="join-arrow" src="/images/arrow-babypink.png"></image></view>
       <view class="bookmark-info">
         <view class="bookmark-card-title">{{item.title}}</view>
+        <view class="card-description">{{item.start_date}}</view>
+          <view class="card-description">{{item.location}}</view>
       </view>
     </swiper-item>
   </swiper>
