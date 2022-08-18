@@ -97,7 +97,7 @@ page {
   /* width: 45%;  */
   border-radius: 24rpx;
   width: 300rpx;
-  height: 470rpx;
+  height: 460rpx;
   /* padding: 20rpx; */
   box-shadow: 0 0 15rpx rgba(0,0,0,0.2);
   font-family:'Fira Sans', sans-serif;
@@ -159,7 +159,7 @@ page {
   align-items: center;
   position: absolute;
   bottom: 8rpx;
-  right: 8rpx;
+  right: 16rpx;
   /* background-color: red; */
   /* flex-grow: 1; */
 }
