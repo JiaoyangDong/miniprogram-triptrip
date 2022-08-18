@@ -71,7 +71,9 @@
 
 /* button */
 .btn {
-  height: 110rpx;
+  margin: 40rpx;
+  height: 100rpx;
+  /* padding: 10rpx; */
   background: #E15B99;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 32rpx;

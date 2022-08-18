@@ -2,9 +2,10 @@
 const app = getApp()
 Page({
   data: {
-    booking: {},
+    booking: {}
   },
   onLoad(options) {
+
 
   },
   onReady() {
@@ -23,6 +24,8 @@ Page({
     let page = this
     console.log('From show.js - onshow: options ', page.options)
     let id = page.options.id
+    // console.log('From show.js - onshow: options ', page.options)
+    // let id = this.data.id
     wx.request({
       header: app.globalData.header,
       url: `${app.globalData.baseURL}/trips/${id}`,
@@ -174,6 +177,11 @@ Page({
       withShareTicket: true,
       // menus: [],
       menus: ['shareAppMessage', 'shareTimeline']
+    })
+  },
+  goToHome() {
+    wx.switchTab({
+      url: 'landing',
     })
   }
 })

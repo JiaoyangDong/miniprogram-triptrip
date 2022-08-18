@@ -24,24 +24,25 @@
     </view>
 
     <!-- TEXT MAIN -->
+    <view>
+      {{trip.start_date}} ~ {{trip.end_date}}
+    </view>
 
     <view class="map">
-      <image class="icon" src="/images/map.png">location{{trip.location}} </image>
+      <image class="icon" style="width: 40rpx; height: 40rpx;" src="/images/map.png">location{{trip.location}} </image>
       {{trip.location}}
     </view>
-    <!-- {{trip.capacity}} -->
-    <!-- {{trip.status}} -->
-    {{trip.start_date}} ~ {{trip.end_date}}
+
     <view class="tags">
       <view class="tag" wx:for="{{trip.tags}}">{{item}}</view>
     </view>
+
     <text class="h2">Description</text>
     <text class="description">
       {{trip.description}}
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro maxime architecto, fugiat obcaecati ullam accusamus sed voluptate ipsa sequi sunt nulla iste recusandae consequuntur ex eius dolor officia natus in.
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat dolore explicabo dicta deleniti accusantium iste amet, perspiciatis facilis aliquam ex, ducimus minima. At atque eaque omnis impedit, cumque eos aliquid.
     </text>
-
 
     <!-- Wanna go!-->
     <button wx:if="{{!isBooker}}" class="btn" open-type="getUserInfo" bindgetuserinfo="submitBooking">Wanna Go!</button>
