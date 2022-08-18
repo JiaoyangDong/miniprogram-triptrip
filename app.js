@@ -34,6 +34,7 @@ App({
     userInfo: null, 
     header: null, 
     user: null,
+    tagList: ["oneday", "weekend", "petfriendly", "hiking", "relaxing", "family", "adventure", "biking"],
     // baseURL: "http://localhost:3000/api/v1"
     baseURL: "http://triptrip.wogengapp.cn/api/v1"
   }

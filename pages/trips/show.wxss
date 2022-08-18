@@ -1,58 +1,79 @@
-/* pages/trips/show.wxss */
-.trip-image {
-  position: relative;
-  background: #D9D9D9;
-  width: 750rpx;
-  height: 610rpx;
+.container{
+  padding: 0;
+  /* padding-bottom: 80rpx; */
+}
+
+.poster{
   z-index: 1;
+  width: 100vw;
+  height:550rpx;
+  position: sticky;
+  top: 0;
 }
 
-.trip-info {
-  margin-top: -40rpx;
-  position: relative;
-  box-sizing: border-box;
-  width: 750rpx;
-  height: 1102rpx;
-  left: 0px;
-  border: 2px solid #E786B4;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 60rpx;  
-  z-index: 2;
-  background-color: white;
-  color: black;
-}
-
-.icons {
+.head{
   display: flex;
   justify-content: space-between;
-  padding: 28rpx 80rpx;
+
 }
 
-.icon {
-  width: 96rpx;
-  height: 96rpx;
-}
 .h1 {
-  margin-left: 60rpx;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 800;
   font-size: 50rpx;
-  margin-top: 30rpx;
+  margin: 20 40rpx;
+  padding: 20rpx 20rpx;
+  /* margin-top: 30rpx; */
+  /* margin-left: 60rpx; */
 }
 
-.description {
-  left: 60rpx;
-  width: 624rpx;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40rpx;
-  margin-top: 16rpx;
+.h2{
+  font-weight: 500;
+  font-size: 30rpx;
+}
+.icons{
+  padding: 20rpx;
 }
 
+.icon{
+  width: 70rpx;
+  height: 70rpx;
+}
+.nostyle{
+  width: 70rpx ! important; 
+  padding: 0 ;
+}
+
+.trip-card{
+  z-index: 2;
+  border-radius: 50rpx;
+  margin-top: -40rpx;
+  background-color: white;
+  border: solid 3px #E15B99;
+
+  padding: 40rpx;
+  padding-bottom: 90rpx;
+}
+.tags{
+  display: flex;
+  margin: 20rpx 0;
+}
+.tag{
+  /* background-color: tomato; */
+  border: #E15B99 1px solid;
+  color: #E15B99;
+  border-radius: 14rpx;
+  padding: 10rpx;
+  font-size: 24rpx;
+}
+
+
+/* button */
 .btn {
-  height: 110rpx;
+  margin: 40rpx;
+  height: 100rpx;
+  /* padding: 10rpx; */
   background: #E15B99;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 32rpx;
@@ -61,7 +82,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 40rpx;
-  line-height: 60rpx;
-  text-align: center;
-  margin-top: 10rpx;
+  /* line-height: 60rpx; */
+  /* text-align: center; */
+  /* margin-top: 220rpx; */
 }
