@@ -28,12 +28,18 @@
               </picker>
         </view>
       </view>
-      <view class="form-item">
+      <!-- <view class="form-item">
           <view class="picker__title">Location</view>
           <picker mode="region" bindchange="bindRegionChange" data-field="location" value="{{location}}">
             <view class="picker" style="border: 1px solid #E15B99; border-radius: 30px; padding: 4rpx 40rpx; min-width: 200rpx; display: flex; align-items: center;">{{formData.location}}</view>
           </picker>
+      </view> -->
+      <view class="form-item">
+        <button bindtap="showMap"> set location</button>
+        <!-- <view style="margin-top:10px">address: {{address?address:"none"}}</view> -->
+        <!-- <view style="margin-top:10px">名称：{{locationName?locationName:"暂无"}}</view> -->
       </view>
+
       <view class="form-item"> Description
         <textarea name="description" rows="4" style="border: 1px solid #E15B99; border-radius: 20px; padding: 20rpx; width: 95%; height: 200rpx; margin-top: 10rpx; font-weight: 200;" placeholder="add more info about the trip ..."></textarea>
       </view>

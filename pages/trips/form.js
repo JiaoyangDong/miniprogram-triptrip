@@ -8,13 +8,8 @@ Page({
     src: "/images/image-icon.png", 
     start_date: '',
     end_date: '',
-    // location: '', 
-    key: 'VP6BZ-FMPCR-U4SWP-WQTQI-BGOQE-RLF3L',//使用在腾讯位置服务申请的key
-    referer: 'triptrip', //调用插件的app的名称
-    location: JSON.stringify({
-      latitude: 39.89631551,
-      longitude: 116.323459711
-    }),
+    // address: '',
+    // locationName: '',
   },
   onLoad(options) {
   },
@@ -22,6 +17,13 @@ Page({
   },
   onShow: function () {
     console.log("form onshow")
+    const location = chooseLocation.getLocation();
+    if(location){
+        this.setData({
+            address: location.address?location.address : "",
+            // locationName: location.name?location.name : ""
+        });
+    }
     const page = this
     if (page.data.resetForm) this.resetForm();
     const id = wx.getStorageSync('editedId')
@@ -39,7 +41,6 @@ Page({
           })
           wx.removeStorageSync('editedId')
         }
-
       })
     }
   },
@@ -52,17 +53,6 @@ Page({
   resetForm() {
     this.setData({formData: {}})
   },
-  // bindRegionChange: function (e) {
-  //   console.log('picker sends selection change, carries value of ', e.detail.value)
-  //   let { formData } = this.data
-  //   const { field } = e.currentTarget.dataset
-  //   if (field == 'location') {
-  //     formData.location = e.detail.value
-  //     this.setData({ formData,
-  //       location: e.detail.value
-  //     })
-  //   }
-  // },
   bindDateChange: function(e) {
     console.log('picker sends selection change, carries value of ', e.detail.value)
     let { formData } = this.data
@@ -175,12 +165,15 @@ Page({
       url: 'landing',
     })
   },
-  setLocation(e) {
-    console.log('from location setter ->', e)
-    const page = this
-    const location = chooseLocation.getLocation()
+  showMap() {
+    const key = 'VP6BZ-FMPCR-U4SWP-WQTQI-BGOQE-RLF3L'//使用在腾讯位置服务申请的key
+    const referer = 'triptrip' //调用插件的app的名称
+    const location = JSON.stringify({
+      latitude: 39.89631551,
+      longitude: 116.323459711
+    });
     wx.navigateTo({
       url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer + '&location=' + location
     })
-  },
+  }
 })
