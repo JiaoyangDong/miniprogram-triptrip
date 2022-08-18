@@ -16,24 +16,25 @@
   },
   "tabBar": {
     "custom": true,
-    "color": "#FFD6E0",
+    "color": "#E15B99",
     "selectedColor": "#E15B99",
     "backgroundColor": "#ffffff",
     "list": [{
+      "custom": true,
       "pagePath": "pages/trips/landing",
-      "text": "Home",
-      "iconPath": "images/homeempty-lightpink.png",
-      "selectedIconPath": "images/homefill-pink.png"
+      "text": "Explore",
+      "iconPath": "images/explorefill-pink.png",
+      "selectedIconPath": "images/exploreempty-pink.png"
     }, {
       "pagePath": "pages/users/mytrips",
       "text": "My Trips",
-      "iconPath": "images/mytrips-lightpink.png",
-      "selectedIconPath": "images/mytrips-pink.png"
+      "iconPath": "images/mytripsfill-pink.png",
+      "selectedIconPath": "images/mytripsempty-pink.png"
     }, {
       "pagePath": "pages/users/profile",
       "text": "Me",
-      "iconPath": "images/meempty-lightpink.png",
-      "selectedIconPath": "images/mefill-pink.png"
+      "iconPath": "images/mefill-pink.png",
+      "selectedIconPath": "images/meempty-pink.png"
     }]
   },
   "style": "v2",

@@ -115,7 +115,7 @@ page {
 }
 
 .trip-image {
-  border-radius: 24rpx;
+  border-radius: 24rpx 24rpx 0 0;
   box-shadow: 0 0 15rpx rgba(0,0,0,0.2);
   width: 300rpx;
   height: 300rpx;
@@ -126,12 +126,22 @@ page {
   /* position: absolute; */
   color: black;
   font-weight: bold;
-  font-size: 25rpx;
   margin-top: 18rpx;
   margin-left: 18rpx;
   /* width: 210rpx; */
   display: flex;
   flex-direction: column;
+  /* background-color:lightseagreen; */
+  height: 140rpx;
+}
+
+.trip-title {
+  font-size: 26rpx;
+}
+
+.trip-start {
+  margin-top: 6rpx;
+  font-size: 24rpx;
 }
 
 .trip-location-box {
@@ -143,11 +153,15 @@ page {
   /* bottom: 20rpx;
   left: 15rpx; */
   /* margin-left: 18rpx; */
-  width: 240rpx;
+  /* width: 240rpx; */
   height: auto;
   display: flex;
   align-items: center;
-  justify-self:right;
+  position: absolute;
+  bottom: 8rpx;
+  right: 8rpx;
+  /* background-color: red; */
+  /* flex-grow: 1; */
 }
 
 .location-icon {
