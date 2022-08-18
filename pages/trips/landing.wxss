@@ -142,6 +142,7 @@ page {
 .trip-start {
   margin-top: 6rpx;
   font-size: 24rpx;
+  font-weight: 500;
 }
 
 .trip-location-box {
