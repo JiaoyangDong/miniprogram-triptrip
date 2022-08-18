@@ -46,7 +46,7 @@
   },
   "permission": {
     "scope.userLocation": {
-    "desc": "permit app to use your location"
+    "desc": "permit location"
     }
   },
   "style": "v2",
