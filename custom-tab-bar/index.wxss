@@ -1,5 +1,4 @@
 /* custom-tab-bar/index.wxss */
-@import "/style/font.wxss";
 
 .tab-bar {
   position: fixed;
@@ -7,12 +6,12 @@
   bottom: 0;
   left: 0;
   right: 0;
-  margin: 25px 35px;
-  border-radius: 50%;
-  height: 48px;
+  margin: 30px 35px;
+  border-radius: 100rpx;
+  height: 64px;
   background-color: white;
   display: flex;
-  padding-bottom: 16px;
+  /* padding-bottom: 14px; */
   /* padding-bottom: env(safe-area-inset-bottom); */
   /* font-family: Fira Sans; */
 }
@@ -24,12 +23,13 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 20rpx;
+  /* margin: 20rpx; */
 }
 
 .tab-bar-item-cover-image {
   width: 27px;
   height: 27px;
+  margin-bottom: 8rpx;
 }
 
 .tab-bar-item-cover-view {

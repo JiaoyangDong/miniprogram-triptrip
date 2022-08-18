@@ -46,6 +46,12 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()){
+      this.getTabBar().setData({
+        selectedTabIndex: 0
+      })
+    }
     const page = this
     if (app.globalData.header) {
       // proceed to fetch api
