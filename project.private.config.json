@@ -16,7 +16,7 @@
         },
         {
           "name": "",
-          "pathName": "pages/trips/form",
+          "pathName": "pages/trips/landing",
           "query": "",
           "launchMode": "default",
           "scene": null
