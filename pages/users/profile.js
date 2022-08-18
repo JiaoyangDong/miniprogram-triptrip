@@ -6,7 +6,7 @@ Page({
    * Page initial data
    */
   data: {
-
+    active_tab: "upcoming",
   },
 
   /**
@@ -27,6 +27,12 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()){
+      this.getTabBar().setData({
+        selectedTabIndex: 2
+      })
+    }
     if (app.globalData.header) {
       // proceed to fetch api
       this.getData()
@@ -47,8 +53,8 @@ Page({
         console.log("From profile.js: res",res)
         if (res.statusCode === 200) {
           page.setData({
-            // pets: res.data.pets,
-            // booked_pets: res.data.booked_pets,
+            past_trips: res.data.past,
+            upcoming_trips: res.data.upcoming
             // user_id: user_id
           })
         } else {
@@ -91,5 +97,15 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  active_upcoming(){
+    this.setData({
+      active_tab: "upcoming"
+    })
+  },
+  active_past(){
+    this.setData({
+      active_tab: "past"
+    })
   }
 })

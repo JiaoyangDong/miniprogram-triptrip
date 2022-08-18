@@ -1,1 +1,128 @@
 /* pages/users/mytrips.wxss */
+.container {
+  padding: 200rpx 30rpx;
+}
+.mytrips-img {
+  width: 64px;
+  height: 64px;
+  margin: 10rpx 50rpx auto;
+  background: #FFD6E0;
+  border-radius: 150rpx;
+  padding: 50rpx;
+}
+.page-title{
+  width: 95px;
+  height: 30px;
+  margin: 40rpx auto;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  color: #000000;
+}
+
+.option {
+  align-self: flex-start;
+  margin: 30rpx 40rpx;
+}
+
+.join-img {
+  box-sizing: border-box;
+  border: 1px solid #E786B4;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+}
+.join-info {
+  position: absolute;
+  width: 160px;
+  top: 30rpx;
+  left: 20rpx;
+}
+
+.active {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 24px;
+  color: #E15B99;
+  text-decoration: underline;
+  margin: 10rpx;
+}
+.inactive {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  margin: 10rpx;
+  border-radius: 16rpx;
+}
+.notrip {
+  background-color:#FFD6E0;
+  width: 590rpx;
+  height: 90rpx;
+  margin: 20rpx;
+  padding: 20rpx;
+}
+.join-card-title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: white;
+}
+
+.title-bookmark {
+  align-self: flex-start;
+  margin: 50rpx 40rpx;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #000000;
+}
+.filter {
+  position: absolute;
+  background-color: black;
+  opacity: 25%;
+  width: 95%;
+  height: 95%;
+  border-radius: 16px;
+}
+.bookmark-img {
+  box-sizing: border-box;
+  border: 1px solid #E786B4;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+}
+.bookmark-info{
+  position: absolute;
+  width: 160px;
+  top: 30rpx;
+  left: 20rpx;
+}
+
+.bookmark-card-title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: white;
+}
+swiper {
+  width: 600rpx;
+}
+.trips-swiper {
+  height: 400rpx;
+  margin: 10rpx;
+}
+.swiper-item{
+  width: 90%;
+  margin: 20rpx 0;
+}

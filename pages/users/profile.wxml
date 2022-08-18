@@ -1,2 +1,47 @@
 <!--pages/users/profile.wxml-->
-<text>pages/users/profile.wxml</text>
+<!-- <text>pages/users/profile.wxml</text> -->
+<view class="container">
+    <image class="profile-img" src="/images/profile-kiwibird.png"></image>
+    <text class="page-title">organizer profile</text>
+
+  <view class="create-cards">
+    <!-- <text class="title-create">trips i'm leading</text> -->
+    <view class="option">
+      <text class="{{active_tab === 'upcoming' ? 'active': 'inactive'}}" bindtap="active_upcoming">upcoming</text>
+      <text class="{{active_tab === 'past' ? 'active': 'inactive'}}" bindtap="active_past">past</text>
+    </view>
+    <!-- upcoming -->
+   
+    <view wx:if="{{active_tab === 'upcoming'}}">
+      <view class="notrip" wx:if="{{!upcoming_trips.length}}">you have no upcoming trip to lead</view>
+      
+      <view class="create-card" wx:for="{{upcoming_trips}}" data-id="{{item.id}}">
+        <image mode="widthFix" src="{{item.image}}" class="create-img"></image>
+        <view class="card-info">
+          <view class="card-title">{{item.title}}</view>
+          <view class="card-description">🗓 {{item.start_date}}</view>
+          <view class="card-description">📍 {{item.location}}</view>
+          <view class="card-description">{{item.description}}</view>
+        </view>
+      </view>  
+        
+    </view>
+
+    <!-- past -->
+    <view wx:if="{{active_tab === 'past'}}">
+      <view class="notrip" wx:if="{{!past_trips.length}}">you have not organized any trip in the past</view>
+
+      <view class="create-card" wx:for="{{past_trips}}" data-id="{{item.id}}">
+        <image mode="widthFix" src="{{item.image}}" class="create-img"></image>
+        <view class="card-info">
+          <view class="card-title">{{item.title}}</view>
+          <view class="card-description">📍 {{item.location}}</view>
+       
+        </view>
+      </view>  
+    </view>
+  </view>
+
+  <button style="width:220px; height:47px" class="secondary-btn"><text class="btn-text">create a trip now</text></button>
+
+</view>
