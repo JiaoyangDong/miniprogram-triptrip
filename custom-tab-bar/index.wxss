@@ -1,16 +1,19 @@
 /* custom-tab-bar/index.wxss */
+@import "/style/font.wxss";
+
 .tab-bar {
   position: fixed;
   border: 1px solid #E15B99;
   bottom: 0;
   left: 0;
   right: 0;
-  margin: 50rpx;
+  margin: 25px 35px;
   border-radius: 50%;
   height: 48px;
   background-color: white;
   display: flex;
-  padding-bottom: env(safe-area-inset-bottom);
+  padding-bottom: 16px;
+  /* padding-bottom: env(safe-area-inset-bottom); */
   /* font-family: Fira Sans; */
 }
 
@@ -31,4 +34,5 @@
 
 .tab-bar-item-cover-view {
   font-size: 12px;
+  /* font-family: "Fira Sans"; */
 }
