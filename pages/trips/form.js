@@ -1,15 +1,14 @@
-// pages/trips/form.js
 const app = getApp()
 const chooseLocation = requirePlugin('chooseLocation');
 Page({
   data: {
-    formData: {},
     resetForm: true,
     src: "/images/image-icon.png", 
     start_date: '',
     end_date: '',
-    // address: '',
-    // locationName: '',
+    address: '',
+    location: '',
+    formData: {},
   },
   onLoad(options) {
   },
@@ -17,15 +16,15 @@ Page({
   },
   onShow: function () {
     console.log("form onshow")
-    const location = chooseLocation.getLocation();
-    if(location){
-        this.setData({
-            address: location.address?location.address : "",
-            // locationName: location.name?location.name : ""
+    const page = this
+    const current_location = chooseLocation.getLocation();
+    if(current_location){
+        page.setData({
+            address: current_location.address ? current_location.address : "",
+            location: current_location.name ? current_location.name : ""
         });
     }
-    const page = this
-    if (page.data.resetForm) this.resetForm();
+    if (page.data.resetForm) page.resetForm();
     const id = wx.getStorageSync('editedId')
     if (id) {
       console.log('id found -> update')
@@ -35,7 +34,7 @@ Page({
         success(res) {
           let data = page.data
           page.setData({
-            locationsIndex: data.locations.findIndex(el => (el === res.data.locations)),
+            // locationsIndex: data.locations.findIndex(el => (el === res.data.locations)),
             formData: res.data,
             editedId: id
           })
@@ -112,7 +111,7 @@ Page({
           console.log('update success?', res)
           page.setData({resetForm: true})
           wx.switchTab({
-            url: '/pages/tris/landing',
+            url: '/pages/trips/landing',
           })
         }
       })
@@ -160,20 +159,27 @@ Page({
       }
     })
   }, 
-  goToHome() {
-    wx.switchTab({
-      url: 'landing',
-    })
-  },
   showMap() {
     const key = 'VP6BZ-FMPCR-U4SWP-WQTQI-BGOQE-RLF3L'//使用在腾讯位置服务申请的key
     const referer = 'triptrip' //调用插件的app的名称
-    const location = JSON.stringify({
-      latitude: 39.89631551,
-      longitude: 116.323459711
-    });
+    // const location = JSON.stringify({
+      // latitude: 39.89631551,
+      // longitude: 116.323459711
+      // });
     wx.navigateTo({
-      url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer + '&location=' + location
+      url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer + '&location='
     })
-  }
-})
+    const page = this
+    let { formData } = this.data
+    const { field } = e.currentTarget.dataset
+    if ( field == 'location') {
+      formData.location = e.detail.value,
+      this.setData({ formData, location: e.detail.value })
+    }
+  },
+    goToHome() {
+      wx.switchTab({
+        url: 'landing',
+      })
+    },
+  })

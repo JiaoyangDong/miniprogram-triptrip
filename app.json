@@ -37,15 +37,15 @@
       "selectedIconPath": "images/mefill-pink.png"
     }]
   },
-  "permission": {
-    "scope.userLocation": {
-    "desc": "permit app to use your location"
-    }
-  },
   "plugins": {
     "chooseLocation": {
     "version": "1.0.9",
-    "provider": "wx414d14767e450fcb"
+    "provider": "wx76a9a06e5b4e693e"
+    }
+  },
+  "permission": {
+    "scope.userLocation": {
+    "desc": "permit app to use your location"
     }
   },
   "style": "v2",
