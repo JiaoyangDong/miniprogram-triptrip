@@ -11,18 +11,22 @@ Page({
     formData: {},
   },
   onLoad(options) {
+    // const eventChannel = this.getOpenerEventChannel()
+    // eventChannel.emit('acceptDataFromOpenedPage', {data: 'test'})
   },
   onReady() {
   },
   onShow: function () {
     console.log("form onshow")
     const page = this
+    let { formData } = page.data
     const current_location = chooseLocation.getLocation();
+    console.log({current_location})
     if(current_location){
-        page.setData({
-            address: current_location.address ? current_location.address : "",
-            location: current_location.name ? current_location.name : ""
-        });
+      const address = current_location.address
+      const location = current_location.name
+      formData = {...formData, address, location}
+      page.setData({formData})
     }
     if (page.data.resetForm) page.resetForm();
     const id = wx.getStorageSync('editedId')
@@ -159,7 +163,8 @@ Page({
       }
     })
   }, 
-  showMap() {
+
+  showMap(e) {
     const key = 'VP6BZ-FMPCR-U4SWP-WQTQI-BGOQE-RLF3L'//使用在腾讯位置服务申请的key
     const referer = 'triptrip' //调用插件的app的名称
     // const location = JSON.stringify({
@@ -167,15 +172,17 @@ Page({
       // longitude: 116.323459711
       // });
     wx.navigateTo({
-      url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer + '&location='
+      url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer + '&location=',
+      
     })
-    const page = this
-    let { formData } = this.data
-    const { field } = e.currentTarget.dataset
-    if ( field == 'location') {
-      formData.location = e.detail.value,
-      this.setData({ formData, location: e.detail.value })
-    }
+
+    // let { formData } = this.data
+    // let location = e.detail.value
+    // let address = e.detail.
+
+    // formData = {...formData, location, }
+    // const { field } = e.currentTarget.dataset
+    // this.setData({ formData, location: e.detail.value })
   },
     goToHome() {
       wx.switchTab({
