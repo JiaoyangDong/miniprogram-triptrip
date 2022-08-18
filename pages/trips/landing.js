@@ -6,7 +6,7 @@ Page({
    * Page initial data
    */
   data: {
-    tag: 'hiking',
+    tag: '',
     trips: [
       {
         title: "Yoga retreat",
@@ -91,16 +91,18 @@ Page({
 
   },
   selectTag(e) {
-    if (this.data.selectedTagIndex === e.currentTarget.dataset.index) {
+    if (this.data.tag !== e.currentTarget.dataset.tag) {
       this.setData({
-        selectedTagIndex: ''
+        tag: e.currentTarget.dataset.tag
       })
-    } else {
-      this.setData({
-        selectedTagIndex: e.currentTarget.dataset.index
-      })
+      this.getNewData()
     }
-    this.getNewData()
+    //   console.log(e.currentTarget)
+    //   this.setData({
+    //     tag: e.currentTarget.dataset.tag
+    //   })
+    // }
+    // this.getNewData()
   },
 
   getNewData() {
