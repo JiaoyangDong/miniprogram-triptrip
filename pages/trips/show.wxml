@@ -1,26 +1,50 @@
 <!--pages/trips/show.wxml-->
+<view class="container">
+  <!-- Trip-image  -->
+  <image class="poster" mode="aspectFill" src="{{trip.image}}">
+    <view class="navigation">
+      <image src="/images/homeempty-lightpink.png" style="height: 60rpx; width: 60rpx; position: fixed; top: 50px; left: 30px;" bindtap="goToHome"></image>
+    </view>
+  </image>
 
-<view class="main">
-      <!-- Trip-image  -->
-    <view class="trip-image">
-      <image mode="aspectFill" src="{{trip.image}}"></image>
+
+
+  <!-- Trip-info -->
+  <view class="trip-card">
+
+    <!-- HEAD -->
+    <view class="head">
+      <view class="h1">{{trip.title}}</view>
+      <view class="icons">
+        <image class="icon" src="{{ isSaved ? '/images/likefill-pink.png' : '/images/like-pink.png'}} " bindtap="toggleBookmark">{{trip.end_date - trip.start_date}} days</image>
+        <button open-type="share" class="nostyle icon">
+          <image class="icon" mode="aspectFit" src="/images/share.png">Share</image>
+        </button>
+      </view>
     </view>
 
-      <!-- Trip-info -->
-  <view class="trip-info">
-    <view class="icons">
-      <!-- bindtap="showMap" -->
+    <!-- TEXT MAIN -->
+
+    <view class="map">
       <image class="icon" src="/images/map.png">location{{trip.location}} </image>
-      <image class="icon" src="/images/heart.png" bindtap="toggleBookmark" style="background-color: {{isSaved ? 'red': 'pink'}};">{{trip.end_date - trip.start_date}} days</image>
-      <!-- bindtap="share" -->
-      <image class="icon"  src="/images/share.png">Share</image>    
+      {{trip.location}}
     </view>
-      <view class="h1">Title: {{trip.name}}</view>
-      <textarea class="description" placeholder="text here">{{trip.description}}</textarea>
+    <!-- {{trip.capacity}} -->
+    <!-- {{trip.status}} -->
+    {{trip.start_date}} ~ {{trip.end_date}}
+    <view class="tags">
+      <view class="tag" wx:for="{{trip.tags}}">{{item}}</view>
+    </view>
+    <text class="h2">Description</text>
+    <text class="description">
+      {{trip.description}}
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro maxime architecto, fugiat obcaecati ullam accusamus sed voluptate ipsa sequi sunt nulla iste recusandae consequuntur ex eius dolor officia natus in.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat dolore explicabo dicta deleniti accusantium iste amet, perspiciatis facilis aliquam ex, ducimus minima. At atque eaque omnis impedit, cumque eos aliquid.
+    </text>
 
-      <!-- Wanna go!-->
-      <button wx:if="{{!isBooker}}" class="btn" open-type="getUserInfo" bindgetuserinfo="submitBooking">Wanna Go!</button>
+
+    <!-- Wanna go!-->
+    <button wx:if="{{!isBooker}}" class="btn" open-type="getUserInfo" bindgetuserinfo="submitBooking">Wanna Go!</button>
+
   </view>
 </view>
-
-

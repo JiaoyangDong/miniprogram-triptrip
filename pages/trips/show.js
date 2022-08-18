@@ -101,7 +101,12 @@ Page({
 
   },
   onShareAppMessage() {
-
+    console.log(this.options)
+    return {
+      title: this.data.trip.title,
+      imgaUrl: this.data.trip.image,
+      path: `pages/trips/show?id=${this.options.id}`
+    }
   }, 
   toggleBookmark(e) {
     console.log("From toggleBookmark e", e)
@@ -162,5 +167,13 @@ Page({
         }
       })
     }
+  },
+  share(e){
+    console.log("From share")
+    wx.showShareMenu({
+      withShareTicket: true,
+      // menus: [],
+      menus: ['shareAppMessage', 'shareTimeline']
+    })
   }
 })
