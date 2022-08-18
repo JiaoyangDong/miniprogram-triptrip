@@ -1,14 +1,20 @@
 // pages/trips/form.js
 const app = getApp()
+const chooseLocation = requirePlugin('chooseLocation');
 Page({
   data: {
-    location: '',
     formData: {},
     resetForm: true,
     src: "/images/image-icon.png", 
     start_date: '',
     end_date: '',
-    location: ''
+    // location: '', 
+    key: 'VP6BZ-FMPCR-U4SWP-WQTQI-BGOQE-RLF3L',//使用在腾讯位置服务申请的key
+    referer: 'triptrip', //调用插件的app的名称
+    location: JSON.stringify({
+      latitude: 39.89631551,
+      longitude: 116.323459711
+    }),
   },
   onLoad(options) {
   },
@@ -46,17 +52,17 @@ Page({
   resetForm() {
     this.setData({formData: {}})
   },
-  bindRegionChange: function (e) {
-    console.log('picker sends selection change, carries value of ', e.detail.value)
-    let { formData } = this.data
-    const { field } = e.currentTarget.dataset
-    if (field == 'location') {
-      formData.location = e.detail.value
-      this.setData({ formData,
-        location: e.detail.value
-      })
-    }
-  },
+  // bindRegionChange: function (e) {
+  //   console.log('picker sends selection change, carries value of ', e.detail.value)
+  //   let { formData } = this.data
+  //   const { field } = e.currentTarget.dataset
+  //   if (field == 'location') {
+  //     formData.location = e.detail.value
+  //     this.setData({ formData,
+  //       location: e.detail.value
+  //     })
+  //   }
+  // },
   bindDateChange: function(e) {
     console.log('picker sends selection change, carries value of ', e.detail.value)
     let { formData } = this.data
@@ -169,9 +175,12 @@ Page({
       url: 'landing',
     })
   },
-  goToSurvey(e) {
-    wx.switchTab({
-      url: 'survey',
+  setLocation(e) {
+    console.log('from location setter ->', e)
+    const page = this
+    const location = chooseLocation.getLocation()
+    wx.navigateTo({
+      url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer + '&location=' + location
     })
-  }
+  },
 })

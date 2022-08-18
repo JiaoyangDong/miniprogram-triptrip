@@ -38,7 +38,7 @@
         <textarea name="description" rows="4" style="border: 1px solid #E15B99; border-radius: 20px; padding: 20rpx; width: 95%; height: 200rpx; margin-top: 10rpx; font-weight: 200;" placeholder="add more info about the trip ..."></textarea>
       </view>
       <view class="form-item" style="display: flex; justify-content: center;">
-        <image src="/images/add.png" style="height: 50rpx; width: 50rpx; padding-right: 15rpx;" bindtap="goToSurvey"></image>
+        <image src="/images/add.png" style="height: 50rpx; width: 50rpx; padding-right: 15rpx;"></image>
         <text>add survey</text>
       </view>
     </form>
