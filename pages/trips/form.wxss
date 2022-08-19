@@ -3,6 +3,7 @@
 }
 .main {
   padding: 20rpx 80rpx;
+  padding-bottom: 160rpx;
 }
 
 .form-item {

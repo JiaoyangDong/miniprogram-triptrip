@@ -55,8 +55,8 @@
       </view>
 
       <view class="form-item" style="display: flex; justify-content: center; padding: 40rpx;">
-        <image src="/images/add.png" style="height: 50rpx; width: 50rpx; padding-right: 15rpx;"></image>
-        <text>add survey</text>
+        <!-- <image src="/images/add.png" style="height: 50rpx; width: 50rpx; padding-right: 15rpx;"></image> -->
+        <!-- <text>add survey</text> -->
       </view>
 
       <!-- Submit button -->
