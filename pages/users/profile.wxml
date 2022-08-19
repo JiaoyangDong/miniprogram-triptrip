@@ -1,47 +1,58 @@
 <!--pages/users/profile.wxml-->
 <!-- <text>pages/users/profile.wxml</text> -->
 <view class="container">
-    <image class="profile-img" src="/images/profile-kiwibird.png"></image>
-    <text class="page-title">organizer profile</text>
+  <image class="profile-img" src="/images/profile-kiwibird.png"></image>
+  <!-- <text class="page-title">Trips I'm planning</text> -->
 
-  <view class="create-cards">
-    <!-- <text class="title-create">trips i'm leading</text> -->
-    <view class="option">
-      <text class="{{active_tab === 'upcoming' ? 'active': 'inactive'}}" bindtap="active_upcoming">upcoming</text>
-      <text class="{{active_tab === 'past' ? 'active': 'inactive'}}" bindtap="active_past">past</text>
-    </view>
-    <!-- upcoming -->
-   
-    <view wx:if="{{active_tab === 'upcoming'}}">
-      <view class="notrip" wx:if="{{!upcoming_trips.length}}">you have no upcoming trip to lead</view>
-      
-      <view class="create-card" wx:for="{{upcoming_trips}}" data-id="{{item.id}}">
-        <image mode="widthFix" src="{{item.image}}" class="create-img"></image>
-        <view class="card-info">
-          <view class="card-title">{{item.title}}</view>
-          <view class="card-description">🗓 {{item.start_date}}</view>
-          <view class="card-description">📍 {{item.location}}</view>
-          <view class="card-description">{{item.description}}</view>
-        </view>
-      </view>  
-        
-    </view>
-
-    <!-- past -->
-    <view wx:if="{{active_tab === 'past'}}">
-      <view class="notrip" wx:if="{{!past_trips.length}}">you have not organized any trip in the past</view>
-
-      <view class="create-card" wx:for="{{past_trips}}" data-id="{{item.id}}">
-        <image mode="widthFix" src="{{item.image}}" class="create-img"></image>
-        <view class="card-info">
-          <view class="card-title">{{item.title}}</view>
-          <view class="card-description">📍 {{item.location}}</view>
-       
-        </view>
-      </view>  
+  <view class="loading-screen" hidden="{{loadingHidden}}">
+    <view class="loading">
+      <view class="sq1"></view>
+      <view class="sq2"></view>
+      <view class="sq3"></view>
+      <view class="sq4"></view>
     </view>
   </view>
 
-  <button style="width:220px; height:47px" class="secondary-btn"><text class="btn-text">create a trip now</text></button>
+  <view class="create-cards">
+    <!-- <text class="title-create">trips i'm leading</text> -->
+    <view class="title-text-box"><text style="text-align: start;">Trips I'm planning:</text></view>
+    <view class="options-and-create">
+      <view class="option" style="margin-bottom: {{'upcoming' || 'past' ? '20rpx' : '0'}}">
+        <text class="{{active_tab === 'upcoming' ? 'active': 'inactive'}}" bindtap="active_upcoming">upcoming</text>
+        <text class="{{active_tab === 'past' ? 'active': 'inactive'}}" bindtap="active_past">past</text>
+      </view>
+      <image class="create-btn-img" src="/images/roundadd.png" bindtap="goToNewTrip" alt="" wx:if="{{upcoming_trips.length}}" style="margin-bottom: 16rpx;" />
+    </view>
 
+    <!-- upcoming -->
+
+    <view wx:if="{{active_tab === 'upcoming'}}">
+      <view class="notrip" wx:if="{{!upcoming_trips.length}}">You don't have any trips yet 😔</view>
+      <view class="notrip-create" bindtap="goToNewTrip" wx:if="{{!upcoming_trips.length}}">Plan a trip!</view>
+      <!-- <view class="trip-cards-box"> -->
+      <view class="trip-card" wx:for="{{upcoming_trips}}" data-id="{{item.id}}" bindtap="goToTrip">
+        <image mode="widthFix" src="{{item.image}}" class="trip-img"></image>
+        <view class="trip-info">
+          <view class="trip-title">{{item.title}}</view>
+          <view class="trip-start-date">{{item.start_date}}</view>
+          <view class="trip-location">📍 {{item.location}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- </view> -->
+  </view>
+
+  <!-- past -->
+  <view wx:if="{{active_tab === 'past'}}">
+    <view class="notrip" wx:if="{{!past_trips.length}}">You don't have any past trips yet!</view>
+
+    <view class="create-card" wx:for="{{past_trips}}" data-id="{{item.id}}">
+      <image mode="widthFix" src="{{item.image}}" class="create-img"></image>
+      <view class="card-info">
+        <view class="card-title">{{item.title}}</view>
+        <view class="card-description">📍 {{item.location}}</view>
+
+      </view>
+    </view>
+  </view>
 </view>

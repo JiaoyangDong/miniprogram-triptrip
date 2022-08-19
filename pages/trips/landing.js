@@ -6,6 +6,7 @@ Page({
    * Page initial data
    */
   data: {
+    loadingHidden: false,
     tag: '',
     trips: [
       {
@@ -60,6 +61,10 @@ Page({
       // wait until loginFinished, then fetch API
       wx.event.on('loginFinished', this, this.getNewData)
     }
+    page.setData({
+      trips: res.data,  
+      loadingHidden: true
+    })
   },
 
   /**
@@ -122,6 +127,7 @@ Page({
         success(res) {
           page.setData({
             trips: res.data,  
+            loadingHidden: true
           })
         }
       })
@@ -136,7 +142,7 @@ Page({
           // let filteredTrips = res.data.where({tag: ${selectedTagIndex}})
           page.setData({
             trips: res.data,
-            // loadingHidden: true,
+            loadingHidden: true
           })
         }
       })

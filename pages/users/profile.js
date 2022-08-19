@@ -6,7 +6,8 @@ Page({
    * Page initial data
    */
   data: {
-    active_tab: "upcoming",
+    loadingHidden: false,
+    active_tab: "upcoming"
   },
 
   /**
@@ -53,6 +54,7 @@ Page({
         console.log("From profile.js: res",res)
         if (res.statusCode === 200) {
           page.setData({
+            loadingHidden: true,
             past_trips: res.data.past,
             upcoming_trips: res.data.upcoming
             // user_id: user_id
@@ -106,6 +108,17 @@ Page({
   active_past(){
     this.setData({
       active_tab: "past"
+    })
+  },
+  goToNewTrip() {
+    wx.navigateTo({
+      url: '/pages/trips/form',
+    })
+  },
+  goToTrip(e) {
+    const tripId = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/trips/show?id=${tripId}`,
     })
   }
 })

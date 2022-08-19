@@ -27,12 +27,13 @@
 }
 
 .tab-bar-item-cover-image {
-  width: 27px;
-  height: 27px;
+  width: 54rpx;
+  height: 54rpx;
   margin-bottom: 8rpx;
 }
 
 .tab-bar-item-cover-view {
-  font-size: 12px;
+  font-size: 24rpx;
+  width: 200rpx;
   /* font-family: "Fira Sans"; */
 }

@@ -184,5 +184,10 @@ Page({
     wx.switchTab({
       url: 'landing',
     })
+  },
+  goToMyTrip(e) {
+    wx.switchTab({
+        url: `/pages/users/mytrips`,
+      })
   }
 })
