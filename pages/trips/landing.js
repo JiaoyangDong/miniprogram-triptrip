@@ -62,7 +62,6 @@ Page({
       wx.event.on('loginFinished', this, this.getNewData)
     }
     page.setData({
-      trips: res.data,  
       loadingHidden: true
     })
   },

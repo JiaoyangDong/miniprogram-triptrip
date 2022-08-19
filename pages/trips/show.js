@@ -50,6 +50,7 @@ Page({
       }
     })
   },
+
   submitBooking(e){
     console.log("From show.js - submitBooking: e", e)
     let page = this
@@ -67,9 +68,12 @@ Page({
           console.log("From show.js : res.data", res.data)
           const booking = res.data.booking;
           console.log(page)
-          wx.redirectTo({
-            url: `/pages/users/profile?id=${page.options.id}`,
+          page.setData({
+            isBooker: true
           })
+          // wx.redirectTo({
+          //   url: `/pages/users/profile?id=${page.options.id}`,
+          // })
         } else {
           console.log("From show.js: status code is", res.statusCode)
           console.log("From show.js: error message", res.data.errors)
