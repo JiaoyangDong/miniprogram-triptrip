@@ -97,7 +97,7 @@ page {
   /* width: 45%;  */
   border-radius: 24rpx;
   width: 300rpx;
-  height: 460rpx;
+  height: 490rpx;
   /* padding: 20rpx; */
   box-shadow: 0 0 15rpx rgba(0,0,0,0.2);
   font-family:'Fira Sans', sans-serif;
@@ -128,6 +128,8 @@ page {
   font-weight: bold;
   margin-top: 18rpx;
   margin-left: 18rpx;
+  margin-right: 18rpx;
+
   /* width: 210rpx; */
   display: flex;
   flex-direction: column;
@@ -168,6 +170,7 @@ page {
 .location-icon {
   height: 30rpx;
   width: 30rpx;
+  min-width: 30rpx;
   margin-right: 5rpx;
 }
 
