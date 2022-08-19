@@ -24,8 +24,8 @@
       <swiper-item class="swiper-item"
                   wx:for="{{upcoming_trips}}" wx:key="*this" bindtap="goToTrip" data-id="{{item.id}}">
         <view class="filter"></view>
-        <image class="join-arrow" src="/images/arrow-white.png"></image>
-        <image class="join-img" style="height: 100%;" src="{{item.image}}" mode="aspectFill"></image>
+        <!-- <image class="join-arrow" src="/images/arrow-white.png"></image> -->
+        <image class="join-img" style="height: 100%; width: 100%;" src="{{item.image}}" mode="aspectFill"></image>
         
         <view class="join-info">
           <view class="join-card-title">{{item.title}}</view>
@@ -42,8 +42,8 @@
       <swiper-item class="swiper-item"
                   wx:for="{{past_trips}}" wx:key="*this" bindtap="goToTrip" data-id="{{item.id}}">
         <view class="filter"></view>
-        <image class="join-arrow" src="/images/arrow-white.png"></image>
-        <image class="join-img" style="height: 100%;" src="{{item.image}}" mode="aspectFill"></image>
+        <!-- <image class="join-arrow" src="/images/arrow-white.png"></image> -->
+        <image class="join-img" style="height: 100%; width: 100%;" src="{{item.image}}" mode="aspectFill"></image>
         <view class="join-info">
           <view class="join-card-title">{{item.title}}</view>
         </view>
@@ -61,8 +61,8 @@
     <swiper-item class="swiper-item"
                 wx:for="{{bookmarked_trips}}" wx:key="*this" bindtap="goToTrip" data-id="{{item.id}}">
       <view class="filter"></view>
-      <image class="bookmark-img" style="height: 100%;" src="{{item.image}}" mode="aspectFill"></image>
-      <view><image class="join-arrow" src="/images/arrow-white.png"></image></view>
+      <image class="bookmark-img" style="height: 100%; width: 100%;" src="{{item.image}}" mode="aspectFill"></image>
+      <!-- <view><image class="join-arrow" src="/images/arrow-white.png"></image></view> -->
       <view class="bookmark-info">
         <view class="bookmark-card-title">{{item.title}}</view>
         <view class="card-description">{{item.start_date}}</view>

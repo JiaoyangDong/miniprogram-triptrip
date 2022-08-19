@@ -143,7 +143,6 @@
 .title-bookmark {
   align-self: flex-start;
   margin: 50rpx 20rpx;
-  font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   font-size: 22px;
@@ -167,7 +166,7 @@
 
 .bookmark-info{
   position: absolute;
-  width: 160px;
+  width: 320rpx;
   top: 30rpx;
   left: 20rpx;
 }
