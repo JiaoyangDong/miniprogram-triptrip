@@ -31,7 +31,7 @@ Page({
       formData = {...formData, address, location}
       page.setData({formData})
     }
-    if (page.data.resetForm) page.resetForm();
+    // if (page.data.resetForm) page.resetForm();
     const id = wx.getStorageSync('editedId')
     if (id) {
       console.log('id found -> update')
