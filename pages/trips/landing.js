@@ -62,7 +62,7 @@ Page({
       wx.event.on('loginFinished', this, this.getNewData)
     }
     page.setData({
-      loadingHidden: true
+      // loadingHidden: true
     })
   },
 
