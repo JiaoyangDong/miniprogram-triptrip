@@ -1,11 +1,19 @@
 <!--pages/trips/landing.wxml-->
 <view class="header">
   <view class="header-content-box">
-    <view class="logo-box"><image class="logo" src="/images/logo-E15B99.png"></image></view>
+    <view class="logo-box"><image class="logo" src="/images/kiwibird-pink.png"></image></view>
     <view class="header-text">triptrip</view>
   </view>
 </view>
 
+<view class="loading-screen" hidden="{{loadingHidden}}">
+  <view class="loading">
+    <view class="sq1"></view>
+    <view class="sq2"></view>
+    <view class="sq3"></view>
+    <view class="sq4"></view>
+  </view>
+</view>
 <view class="scroll-view-box-box">
   <scroll-view scroll-x="true" style="width: 100%; white-space: nowrap;" class="tags-scroll-view">
     <view class="tag-button tag0" bindtap="selectTag" data-index="0" data-tag="" style="background: {{tag === '' ? 'rgba(225, 91, 153, .1)' : 'white'}};" >
