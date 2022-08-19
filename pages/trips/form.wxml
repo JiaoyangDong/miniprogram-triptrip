@@ -9,10 +9,14 @@
         <image style="height: 250rpx; width: 250rpx;" src="{{src}}" mode="aspectFill"  bindtap="listenerBtnChooseImage"/>
         <!-- <text class="h2">Upload a beautiful photo</text> -->
       </view>
+
+      <!-- Title -->
       <view class="form-item">
         <view class="title"><text class="h2">Title</text></view>
         <input style="border: 2rpx solid #E15B99; border-radius: 30rpx; padding: 4rpx 30rpx; margin-top: 10rpx; font-weight: 200; height: 55rpx;" bindinput="setInputData" data-field="title" name="title" value="{{formData.title}}" />
       </view>
+
+      <!-- Date -->
       <view class="form-item"> 
         <view class="picker-title"><text class="h2">Date</text></view>
         <view style="display: flex; justify-content: space-between; margin-top: 14rpx;">
@@ -28,9 +32,24 @@
               </picker>
         </view>
       </view>
+
+      <!-- Location -->
       <view class="form-item"> <text class="h2">Location</text>
         <input style="border: 2rpx solid #E15B99; border-radius: 30rpx; padding: 10rpx; margin-top: 10rpx; font-weight: 200; padding: 4rpx 30rpx; height: 55rpx;" bindtap="showMap" data-field="location" name="location" value="{{formData.location}} "/>
       </view>
+
+      <!-- Tags -->
+      <view class="form-item t"> <text class="h2">Tags</text>
+        <view class="tags">
+          <view wx:for="{{tags}}" bindtap="selectTag" data-tag="{{item.name}}">
+            <view class="tag {{item.active? 'tag-active' : 'tag-inactive'}}">
+              {{item.name}}
+              <!-- {{item.active?  'tag-active' : 'tag-inactive'}} -->
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- Desctiption -->
       <view class="form-item"> <text class="h2">Description</text>
         <textarea bindinput="setInputData" data-field="description" name="description" value="{{formData.description}}" rows="4" style="border: 1px solid #E15B99; border-radius: 20px; padding: 20rpx; width: 95%; height: 200rpx; margin-top: 10rpx; font-weight: 200;" placeholder="add more info about the trip ..."></textarea>
       </view>
@@ -39,6 +58,8 @@
         <image src="/images/add.png" style="height: 50rpx; width: 50rpx; padding-right: 15rpx;"></image>
         <text>add survey</text>
       </view>
+
+      <!-- Submit button -->
       <button class="form-item" form-type="submit" style="font-weight: 700; font-size: 40rpx; width: 280rpx; border-radius: 32rpx;">Create</button>
     </form>
 </view>
