@@ -1,5 +1,6 @@
 // pages/trips/show.js
 const app = getApp()
+// const chooseLocation = requirePlugin('chooseLocation');
 Page({
   data: {
     booking: {}
@@ -183,5 +184,10 @@ Page({
     wx.switchTab({
       url: 'landing',
     })
+  },
+  goToMyTrip(e) {
+    wx.switchTab({
+        url: `/pages/users/mytrips`,
+      })
   }
 })
