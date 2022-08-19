@@ -7,9 +7,15 @@ Page({
    */
   data: {
     loadingHidden: false,
-    active_tab: "upcoming"
+    active_tab: "upcoming",
+    indicatorDots: true
   },
 
+  // changeIndicatorDots() {
+  //   this.setData({
+  //     indicatorDots: !this.data.indicatorDots
+  //   })
+  // }
   /**
    * Lifecycle function--Called when page load
    */
