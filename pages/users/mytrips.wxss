@@ -1,14 +1,14 @@
 /* pages/users/mytrips.wxss */
 .container {
-  padding: 200rpx 30rpx;
+  padding: 100rpx 30rpx;
 }
 .mytrips-img {
-  width: 64px;
-  height: 64px;
+  width: 54px;
+  height: 54px;
   margin: 10rpx 50rpx auto;
   background: #FFD6E0;
   border-radius: 150rpx;
-  padding: 50rpx;
+  padding: 40rpx;
 }
 .page-title{
   width: 95px;
@@ -22,50 +22,107 @@
   color: #000000;
 }
 
+.loading-screen{
+  width: 100%;
+  height: 50vh;
+  background-color: transparent;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loading{
+  position: absolute;
+  top: 650rpx;
+  width: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  animation: rotate 6s linear infinite;
+}
+@keyframes rotate{
+  to{
+    transform: rotate(360deg);
+  }
+}
+.loading .sq1{
+  width: 32px;
+  height: 32px;
+  background-color: #FFD6E0;
+  margin: 4px;
+}
+.loading .sq2{
+  width: 32px;
+  height: 32px;
+  background-color: #E786B4;
+  margin: 4px;
+}
+.loading .sq3{
+  width: 32px;
+  height: 32px;
+  background-color: #E786B4;
+  margin: 4px;
+}
+.loading .sq4{
+  width: 32px;
+  height: 32px;
+  background-color: #e4e4e4;
+  margin: 4px;
+}
+
 .option {
   align-self: flex-start;
-  margin: 30rpx 40rpx;
+  margin: 30rpx 10rpx;
 }
 
 .join-img {
   box-sizing: border-box;
-  border: 1px solid #E786B4;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
   border-radius: 16px;
+}
+.join-arrow {
+  position: absolute;
+  top: 50rpx;
+  right: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
 }
 .join-info {
   position: absolute;
   width: 160px;
-  top: 30rpx;
+  top: 40rpx;
   left: 20rpx;
 }
 
 .active {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 600;
-  font-size: 25px;
+  font-weight: 700;
+  font-size: 22px;
   line-height: 24px;
   color: #E15B99;
-  text-decoration: underline;
+  text-shadow: 2px 2px 5px burlywood;
   margin: 10rpx;
 }
 .inactive {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 22px;
   line-height: 24px;
   color: #000000;
   margin: 10rpx;
   border-radius: 16rpx;
 }
 .notrip {
-  background-color:#FFD6E0;
-  width: 590rpx;
+  background-color:white;
+  width: 450rpx;
   height: 90rpx;
-  margin: 20rpx;
+  /* margin: 20rpx; */
   padding: 20rpx;
+  border: 1px solid #E786B4;
+  border-radius: 16rpx;
+  margin-top: 80rpx;
+  margin-bottom: 100rpx;
 }
 .join-card-title {
   font-family: 'Inter';
@@ -75,28 +132,31 @@
   line-height: 24px;
   color: white;
 }
+.card-description {
+  color: white;
+}
 
 .title-bookmark {
   align-self: flex-start;
-  margin: 50rpx 40rpx;
+  margin: 50rpx 20rpx;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 20px;
   color: #000000;
 }
 .filter {
   position: absolute;
   background-color: black;
-  opacity: 25%;
-  width: 95%;
-  height: 95%;
+  opacity: 50%;
+  width: 100%;
+  height: 100%;
   border-radius: 16px;
 }
 .bookmark-img {
   box-sizing: border-box;
-  border: 1px solid #E786B4;
+  /* border: 1px solid #E786B4; */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
 }
@@ -115,14 +175,17 @@
   line-height: 24px;
   color: white;
 }
-swiper {
-  width: 600rpx;
-}
-.trips-swiper {
+/* swiper {
+  width: 660rpx;
   height: 400rpx;
-  margin: 10rpx;
+} */
+.trips-swiper {
+  background-color: transparent;
+  width: 640rpx;
+  height: 400rpx;
+  /* margin: 10rpx 10rpx 20rpx 20rpx; */
 }
 .swiper-item{
-  width: 90%;
-  margin: 20rpx 0;
+  background-color: transparent;
+  width: 100%;
 }

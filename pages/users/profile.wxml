@@ -1,9 +1,19 @@
 <!--pages/users/profile.wxml-->
 <!-- <text>pages/users/profile.wxml</text> -->
 <view class="container">
-    <image class="profile-img" src="/images/profile-kiwibird.png"></image>
-    <!-- <text class="page-title">Trips I'm planning</text> -->
+  <image class="profile-img" src="/images/profile-kiwibird.png"></image>
+  <!-- <text class="page-title">Trips I'm planning</text> -->
 
+  <view class="loading-screen" hidden="{{loadingHidden}}">
+    <view class="loading">
+      <view class="sq1"></view>
+      <view class="sq2"></view>
+      <view class="sq3"></view>
+      <view class="sq4"></view>
+    </view>
+  </view>
+
+  <view class="create-cards">
     <!-- <text class="title-create">trips i'm leading</text> -->
     <view class="title-text-box"><text style="text-align: start;">Trips I'm planning:</text></view>
     <view class="options-and-create">
@@ -15,7 +25,7 @@
     </view>
 
     <!-- upcoming -->
-   
+
     <view wx:if="{{active_tab === 'upcoming'}}">
       <view class="notrip" wx:if="{{!upcoming_trips.length}}">You don't have any trips yet 😔</view>
       <view class="notrip-create" bindtap="goToNewTrip" wx:if="{{!upcoming_trips.length}}">Plan a trip!</view>
@@ -28,6 +38,7 @@
             <view class="trip-location">📍 {{item.location}}</view>
           </view>
         </view>
+      </view>
       <!-- </view> -->
     </view>
 
@@ -40,9 +51,9 @@
         <view class="card-info">
           <view class="card-title">{{item.title}}</view>
           <view class="card-description">📍 {{item.location}}</view>
-       
-        </view>
-      </view>  
-    </view>
 
+        </view>
+      </view>
+    </view>
+  </view>
 </view>
