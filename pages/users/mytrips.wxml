@@ -24,7 +24,7 @@
       <swiper-item class="swiper-item"
                   wx:for="{{upcoming_trips}}" wx:key="*this" bindtap="goToTrip" data-id="{{item.id}}">
         <view class="filter"></view>
-        <view><image class="join-arrow" src="/images/arrow-white.png"></image></view>
+        <image class="join-arrow" src="/images/arrow-white.png"></image>
         <image class="join-img" style="height: 100%;" src="{{item.image}}" mode="aspectFill"></image>
         
         <view class="join-info">
@@ -42,7 +42,7 @@
       <swiper-item class="swiper-item"
                   wx:for="{{past_trips}}" wx:key="*this" bindtap="goToTrip" data-id="{{item.id}}">
         <view class="filter"></view>
-        <view><image class="join-arrow" src="/images/join-arrow.png"></image></view>
+        <image class="join-arrow" src="/images/join-arrow.png"></image>
         <image class="join-img" style="height: 100%;" src="{{item.image}}" mode="aspectFill"></image>
         <view class="join-info">
           <view class="join-card-title">{{item.title}}</view>

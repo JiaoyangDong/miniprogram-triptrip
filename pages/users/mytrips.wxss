@@ -180,7 +180,7 @@
   height: 400rpx;
 } */
 .trips-swiper {
-  background-color: blue;
+  background-color: transparent;
   width: 640rpx;
   height: 400rpx;
   /* margin: 10rpx 10rpx 20rpx 20rpx; */

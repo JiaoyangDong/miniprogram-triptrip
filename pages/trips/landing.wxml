@@ -1,7 +1,7 @@
 <!--pages/trips/landing.wxml-->
 <view class="header">
   <view class="header-content-box">
-    <view class="logo-box"><image class="logo" src="/images/logo-E15B99.png"></image></view>
+    <view class="logo-box"><image class="logo" src="/images/kiwibird-pink.png"></image></view>
     <view class="header-text">triptrip</view>
   </view>
 </view>
