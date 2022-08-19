@@ -14,8 +14,14 @@ Page({
     // formData: {tags: []}
   },
   onLoad(options) {
-    // const eventChannel = this.getOpenerEventChannel()
-    // eventChannel.emit('acceptDataFromOpenedPage', {data: 'test'})
+    let tags = app.globalData.tagList.map(function(tag) {
+      return {
+        name: tag, 
+        active: false
+      }
+    })
+    console.log({tags})
+    this.setData({tags})
   },
   onReady() {
   },
@@ -48,14 +54,15 @@ Page({
           wx.removeStorageSync('editedId')
         }
       })
+    } else {
+      // let tags = app.globalData.tagList.map(function(tag) {
+      //   return {
+      //     name: tag, 
+      //     active: false
+      //   }
+      // })
+      // page.setData({tags})
     }
-    let tags = app.globalData.tagList.map(function(tag) {
-      return {
-        name: tag, 
-        active: false
-      }
-    })
-    page.setData({tags})
     // console.log(tags)
   },
   setInputData(e) {
@@ -206,5 +213,8 @@ Page({
       if (tag.name === currentTag) tag.active = !tag.active
       page.setData({tags})
     })
+    let { formData } = this.data
+    formData = {...formData, tags}
+    page.setData({formData})
   }
 })

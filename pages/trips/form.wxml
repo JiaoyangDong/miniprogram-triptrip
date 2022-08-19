@@ -39,7 +39,7 @@
       </view>
 
       <!-- Tags -->
-      <view class="form-item t"> <text class="h2">Tags</text>
+      <view class="form-item"> <text class="h2">Tags</text>
         <view class="tags">
           <view wx:for="{{tags}}" bindtap="selectTag" data-tag="{{item.name}}">
             <view class="tag {{item.active? 'tag-active' : 'tag-inactive'}}">
