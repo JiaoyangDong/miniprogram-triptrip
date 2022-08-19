@@ -21,21 +21,22 @@
         <text class="{{active_tab === 'upcoming' ? 'active': 'inactive'}}" bindtap="active_upcoming">upcoming</text>
         <text class="{{active_tab === 'past' ? 'active': 'inactive'}}" bindtap="active_past">past</text>
       </view>
-      <image class="create-btn-img" src="/images/roundadd.png" bindtap="goToNewTrip" alt="" style="visibility: {{'upcoming' ? 'hidden' : 'visible'}}" />
+    <image class="create-btn-img" src="/images/roundadd.png" bindtap="goToNewTrip" alt="" wx:if="{{upcoming_trips.length}}" style="margin-bottom: 16rpx;"/>
     </view>
 
     <!-- upcoming -->
 
     <view wx:if="{{active_tab === 'upcoming'}}">
       <view class="notrip" wx:if="{{!upcoming_trips.length}}">You don't have any trips yet 😔</view>
-      <view class="notrip-create" bindtap="goToNewTrip">Plan a trip!</view>
+      <view class="notrip-create" bindtap="goToNewTrip" wx:if="{{!upcoming_trips.length}}">Plan a trip!</view>
       <!-- <view class="trip-cards-box"> -->
-      <view class="trip-card" wx:for="{{upcoming_trips}}" data-id="{{item.id}}" bindtap="goToShow">
-        <image mode="widthFix" src="{{item.image}}" class="trip-img"></image>
-        <view class="trip-info">
-          <view class="trip-title">{{item.title}}</view>
-          <view class="trip-start-date">{{item.start_date}}</view>
-          <view class="trip-location">📍 {{item.location}}</view>
+        <view class="trip-card" wx:for="{{upcoming_trips}}" data-id="{{item.id}}" bindtap="goToTrip">
+          <image mode="widthFix" src="{{item.image}}" class="trip-img"></image>
+          <view class="trip-info">
+            <view class="trip-title">{{item.title}}</view>
+            <view class="trip-start-date">{{item.start_date}}</view>
+            <view class="trip-location">📍 {{item.location}}</view>
+          </view>
         </view>
       </view>
       <!-- </view> -->
