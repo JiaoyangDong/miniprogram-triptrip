@@ -28,13 +28,13 @@ Page({
       formData = {...formData, address, location}
       page.setData({formData})
     }
-    if (page.data.resetForm) page.resetForm();
+    // if (page.data.resetForm) page.resetForm();
     const id = wx.getStorageSync('editedId')
     if (id) {
       console.log('id found -> update')
       wx.request({
         header: app.globalData.header,
-        url: `${app.globalData.baseURL}/pets/${id}`,
+        url: `${app.globalData.baseURL}/trips/${id}`,
         success(res) {
           let data = page.data
           page.setData({
@@ -172,7 +172,6 @@ Page({
       // });
     wx.navigateTo({
       url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer + '&location=',
-      
     })
 
     // let { formData } = this.data
