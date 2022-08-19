@@ -54,16 +54,7 @@ Page({
           wx.removeStorageSync('editedId')
         }
       })
-    } else {
-      // let tags = app.globalData.tagList.map(function(tag) {
-      //   return {
-      //     name: tag, 
-      //     active: false
-      //   }
-      // })
-      // page.setData({tags})
-    }
-    // console.log(tags)
+    } 
   },
   setInputData(e) {
     let { formData } = this.data
