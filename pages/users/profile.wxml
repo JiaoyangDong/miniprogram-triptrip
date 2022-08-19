@@ -13,21 +13,21 @@
     </view>
   </view>
 
-  <view class="create-cards">
+  <!-- <view class="create-cards"> -->
     <!-- <text class="title-create">trips i'm leading</text> -->
-    <view class="title-text-box"><text style="text-align: start;">Trips I'm planning:</text></view>
+    <view class="title-text-box"><text style="text-align: start;">trips I'm planning</text></view>
     <view class="options-and-create">
-      <view class="option" style="margin-bottom: {{'upcoming' || 'past' ? '20rpx' : '0'}}">
+      <view class="option" style="font-family: Fira Sans;margin-bottom: {{'upcoming' || 'past' ? '20rpx' : '0'}}">
         <text class="{{active_tab === 'upcoming' ? 'active': 'inactive'}}" bindtap="active_upcoming">upcoming</text>
         <text class="{{active_tab === 'past' ? 'active': 'inactive'}}" bindtap="active_past">past</text>
       </view>
-      <image class="create-btn-img" src="/images/roundadd.png" bindtap="goToNewTrip" alt="" wx:if="{{upcoming_trips.length}}" style="margin-bottom: 16rpx;" />
+      <image class="create-btn-img" src="/images/roundadd.png" bindtap="goToNewTrip" alt="" wx:if="{{upcoming_trips.length}}"/>
     </view>
 
     <!-- upcoming -->
 
     <view wx:if="{{active_tab === 'upcoming'}}">
-      <view class="notrip" wx:if="{{!upcoming_trips.length}}">You don't have any trips yet 😔</view>
+      <view class="notrip" wx:if="{{!upcoming_trips.length}}">i dont have any trips yet 😔</view>
       <view class="notrip-create" bindtap="goToNewTrip" wx:if="{{!upcoming_trips.length}}">Plan a trip!</view>
       <!-- <view class="trip-cards-box"> -->
       <view class="trip-card" wx:for="{{upcoming_trips}}" data-id="{{item.id}}" bindtap="goToTrip">
@@ -38,13 +38,11 @@
           <view class="trip-location">📍 {{item.location}}</view>
         </view>
       </view>
-    </view>
-    <!-- </view> -->
-  </view>
+      <!-- </view> -->
 
-  <!-- past -->
-  <view wx:if="{{active_tab === 'past'}}">
-    <view class="notrip" wx:if="{{!past_trips.length}}">You don't have any past trips yet!</view>
+    <!-- past -->
+    <view wx:if="{{active_tab === 'past'}}">
+      <view class="notrip" wx:if="{{!past_trips.length}}">i don't have any past trips yet!</view>
 
     <view class="create-card" wx:for="{{past_trips}}" data-id="{{item.id}}">
       <image mode="widthFix" src="{{item.image}}" class="create-img"></image>
@@ -54,5 +52,5 @@
 
       </view>
     </view>
-  </view>
-</view>
+  <!-- </view> -->
+    </view>
