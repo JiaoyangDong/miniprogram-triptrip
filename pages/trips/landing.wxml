@@ -6,6 +6,15 @@
   </view>
 </view>
 
+<view class="loading-screen" hidden="{{loadingHidden}}">
+  <view class="loading">
+    <view class="sq1"></view>
+    <view class="sq2"></view>
+    <view class="sq3"></view>
+    <view class="sq4"></view>
+  </view>
+</view>
+
 <scroll-view scroll-x="true" style="width: 100%; white-space: nowrap;" class="tags-scroll-view">
   <view class="tag-button tag1" bindtap="selectTag" data-index="1" style="background: {{selectedIndex === index ? 'white' : '#FFD6E0'}};" >
     <view class="inner-tag-view">

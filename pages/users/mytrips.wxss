@@ -22,9 +22,56 @@
   color: #000000;
 }
 
+.loading-screen{
+  width: 100%;
+  height: 50vh;
+  background-color: transparent;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loading{
+  position: absolute;
+  top: 650rpx;
+  width: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  animation: rotate 6s linear infinite;
+}
+@keyframes rotate{
+  to{
+    transform: rotate(360deg);
+  }
+}
+.loading .sq1{
+  width: 32px;
+  height: 32px;
+  background-color: #FFD6E0;
+  margin: 4px;
+}
+.loading .sq2{
+  width: 32px;
+  height: 32px;
+  background-color: #E786B4;
+  margin: 4px;
+}
+.loading .sq3{
+  width: 32px;
+  height: 32px;
+  background-color: #E786B4;
+  margin: 4px;
+}
+.loading .sq4{
+  width: 32px;
+  height: 32px;
+  background-color: #e4e4e4;
+  margin: 4px;
+}
+
 .option {
   align-self: flex-start;
-  margin: 30rpx 40rpx;
+  margin: 30rpx 10rpx;
 }
 
 .join-img {
@@ -49,18 +96,18 @@
 .active {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 600;
-  font-size: 25px;
+  font-weight: 700;
+  font-size: 22px;
   line-height: 24px;
   color: #E15B99;
-  text-decoration: underline;
+  text-shadow: 2px 2px 5px burlywood;
   margin: 10rpx;
 }
 .inactive {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 22px;
   line-height: 24px;
   color: #000000;
   margin: 10rpx;
@@ -91,18 +138,18 @@
 
 .title-bookmark {
   align-self: flex-start;
-  margin: 50rpx 40rpx;
+  margin: 50rpx 20rpx;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 20px;
   color: #000000;
 }
 .filter {
   position: absolute;
   background-color: black;
-  opacity: 20%;
+  opacity: 50%;
   width: 100%;
   height: 100%;
   border-radius: 16px;
@@ -128,11 +175,12 @@
   line-height: 24px;
   color: white;
 }
-swiper {
+/* swiper {
   width: 660rpx;
   height: 400rpx;
-}
+} */
 .trips-swiper {
+  background-color: blue;
   width: 640rpx;
   height: 400rpx;
   /* margin: 10rpx 10rpx 20rpx 20rpx; */

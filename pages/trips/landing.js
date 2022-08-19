@@ -5,6 +5,7 @@ Page({
    * Page initial data
    */
   data: {
+    loadingHidden: false,
     trips: [
       {
         title: "Yoga retreat",
@@ -47,6 +48,22 @@ Page({
 
   },
 
+  getData(){
+    const page = this
+    wx.request({
+      url: `${app.globalData.baseURL}`,
+      method: "GET",
+      header: app.globalData.header,
+      success(res) {
+        console.log("From landing.js: onshow request succesfully")
+        if (res.statusCode === 200) {
+          page.setData({
+            loadingHidden: true,
+          })
+        } 
+      }
+    })
+  },
   /**
    * Lifecycle function--Called when page hide
    */

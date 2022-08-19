@@ -4,6 +4,15 @@
     <image class="profile-img" src="/images/profile-kiwibird.png"></image>
     <text class="page-title">organizer profile</text>
 
+<view class="loading-screen" hidden="{{loadingHidden}}">
+  <view class="loading">
+    <view class="sq1"></view>
+    <view class="sq2"></view>
+    <view class="sq3"></view>
+    <view class="sq4"></view>
+  </view>
+</view>
+
   <view class="create-cards">
     <!-- <text class="title-create">trips i'm leading</text> -->
     <view class="option">
