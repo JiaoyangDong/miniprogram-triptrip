@@ -1,6 +1,9 @@
 /* pages/users/profile.wxss */
 .container {
-  padding: 100rpx 30rpx;
+  padding-top: 100rpx;
+  padding-bottom: 200rpx;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
 }
 .profile-img {
   width: 54px;
@@ -17,13 +20,20 @@
   font-weight: 400;
   font-size: 25px;
   line-height: 30px;
-  color: #000000;
+  color: #404040;
+}
+
+.title-text-box {
+  width: 95%;
+  font-size: 50rpx;
+  font-weight: bold;
+  margin-top: 30rpx;
+  margin-bottom: 10rpx;
 }
 
 .title-create {
   width: 164px;
   height: 24px;
-
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
@@ -84,9 +94,19 @@
   align-self: flex-start;
   margin: 30rpx 10rpx;
 }
+.options-and-create {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.option {
+}
+
 .active {
   font-family: 'Inter';
-  font-style: normal;
+  /* font-style: normal; */
   font-weight: 600;
   font-size: 22px;
   line-height: 24px;
@@ -96,31 +116,47 @@
 }
 .inactive {
   font-family: 'Inter';
-  font-style: normal;
+  /* font-style: normal; */
   font-weight: 400;
   font-size: 22px;
   line-height: 24px;
   color: #000000;
   margin: 10rpx;
-  border-radius: 16rpx;
+  /* border-radius: 16rpx; */
 }
 
-.create-img {
+/* .create-img {
   box-sizing: border-box;
   margin: 10rpx;
   margin-top: 30rpx;
   margin-bottom: 20rpx;
   width: 450rpx;
-  /* height: 300rpx; */
+  height: 300rpx;
   border: 1px solid #E786B4;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
+} */
+
+.trip-card {
+  /* background-color: pink; */
+  margin-bottom: 30rpx;
+  box-shadow: 0 0 15rpx rgba(0,0,0,0.2);
+  border-radius: 30rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  padding-bottom: 10rpx;
+  position: relative;
 }
-.card-info {
-  width: 550rpx;
-  margin: 20rpx;
+
+.trip-img {
+  border-radius: 30rpx 30rpx 0 0;
 }
-.card-title {
+
+.trip-info {
+  margin: 10rpx 20rpx;
+}
+
+.trip-title {
   margin-bottom: 10rpx;
   font-family: 'Inter';
   font-style: normal;
@@ -129,33 +165,61 @@
   line-height: 24px;
   color: #000000;
 }
-.card-description {
-  margin-bottom: 10rpx;
+
+.trip-start-date {
+  font-size: 28rpx;
+}
+
+.trip-location {
+  position: absolute;
+  bottom: 16rpx;
+  right: 16rpx;
 }
 
 .notrip {
   background-color:#FFD6E0;
   width: 590rpx;
-  height: 90rpx;
+  text-align: center;
+  /* height: 90rpx; */
   margin: 20rpx;
   padding: 20rpx;
+  border-radius: 30rpx;
 }
 
-.secondary-btn {
+/* .create-btn {
   box-sizing: border-box;
-  background: #FFFFFF;
+  background-color: #ffd6e0;
   border: 1px solid #E15B99;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 16px;
-}
-  
-.btn-text {
-  width: 180px;
-  height: 24px;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 17px;
-  line-height: 24px;
+  border-radius: 50%;
+  text-align: center;
   color: #E15B99;
-  }
+  font-size: 50rpx;
+  font-weight: bold;
+  width:80rpx;
+  height:80rpx"
+} */
+
+/* img btn */
+.create-btn-img {
+  width:80rpx;
+  height:80rpx;
+  border-radius: 50%;
+  /* background-color: #FFD6E0; */
+  padding: 0rpx;
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+}
+
+.notrip-create {
+  width: 400rpx;
+  height: 100rpx;
+  text-align: center;
+  margin: 40rpx auto;
+  background-color: #E15B99;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 25px;
+  color: #FFFFFF;
+  padding-top: 24rpx;
+}

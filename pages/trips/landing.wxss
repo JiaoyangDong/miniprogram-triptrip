@@ -1,4 +1,7 @@
 /* pages/trips/landing.wxss */
+page {
+  padding-bottom: 180rpx;
+}
 
 .header {
   height: 250rpx;
@@ -70,6 +73,9 @@
   background-color: #e4e4e4;
   margin: 4px;
 }
+.scroll-view-box-box {
+  margin: 0 40rpx;
+}
 
 .tags-scroll-view {
   margin-top: 30rpx;
@@ -89,9 +95,9 @@
 
 .tag-button {
   box-shadow: 0 0 15rpx rgba(0,0,0,0.2);
-  height: 120rpx;
-  width: 120rpx;
-  margin: 5rpx 24rpx;
+  height: 132rpx;
+  width: 132rpx;
+  margin: 5rpx 20rpx;
   border: 1px solid #E15B99;
   border-radius: 30rpx;
   display: inline-block;
@@ -100,11 +106,27 @@
   font-size: 12px;
   color: #E15B99;
   margin-top: 16rpx;
+  position: relative;
+}
+
+.selected-tag-img {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  border-radius: 50%;
+  /* background-color: white; */
+}
+
+.tags-scroll-view .tag-button:nth-child(1) {
+  margin-left: 10rpx;
 }
 
 .tag-img {
   height: 80rpx;
   width: 80rpx;
+  margin-bottom: 10rpx;
 }
 
 .trip-cards-box {
@@ -121,7 +143,7 @@
   /* width: 45%;  */
   border-radius: 24rpx;
   width: 300rpx;
-  height: 450rpx;
+  height: 460rpx;
   /* padding: 20rpx; */
   box-shadow: 0 0 15rpx rgba(0,0,0,0.2);
   font-family:'Fira Sans', sans-serif;
@@ -139,7 +161,7 @@
 }
 
 .trip-image {
-  border-radius: 24rpx;
+  border-radius: 24rpx 24rpx 0 0;
   box-shadow: 0 0 15rpx rgba(0,0,0,0.2);
   width: 300rpx;
   height: 300rpx;
@@ -150,26 +172,42 @@
   /* position: absolute; */
   color: black;
   font-weight: bold;
-  font-size: 25rpx;
   margin-top: 18rpx;
   margin-left: 18rpx;
   /* width: 210rpx; */
-  /* display: flex; */
+  display: flex;
+  flex-direction: column;
+  /* background-color:lightseagreen; */
+  height: 140rpx;
+}
+
+.trip-title {
+  font-size: 26rpx;
+}
+
+.trip-start {
+  margin-top: 6rpx;
+  font-size: 24rpx;
 }
 
 .trip-location-box {
   /* position: absolute; */
   color: #404040;
   font-size: 24rpx;
+  font-weight: 500;
   /* font-weight: bold; */
   /* bottom: 20rpx;
   left: 15rpx; */
-  margin-top: 18rpx;
-  margin-left: 18rpx;
-  width: 240rpx;
+  /* margin-left: 18rpx; */
+  /* width: 240rpx; */
+  height: auto;
   display: flex;
   align-items: center;
-  
+  position: absolute;
+  bottom: 8rpx;
+  right: 16rpx;
+  /* background-color: red; */
+  /* flex-grow: 1; */
 }
 
 .location-icon {

@@ -28,6 +28,12 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()){
+      this.getTabBar().setData({
+        selectedTabIndex: 2
+      })
+    }
     if (app.globalData.header) {
       // proceed to fetch api
       this.getData()
@@ -102,6 +108,17 @@ Page({
   active_past(){
     this.setData({
       active_tab: "past"
+    })
+  },
+  goToNewTrip() {
+    wx.navigateTo({
+      url: '/pages/trips/form',
+    })
+  },
+  goToTrip(e) {
+    const tripId = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/trips/show?id=${tripId}`,
     })
   }
 })

@@ -16,6 +16,20 @@
         },
         {
           "name": "",
+          "pathName": "pages/trips/form",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/trips/show",
+          "query": "id=27",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
           "pathName": "pages/trips/landing",
           "query": "",
           "launchMode": "default",
@@ -23,7 +37,7 @@
         },
         {
           "name": "",
-          "pathName": "pages/users/mytrips",
+          "pathName": "pages/trips/landing",
           "query": "",
           "launchMode": "default",
           "scene": null

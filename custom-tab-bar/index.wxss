@@ -1,16 +1,18 @@
 /* custom-tab-bar/index.wxss */
+
 .tab-bar {
   position: fixed;
   border: 1px solid #E15B99;
   bottom: 0;
   left: 0;
   right: 0;
-  margin: 50rpx;
-  border-radius: 50%;
-  height: 48px;
+  margin: 30px 35px;
+  border-radius: 100rpx;
+  height: 64px;
   background-color: white;
   display: flex;
-  padding-bottom: env(safe-area-inset-bottom);
+  /* padding-bottom: 14px; */
+  /* padding-bottom: env(safe-area-inset-bottom); */
   /* font-family: Fira Sans; */
 }
 
@@ -21,14 +23,17 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 20rpx;
+  /* margin: 20rpx; */
 }
 
 .tab-bar-item-cover-image {
-  width: 27px;
-  height: 27px;
+  width: 54rpx;
+  height: 54rpx;
+  margin-bottom: 8rpx;
 }
 
 .tab-bar-item-cover-view {
-  font-size: 12px;
+  font-size: 24rpx;
+  width: 200rpx;
+  /* font-family: "Fira Sans"; */
 }
