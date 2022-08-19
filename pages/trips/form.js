@@ -111,7 +111,7 @@ Page({
     console.log('from create button --->',e)
     const page = this
     let trip = this.data.formData
-    console.log(trip)
+    console.log("Update: trip", trip)
     this.setData({trip})
     if (this.data.editedId !== undefined && this.data.editedId !== null) {
       wx.request({
@@ -128,6 +128,7 @@ Page({
         }
       })
     } else {
+      console.log("Create: trip", trip)
       wx.request({
         header: app.globalData.header,
         url: `${app.globalData.baseURL}/trips`,
@@ -143,6 +144,10 @@ Page({
               confirmText: 'OK'
             })
           } else {
+            wx.showToast({
+              title: "Trip created successfully",
+              duration: 2000
+            })  
             // call the upload
             const id = res.data.trip.id
             page.setData({resetForm: true})

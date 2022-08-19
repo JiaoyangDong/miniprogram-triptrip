@@ -43,6 +43,7 @@
 .nostyle{
   width: 70rpx ! important; 
   padding: 0 ;
+  background-color: transparent;
 }
 
 .trip-card{
