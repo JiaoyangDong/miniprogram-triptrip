@@ -9,6 +9,9 @@ Page({
     address: '',
     location: '',
     formData: {},
+    // TODO: set tags into form data
+    // tags: []
+    // formData: {tags: []}
   },
   onLoad(options) {
     // const eventChannel = this.getOpenerEventChannel()
@@ -46,6 +49,14 @@ Page({
         }
       })
     }
+    let tags = app.globalData.tagList.map(function(tag) {
+      return {
+        name: tag, 
+        active: false
+      }
+    })
+    page.setData({tags})
+    // console.log(tags)
   },
   setInputData(e) {
     let { formData } = this.data
@@ -183,9 +194,18 @@ Page({
     // const { field } = e.currentTarget.dataset
     // this.setData({ formData, location: e.detail.value })
   },
-    goToHome() {
-      wx.switchTab({
-        url: 'landing',
-      })
-    },
-  })
+  goToHome() {
+    wx.switchTab({
+      url: 'landing',
+    })
+  },
+  selectTag(e) {
+    const page = this
+    const currentTag = e.currentTarget.dataset.tag
+    let tags = page.data.tags
+    tags.forEach((tag) => { 
+      if (tag.name === currentTag) tag.active = !tag.active
+      page.setData({tags})
+    })
+  }
+})
