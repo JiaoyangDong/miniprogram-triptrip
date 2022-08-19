@@ -40,12 +40,10 @@
     <text class="h2">Description</text>
     <text class="description">
       {{trip.description}}
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro maxime architecto, fugiat obcaecati ullam accusamus sed voluptate ipsa sequi sunt nulla iste recusandae consequuntur ex eius dolor officia natus in.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat dolore explicabo dicta deleniti accusantium iste amet, perspiciatis facilis aliquam ex, ducimus minima. At atque eaque omnis impedit, cumque eos aliquid.
     </text>
 
     <!-- Wanna go!-->
-    <button wx:if="{{!isBooker}}" class="btn" open-type="getUserInfo" bindgetuserinfo="submitBooking">Wanna Go!</button>
-
+    <button wx:if="{{!isBooker}}" class="btn btn-primary" open-type="getUserInfo" bindgetuserinfo="submitBooking">Wanna Go!</button>
+    <button wx:if="{{isBooker}}" bindtap="goToMyTrip" class="btn btn-secondary">Signed up! Go to my trips.</button>
   </view>
 </view>
