@@ -3,23 +3,23 @@ let app = getApp();
 Component({
   data: {
     selectedID: 0,
-    color: "#E15B99",
+    color: "#404040",
     selectedColor: "#E15B99",
     list: [{
       pagePath: "/pages/trips/landing",
-      iconPath: "/images/explorefill-pink.png",
+      iconPath: "/images/exploreempty-gray.png",
       selectedIconPath: "/images/exploreempty-pink.png",
       text: "Explore"
     }, {
       pagePath: "/pages/users/mytrips",
-      iconPath: "/images/mytripsfill-pink.png",
+      iconPath: "/images/mytripsempty-gray.png",
       selectedIconPath: "/images/mytripsempty-pink.png",
-      text: "My Trips"
+      text: "My trips"
       }, {
       pagePath: "/pages/users/profile",
-      iconPath: "/images/mefill-pink.png",
-      selectedIconPath: "/images/meempty-pink.png",
-      text: "Me"
+      iconPath: "/images/plan-gray.png",
+      selectedIconPath: "/images/plan-pink.png",
+      text: "Plan a trip"
       }]
   },
   attached() {

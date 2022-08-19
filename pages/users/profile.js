@@ -107,5 +107,16 @@ Page({
     this.setData({
       active_tab: "past"
     })
+  },
+  goToNewTrip() {
+    wx.navigateTo({
+      url: '/pages/trips/form',
+    })
+  },
+  goToTrip(e) {
+    const tripId = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/trips/show?id=${tripId}`,
+    })
   }
 })
