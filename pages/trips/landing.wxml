@@ -30,7 +30,7 @@
         </view>
       </view>
     <view class="tag-button tag3" bindtap="selectTag" data-index="3" data-tag="petfriendly" style="background: {{tag === 'petfriendly' ? 'rgba(225, 91, 153, .1)' : 'white'}};">
-      <image class="selected-tag-img" src="/images/tags/selected.png" style="visibility: {{tag === 'petfriendly' ? 'visible' : 'hidden'}};"></image>
+      <image class="selected-tag-img" src="/images/tags/selected.png" style="visibility: {{tag === 'petfriendly' ? 'visible' : 'hidden'}}"></image>
       <view class="inner-tag-view"> 
         <image class="tag-img" src="/images/tags/petfriendly.png"></image>
         <view>Pet-friendly</view>

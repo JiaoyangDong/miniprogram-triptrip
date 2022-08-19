@@ -49,8 +49,8 @@ page {
 
 .tag-button {
   box-shadow: 0 0 15rpx rgba(0,0,0,0.2);
-  height: 132rpx;
-  width: 132rpx;
+  height: 140rpx;
+  width: 140rpx;
   margin: 5rpx 20rpx;
   border: 1px solid #E15B99;
   border-radius: 30rpx;
