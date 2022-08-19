@@ -1,6 +1,10 @@
 /* pages/users/mytrips.wxss */
 .container {
-  padding: 100rpx 30rpx;
+  /* padding: 100rpx 30rpx; */
+  padding-top: 100rpx;
+  /* margin-bottom: 200rpx; */
+  padding-left: 50rpx;
+  padding-right: 50rpx;
 }
 .mytrips-img {
   width: 54px;
@@ -149,7 +153,7 @@
 .filter {
   position: absolute;
   background-color: black;
-  opacity: 50%;
+  opacity: 30%;
   width: 100%;
   height: 100%;
   border-radius: 16px;
@@ -157,9 +161,10 @@
 .bookmark-img {
   box-sizing: border-box;
   /* border: 1px solid #E786B4; */
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
   border-radius: 16px;
 }
+
 .bookmark-info{
   position: absolute;
   width: 160px;
@@ -188,4 +193,8 @@
 .swiper-item{
   background-color: transparent;
   width: 100%;
+}
+
+.bookmarks-swiper {
+  margin-bottom: 220rpx;
 }
