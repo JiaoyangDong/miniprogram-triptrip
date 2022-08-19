@@ -43,6 +43,7 @@
 .nostyle{
   width: 70rpx ! important; 
   padding: 0 ;
+  background-color: transparent;
 }
 
 .trip-card{
@@ -50,10 +51,12 @@
   border-radius: 50rpx;
   margin-top: -40rpx;
   background-color: white;
-  border: solid 3px #E15B99;
+  /* border: solid 3px #E15B99; */
 
   padding: 40rpx;
   padding-bottom: 90rpx;
+  min-height: 70vh;
+  width: 90vw;
 }
 .tags{
   display: flex;
@@ -65,6 +68,7 @@
   color: #E15B99;
   border-radius: 14rpx;
   padding: 10rpx;
+  margin: 5rpx;
   font-size: 24rpx;
 }
 
@@ -74,10 +78,7 @@
   margin: 40rpx;
   height: 100rpx;
   /* padding: 10rpx; */
-  background: #E15B99;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 32rpx;
-  color: #FFFFFF; 
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
@@ -85,4 +86,17 @@
   /* line-height: 60rpx; */
   /* text-align: center; */
   /* margin-top: 220rpx; */
+}
+.btn-primary {
+  background: #E15B99;
+  color: #FFFFFF; 
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.btn-secondary{
+  padding-top: 10rpx;
+  background: #FFFFFF;
+  color: #E15B99; 
+  border: #E15B99 solid 1px;
+  font-size: 30rpx;
+  /* box-shadow: 2px 2px 8px #e15b9965; */
 }
