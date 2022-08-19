@@ -6,7 +6,8 @@ Page({
    * Page initial data
    */
   data: {
-    active_tab: "upcoming",
+    loadingHidden: false,
+    active_tab: "upcoming"
   },
 
   /**
@@ -53,6 +54,7 @@ Page({
         console.log("From profile.js: res",res)
         if (res.statusCode === 200) {
           page.setData({
+            loadingHidden: true,
             past_trips: res.data.past,
             upcoming_trips: res.data.upcoming
             // user_id: user_id
