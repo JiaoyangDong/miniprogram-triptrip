@@ -41,4 +41,31 @@ button {
 .h2{
   font-weight: 500;
   font-size: 30rpx;
+  margin-top: 20rpx;
+}
+
+.tags{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 10rpx; 
+	/* column-gap: 10px; */
+	/* grid-gap: 10px; */
+}
+
+.tag{
+  border:#fc9bc8 1px solid;
+  border-radius: 10rpx;
+  text-align: center;
+  padding: 3rpx;
+  font-size:20rpx;
+  /* width: 20%; */
+}
+
+.tag-inactive {
+  color:#fc9bc8;
+}
+
+.tag-active {
+  color: white;
+  background-color: #fc9bc8;
 }
