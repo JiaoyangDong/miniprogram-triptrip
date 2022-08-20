@@ -1,79 +1,12 @@
 /* pages/users/mytrips.wxss */
 @import "user.wxss";
 
-.loading-screen{
-  width: 100%;
-  height: 50vh;
-  background-color: transparent;
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.loading{
-  position: absolute;
-  top: 650rpx;
-  width: 80px;
-  display: flex;
-  flex-wrap: wrap;
-  animation: rotate 6s linear infinite;
-}
-@keyframes rotate{
-  to{
-    transform: rotate(360deg);
-  }
-}
-.loading .sq1{
-  width: 32px;
-  height: 32px;
-  background-color: #FFD6E0;
-  margin: 4px;
-}
-.loading .sq2{
-  width: 32px;
-  height: 32px;
-  background-color: #E786B4;
-  margin: 4px;
-}
-.loading .sq3{
-  width: 32px;
-  height: 32px;
-  background-color: #E786B4;
-  margin: 4px;
-}
-.loading .sq4{
-  width: 32px;
-  height: 32px;
-  background-color: #e4e4e4;
-  margin: 4px;
-}
-
 .option {
   align-self: flex-start;
   margin: 30rpx 10rpx;
 }
 
-.join-img {
-  box-sizing: border-box;
-  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
-  border-radius: 16px;
-}
-.join-arrow {
-  position: absolute;
-  top: 50rpx;
-  right: 10rpx;
-  width: 60rpx;
-  height: 60rpx;
-}
-
-.join-info {
-  position: absolute;
-  width: 160px;
-  top: 40rpx;
-  left: 20rpx;
-}
-
-.join-card-title {
+.card-title {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
@@ -85,7 +18,7 @@
   color: white;
 }
 
-.title-bookmark {
+.header-bookmark {
   font-family: Fira Sans;
   align-self: flex-start;
   margin: 50rpx 20rpx;
@@ -95,36 +28,26 @@
   line-height: 20px;
   color: #000000;
 }
-.filter {
+.card-view{
+  box-sizing: border-box; 
+  border-radius: 16px;
+  overflow: hidden; 
+  width:96%; 
+  height: 100%;
+}
+.card-view-filter {
   position: absolute;
   background-color: black;
   opacity: 30%;
-  width: 100%;
-  height: 100%;
-  border-radius: 16px;
-}
-.bookmark-img {
-  box-sizing: border-box;
-  /* border: 1px solid #E786B4; */
-  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
-  border-radius: 16px;
 }
 
-.bookmark-info{
+.trip-info{
   position: absolute;
   width: 320rpx;
   top: 30rpx;
-  left: 20rpx;
+  left: 30rpx;
 }
 
-.bookmark-card-title {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
-  color: white;
-}
 /* swiper {
   width: 660rpx;
   height: 400rpx;
@@ -137,5 +60,10 @@
 }
 .swiper-item{
   background-color: transparent;
-  width: 100%;
+  /* width: 100%; */
+}
+.swiper-view{
+  width: 100%; 
+  height:100%; 
+  padding: 0 2%;
 }

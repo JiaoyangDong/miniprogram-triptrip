@@ -8,7 +8,8 @@ Page({
   data: {
     loadingHidden: false,
     active_tab: "upcoming",
-    indicatorDots: true
+    indicatorDots: false,
+    activeIndex: 0,
   },
 
   // changeIndicatorDots() {
@@ -127,5 +128,9 @@ Page({
     wx.navigateTo({
         url: `/pages/trips/show?id=${e.currentTarget.dataset.id}`,
       })
+  },
+  switchCard(e) {
+    let current = e.detail.current;
+    this.setData({ activeIndex: current });
   }
 })

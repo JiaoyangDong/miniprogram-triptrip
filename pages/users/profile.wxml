@@ -1,19 +1,18 @@
 <!--pages/users/profile.wxml-->
-<!-- <text>pages/users/profile.wxml</text> -->
+<view class="loading-screen" hidden="{{loadingHidden}}">
+  <view class="loading">
+    <view class="sq1"></view>
+    <view class="sq2"></view>
+    <view class="sq3"></view>
+    <view class="sq4"></view>
+  </view>
+</view>
+
 <view class="container">
   <image class="logo-img" src="/images/profile-kiwibird.png"></image>
   <text class="page-title">trips I'm planning</text>
   <!-- <view class="create-cards"> -->
   <!-- <text class="title-create">trips i'm leading</text> -->
-
-  <view class="loading-screen" hidden="{{loadingHidden}}">
-    <view class="loading">
-      <view class="sq1"></view>
-      <view class="sq2"></view>
-      <view class="sq3"></view>
-      <view class="sq4"></view>
-    </view>
-  </view>
 
 
   <view class="options-and-create">
