@@ -1,7 +1,7 @@
 <!--pages/users/mytrips.wxml-->
 <!-- <text>pages/users/mytrips.wxml</text> -->
 <view class="container">
-  <image class="mytrips-img" src="/images/mytrips-pink.png"></image>
+  <image class="logo-img" src="/images/mytrips-pink.png"></image>
   <text class="page-title">my trips</text>
 
   <view class="loading-screen" hidden="{{loadingHidden}}">
@@ -14,9 +14,10 @@
   </view>
 
   <view class="option">
-    <text class="{{active_tab === 'upcoming' ? 'active': 'inactive'}}" bindtap="active_upcoming">upcoming</text>
-    <text class="{{active_tab === 'past' ? 'active': 'inactive'}}" bindtap="active_past">past</text>
+    <text class="title {{active_tab === 'upcoming' ? 'active': 'inactive'}}" bindtap="active_upcoming">upcoming</text>
+    <text class="title {{active_tab === 'past' ? 'active': 'inactive'}}" bindtap="active_past">past</text>
   </view>
+
   <!-- upcoming -->
   <view wx:if="{{active_tab === 'upcoming'}}">
     <view class="notrip" wx:if="{{!upcoming_trips.length}}"><text>waiting to add your next trip!</text></view>
@@ -29,7 +30,7 @@
         <view class="join-info">
           <view class="join-card-title">{{item.title}}</view>
           <view class="card-description">{{item.start_date}}</view>
-          <view class="card-description">{{item.location}}</view>
+          <view class="card-description">📍 {{item.location}}</view>
         </view>
       </swiper-item>
     </swiper>
@@ -54,7 +55,7 @@
   <text class="title-bookmark">my bookmarks</text>
   <view class="notrip" wx:if="{{!bookmarked_trips.length}}">no bookmarked trips yet</view>
 
-  <swiper indicator-dots="{{indicatorDots}}" indicator-active-color='#E786B4' indicator-color='#fff' class="trips-swiper bookmarks-swiper" wx:if="{{bookmarked_trips.length}}">
+  <swiper indicator-dots="{{indicatorDots}}" indicator-active-color='#E786B4' indicator-color='#fff' class="trips-swiper" wx:if="{{bookmarked_trips.length}}">
     <swiper-item class="swiper-item" wx:for="{{bookmarked_trips}}" wx:key="*this" bindtap="goToTrip" data-id="{{item.id}}">
       <view class="filter"></view>
       <image class="bookmark-img" style="height: 100%; width: 100%;" src="{{item.image}}" mode="aspectFill"></image>
@@ -62,7 +63,7 @@
       <view class="bookmark-info">
         <view class="bookmark-card-title">{{item.title}}</view>
         <view class="card-description">{{item.start_date}}</view>
-        <view class="card-description">{{item.location}}</view>
+        <view class="card-description">📍 {{item.location}}</view>
       </view>
     </swiper-item>
   </swiper>

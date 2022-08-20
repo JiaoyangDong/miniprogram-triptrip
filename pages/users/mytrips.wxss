@@ -1,30 +1,5 @@
 /* pages/users/mytrips.wxss */
-.container {
-  /* padding: 100rpx 30rpx; */
-  padding-top: 100rpx;
-  /* margin-bottom: 200rpx; */
-  padding-left: 50rpx;
-  padding-right: 50rpx;
-}
-.mytrips-img {
-  width: 54px;
-  height: 54px;
-  margin: 10rpx 50rpx auto;
-  background: #FFD6E0;
-  border-radius: 150rpx;
-  padding: 40rpx;
-}
-.page-title{
-  width: 95px;
-  height: 30px;
-  margin: 40rpx auto;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 25px;
-  line-height: 30px;
-  color: #000000;
-}
+@import "user.wxss";
 
 .loading-screen{
   width: 100%;
@@ -90,6 +65,7 @@
   width: 60rpx;
   height: 60rpx;
 }
+
 .join-info {
   position: absolute;
   width: 160px;
@@ -97,37 +73,6 @@
   left: 20rpx;
 }
 
-.active {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 22px;
-  line-height: 24px;
-  color: #E15B99;
-  text-shadow: 2px 2px 5px burlywood;
-  margin: 10rpx;
-}
-.inactive {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 24px;
-  color: #000000;
-  margin: 10rpx;
-  border-radius: 16rpx;
-}
-.notrip {
-  background-color:white;
-  width: 450rpx;
-  height: 90rpx;
-  /* margin: 20rpx; */
-  padding: 20rpx;
-  border: 1px solid #E786B4;
-  border-radius: 16rpx;
-  margin-top: 80rpx;
-  margin-bottom: 100rpx;
-}
 .join-card-title {
   font-family: 'Inter';
   font-style: normal;
@@ -141,10 +86,11 @@
 }
 
 .title-bookmark {
+  font-family: Fira Sans;
   align-self: flex-start;
   margin: 50rpx 20rpx;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 22px;
   line-height: 20px;
   color: #000000;
@@ -184,6 +130,7 @@
   height: 400rpx;
 } */
 .trips-swiper {
+  font-family: Fira Sans;
   background-color: transparent;
   width: 640rpx;
   height: 400rpx;
@@ -191,8 +138,4 @@
 .swiper-item{
   background-color: transparent;
   width: 100%;
-}
-
-.bookmarks-swiper {
-  margin-bottom: 220rpx;
 }

@@ -44,6 +44,9 @@
 
     <!-- Wanna go!-->
     <button wx:if="{{!isBooker}}" class="btn btn-primary" open-type="getUserInfo" bindgetuserinfo="submitBooking">Wanna Go!</button>
-    <button wx:if="{{isBooker}}" bindtap="goToMyTrip" class="btn btn-secondary">Signed up! Go to my trips.</button>
+    <button wx:if="{{isBooker}}" bindtap="goToMyTrip" class="btn btn-secondary">
+      <view>Signed up!</view> 
+      <view> Go to my trips.</view>
+    </button>
   </view>
 </view>

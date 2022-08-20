@@ -1,21 +1,7 @@
 /* pages/users/profile.wxss */
+@import "user.wxss";
 
-.container {
-  padding-top: 100rpx;
-  padding-bottom: 200rpx;
-  padding-left: 50rpx;
-  padding-right: 50rpx;
-
-}
-.profile-img {
-  width: 54px;
-  height: 54px;
-  margin: 10rpx 50rpx auto;
-  background: #FFD6E0;
-  border-radius: 150rpx;
-  padding: 40rpx;
-}
-.page-title{
+/* .page-title{
   margin: 40rpx auto;
   font-family: 'Inter';
   font-style: normal;
@@ -23,8 +9,7 @@
   font-size: 25px;
   line-height: 30px;
   color: #404040;
-  font-family: Fira Sans;
-}
+} */
 
 .title-text-box {
   font-size: 50rpx;
@@ -110,23 +95,21 @@
 
 }
 
-.active {
-  /* font-style: normal; */
-  font-weight: 600;
+.title{
   font-size: 22px;
   line-height: 24px;
+  margin: 10rpx;
+  /* font-style: normal; */
+}
+.active {
+  font-weight: 600;
   color: #E15B99;
   text-shadow: 2px 2px 5px burlywood;
-  margin: 10rpx;
 }
 .inactive {
-  /* font-style: normal; */
   font-weight: 400;
-  font-size: 22px;
-  line-height: 24px;
-  color: #404040;
-  margin: 10rpx;
-  /* border-radius: 16rpx; */
+  color: #868686;
+  text-shadow: 2px 2px 5px rgb(160, 157, 159);
 }
 
 /* .create-img {
@@ -150,6 +133,7 @@
   margin-right: 50rpx;
   padding-bottom: 10rpx;
   position: relative;
+  font-family: Fira Sans;
 }
 
 .trip-img {
@@ -162,39 +146,28 @@
 
 .trip-title {
   margin-bottom: 10rpx;
-  font-family: 'Inter';
   font-style: normal;
   /* font-weight: bold; */
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
   color: #000000;
-  font-family: Fira Sans;
+  /* font-family: 'Inter'; */
+  /* font-family: Fira Sans; */
 }
 
 .trip-start-date {
   font-size: 28rpx;
   margin-bottom: 48rpx;
-  font-family: Fira Sans;
 }
 
 .trip-location {
   position: absolute;
   bottom: 16rpx;
   right: 16rpx;
-  font-family: Fira Sans;
 }
 
-.notrip {
-  background-color:#FFD6E0;
-  width: 590rpx;
-  text-align: center;
-  /* height: 90rpx; */
-  margin: 20rpx;
-  padding: 20rpx;
-  border-radius: 30rpx;
-  font-family: Fira Sans;
-}
+
 
 /* .create-btn {
   box-sizing: border-box;

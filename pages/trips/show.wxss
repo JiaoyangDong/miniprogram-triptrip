@@ -94,9 +94,9 @@
 }
 .btn-secondary{
   padding-top: 10rpx;
-  background: #FFFFFF;
+  background: #fce1ee;
+  /* border: #E15B99 solid 1px; */
   color: #E15B99; 
-  border: #E15B99 solid 1px;
   font-size: 30rpx;
   /* box-shadow: 2px 2px 8px #e15b9965; */
 }

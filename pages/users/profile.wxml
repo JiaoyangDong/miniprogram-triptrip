@@ -1,8 +1,10 @@
 <!--pages/users/profile.wxml-->
 <!-- <text>pages/users/profile.wxml</text> -->
 <view class="container">
-  <image class="profile-img" src="/images/profile-kiwibird.png"></image>
-  <!-- <text class="page-title">Trips I'm planning</text> -->
+  <image class="logo-img" src="/images/profile-kiwibird.png"></image>
+  <text class="page-title">trips I'm planning</text>
+  <!-- <view class="create-cards"> -->
+  <!-- <text class="title-create">trips i'm leading</text> -->
 
   <view class="loading-screen" hidden="{{loadingHidden}}">
     <view class="loading">
@@ -13,13 +15,11 @@
     </view>
   </view>
 
-  <!-- <view class="create-cards"> -->
-  <!-- <text class="title-create">trips i'm leading</text> -->
-  <view class="title-text-box"><text style="text-align: start;">trips I'm planning</text></view>
+
   <view class="options-and-create">
-    <view class="option" style="font-family: Fira Sans;margin-bottom: {{'upcoming' || 'past' ? '20rpx' : '0'}}">
-      <text class="{{active_tab === 'upcoming' ? 'active': 'inactive'}}" bindtap="active_upcoming">upcoming</text>
-      <text class="{{active_tab === 'past' ? 'active': 'inactive'}}" bindtap="active_past">past</text>
+    <view class="option" style=" margin-bottom: {{'upcoming' || 'past' ? '20rpx' : '0'}}">
+      <text class="title {{active_tab === 'upcoming' ? 'active': 'inactive'}}" bindtap="active_upcoming">upcoming</text>
+      <text class="title {{active_tab === 'past' ? 'active': 'inactive'}}" bindtap="active_past">past</text>
     </view>
   </view>
   <image class="create-btn-img" src="/images/roundadd.png" bindtap="goToNewTrip" alt="" wx:if="{{upcoming_trips.length}}" style="margin-bottom: 16rpx;" />
