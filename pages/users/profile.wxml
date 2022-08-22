@@ -20,8 +20,8 @@
       <text class="title {{active_tab === 'upcoming' ? 'active': 'inactive'}}" bindtap="active_upcoming">upcoming</text>
       <text class="title {{active_tab === 'past' ? 'active': 'inactive'}}" bindtap="active_past">past</text>
     </view>
+    <image class="create-btn-img" src="/images/roundadd.png" bindtap="goToNewTrip" alt="" wx:if="{{upcoming_trips.length}}" style="margin-bottom: 16rpx;" />
   </view>
-  <image class="create-btn-img" src="/images/roundadd.png" bindtap="goToNewTrip" alt="" wx:if="{{upcoming_trips.length}}" style="margin-bottom: 16rpx;" />
 
   <!-- upcoming -->
 
@@ -41,7 +41,7 @@
 
     <!-- past -->
     <view wx:if="{{active_tab === 'past'}}">
-      <view class="notrip" wx:if="{{!past_trips.length}}">i don't have any past trips yet!</view>
+      <view class="notrip" wx:if="{{!past_trips.length}}">i don't have any past trips yet</view>
 
       <view class="create-card" wx:for="{{past_trips}}" data-id="{{item.id}}">
         <image mode="widthFix" src="{{item.image}}" class="create-img"></image>
