@@ -8,8 +8,10 @@ Page({
   data: {
     resetForm: true,
     // tripId: , // testing only
+    yes:'/images/minus-2.png',
+    no:'/images/addsurvey.png',
     questions: {
-      "room": {name: "Room type", active: true},
+      "room": {name: "Room type", active: false},
       "food": {name: "Food preference", active: false},
       "pickup": {name: "Do you need pick up?", active: false}
     },

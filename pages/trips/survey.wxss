@@ -10,6 +10,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 0rpx;
 }
 
 .h1 {
@@ -28,17 +29,61 @@ form {
   font-weight: bold;
 }
 
-.form-item {
+.item-name {
   margin-bottom: 10rpx;
   margin-top: 30rpx;
   font-weight: 400;
-  /* font-size: 10pt; */
 }
 
-.hidesurvey {
-  position: fixed;
-  left: 220rpx;
-  bottom: 120rpx;
+.item-add {
+  margin-bottom: 0rpx;
+  margin-top: 50rpx;
+  font-weight: 400;
+}
+
+.form-option {
+  display: flex; 
+  justify-content: space between; 
+  padding: 0rpx;
+}
+
+.toggle-btn {
+  height: 38rpx; 
+  width: 38rpx;
+  padding-top: 5rpx; 
+  padding-right: 20rpx;
+}
+
+.greydot {
+  height: 38rpx; 
+  width: 38rpx; 
+  padding-top: 5rpx; 
+  padding-right: 10rpx;
+}
+
+.dot-point {
+  display: flex; 
+  padding: 10rpx;
+}
+
+.nameinput, .roominput, .pickinput {
+  background-color: #D9D9D9; 
+  border: 2rpx solid #D9D9D9; 
+  border-radius: 30rpx; 
+  padding: 12rpx 20rpx; 
+  margin-top: 10rpx; 
+  font-weight: 200; 
+  height: 60rpx;
+}
+
+.foodinput {
+  background-color: #D9D9D9; 
+  border: 2rpx solid #D9D9D9; 
+  border-radius: 30rpx; 
+  padding: 12rpx 20rpx; 
+  margin-top: 10rpx; 
+  font-weight: 200; 
+  height: 130rpx;
 }
 
 button {
@@ -53,11 +98,21 @@ button {
   color: #FFFFFF;
 }
 
-.options {
+.option-room, .option-pickup {
   height: 100rpx;
   width: 600rpx;
-  margin: 30rpx 30rpx 30rpx 30rpx;
+  margin: 0rpx 30rpx;
   padding: 70rpx;
   font-size: 35rpx;
   color: black;
 }
+
+.option-food {
+  height: 100rpx;
+  width: 600rpx;
+  margin: 30rpx 30rpx;
+  padding: 20rpx 20rpx 70rpx 70rpx;
+  font-size: 35rpx;
+  color: black;
+}
+
