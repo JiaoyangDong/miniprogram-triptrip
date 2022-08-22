@@ -29,23 +29,23 @@ form {
   font-weight: bold;
 }
 
-.form-item-name {
+.item-name {
   margin-bottom: 10rpx;
   margin-top: 30rpx;
   font-weight: 400;
 }
 
-.form-item-add {
+.item-add {
   margin-bottom: 0rpx;
   margin-top: 50rpx;
   font-weight: 400;
 }
 
-.hidesurvey {
+/* .hidesurvey {
   position: fixed;
   left: 220rpx;
   bottom: 120rpx;
-}
+} */
 
 button {
   position: fixed; 
@@ -71,8 +71,8 @@ button {
 .option-food {
   height: 100rpx;
   width: 600rpx;
-  margin: 0rpx 30rpx;
-  padding: 70rpx;
+  margin: 30rpx 30rpx;
+  padding: 20rpx 20rpx 70rpx 70rpx;
   font-size: 35rpx;
   color: black;
 }
