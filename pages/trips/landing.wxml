@@ -18,6 +18,7 @@
 </view>
 
 <view class="scroll-view-box-box">
+  <view class="tag-scroll-filter"></view>
   <scroll-view scroll-x="true" style="width: 100%; white-space: nowrap;" class="tags-scroll-view">
     <view class="tag-button tag0" bindtap="selectTag" data-index="0" data-tag="" style="background: {{tag === '' ? 'rgba(225, 91, 153, .1)' : 'white'}};">
       <image class="selected-tag-img" src="/images/tags/selected.png" style="visibility: {{tag === '' ? 'visible' : 'hidden'}};"></image>
