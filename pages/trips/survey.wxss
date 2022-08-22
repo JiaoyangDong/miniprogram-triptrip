@@ -41,11 +41,50 @@ form {
   font-weight: 400;
 }
 
-/* .hidesurvey {
-  position: fixed;
-  left: 220rpx;
-  bottom: 120rpx;
-} */
+.form-option {
+  display: flex; 
+  justify-content: space between; 
+  padding: 0rpx;
+}
+
+.toggle-btn {
+  height: 38rpx; 
+  width: 38rpx;
+  padding-top: 5rpx; 
+  padding-right: 20rpx;
+}
+
+.greydot {
+  height: 38rpx; 
+  width: 38rpx; 
+  padding-top: 5rpx; 
+  padding-right: 10rpx;
+}
+
+.dot-point {
+  display: flex; 
+  padding: 10rpx;
+}
+
+.nameinput, .roominput, .pickinput {
+  background-color: #D9D9D9; 
+  border: 2rpx solid #D9D9D9; 
+  border-radius: 30rpx; 
+  padding: 12rpx 20rpx; 
+  margin-top: 10rpx; 
+  font-weight: 200; 
+  height: 60rpx;
+}
+
+.foodinput {
+  background-color: #D9D9D9; 
+  border: 2rpx solid #D9D9D9; 
+  border-radius: 30rpx; 
+  padding: 12rpx 20rpx; 
+  margin-top: 10rpx; 
+  font-weight: 200; 
+  height: 130rpx;
+}
 
 button {
   position: fixed; 
@@ -59,7 +98,7 @@ button {
   color: #FFFFFF;
 }
 
-.option-room {
+.option-room, .option-pickup {
   height: 100rpx;
   width: 600rpx;
   margin: 0rpx 30rpx;
@@ -77,11 +116,3 @@ button {
   color: black;
 }
 
-.option-pickup {
-  height: 100rpx;
-  width: 600rpx;
-  margin: 0rpx 30rpx;
-  padding: 70rpx;
-  font-size: 35rpx;
-  color: black;
-}

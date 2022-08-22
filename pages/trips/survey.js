@@ -11,7 +11,9 @@ Page({
       "room": {name: "Room type", active: false},
       "food": {name: "Food preference", active: false},
       "pickup": {name: "Do you need pickup?", active: false}
-    }
+    },
+    yes:'/images/minus-2.png',
+    no:'/images/addsurvey.png'
   },
 
   resetForm() {
