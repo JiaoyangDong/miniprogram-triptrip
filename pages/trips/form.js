@@ -41,20 +41,22 @@ Page({
       page.setData({formData})
     }
     // if (page.data.resetForm) page.resetForm();
-    const id = wx.getStorageSync('editedId')
+    const id = wx.getStorageSync('tripId')
     if (id) {
       console.log('id found -> update')
+      // page.data.resetForm = false
       wx.request({
         header: app.globalData.header,
         url: `${app.globalData.baseURL}/trips/${id}`,
         success(res) {
-          let data = page.data
+          let data = res.data
+          console.log(data)
           page.setData({
             // locationsIndex: data.locations.findIndex(el => (el === res.data.locations)),
-            formData: res.data,
-            editedId: id
+            formData: res.data.trip,
+            tripId: id
           })
-          wx.removeStorageSync('editedId')
+          wx.removeStorageSync('tripId')
         }
       })
     } 

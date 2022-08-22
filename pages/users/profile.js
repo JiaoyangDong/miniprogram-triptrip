@@ -115,10 +115,10 @@ Page({
       url: '/pages/trips/form',
     })
   },
-  goToTrip(e) {
+  goToAdmin(e) {
     const tripId = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: `/pages/trips/show?id=${tripId}`,
+      url: `/pages/trips/admin?id=${tripId}`,
     })
   }
 })

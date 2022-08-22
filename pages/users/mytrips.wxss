@@ -21,9 +21,12 @@
 .header-bookmark {
   font-family: Fira Sans;
   align-self: flex-start;
-  margin: 50rpx 20rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 50rpx;
+  margin-bottom: 20rpx;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 22px;
   line-height: 20px;
   color: #000000;
