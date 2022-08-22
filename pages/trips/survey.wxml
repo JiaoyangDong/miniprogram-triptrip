@@ -1,5 +1,4 @@
 <!--pages/trips/survey.wxml-->
-<text>pages/trips/survey.wxml</text>
 <view class="navigation">
   <image src="/images/homeempty-pink.png" style="height: 60rpx; width: 60rpx; position: fixed; top: 50px; left: 30px;" ></image>
 </view>
@@ -7,21 +6,20 @@
 <view class="main">
   <view class="h1">Add survey</view>
 <!-- required field -->
-  <view class="form-item">
+  <view class="form-item-name">
     <view class="h2">Full Name (required)</view>
     <view class="nameinput" style="background: #D9D9D9; border: 2rpx solid #D9D9D9; border-radius: 30rpx; padding: 10rpx 30rpx; margin-top: 10rpx; font-weight: 200; height: 55rpx;"></view>
   </view>
 
 <!-- form field -->
-  <view class="form-item">
+  <view class="form-item-add">
     <view class="h2">add question to the survey:</view>
   </view>
 
   <form bindsubmit="submitSurvey">
-    <view class="options" bindtap="selectQuestion" data-index="1" data-tag="room">
-      <view class="h2"><image src="/images/addsurvey.png" style="height: 38rpx; width: 38rpx;padding-top: 5rpx; padding-right: 20rpx; "></image><text>Room type</text></view>
+    <view class="option-room" bindtap="selectQuestion" data-index="1" data-tag="room">
+      <view class="h2"><image src="{{questions.room.active?'/images/minus-2.png':'/images/addsurvey.png'}}" style="height: 38rpx; width: 38rpx;padding-top: 5rpx; padding-right: 20rpx; "></image><text>Room type</text></view>
       <view wx:if="{{questions.room.active}}">
-        <image src="/images/minus-2.png" style="height: 38rpx; width: 38rpx;padding-top: 5rpx; padding-right: 20rpx; "></image>
         <view class="roominput" style="background: #D9D9D9; border: 2rpx solid #D9D9D9; border-radius: 30rpx; padding: 10rpx 30rpx; margin-top: 10rpx; font-weight: 200; height: 55rpx;">
           <image src="/images/dot.png" style="height: 38rpx; width: 38rpx;padding-top: 5rpx; padding-right: 10rpx; "></image><text>individual room</text>
           <image src="/images/dot.png" style="height: 38rpx; width: 38rpx;padding-top: 5rpx; padding-right: 10rpx; padding-left: 30rpx;"></image><text>share room</text>
@@ -30,11 +28,10 @@
 
     </view>
 
-    <view class="options" bindtap="selectQuestion" data-index="2" data-tag="food">
-      <view class="h2"><image src="/images/addsurvey.png" style="height: 38rpx; width: 38rpx;padding-top: 5rpx; padding-right: 20rpx; "></image><text>Food preference</text></view>
+    <view class="option-food" bindtap="selectQuestion" data-index="2" data-tag="food">
+      <view class="h2"><image src="{{questions.food.active?'/images/minus-2.png':'/images/addsurvey.png'}}" style="height: 38rpx; width: 38rpx;padding-top: 5rpx; padding-right: 20rpx; "></image><text>Food preference</text></view>
      
       <view wx:if="{{questions.food.active}}">
-        <image src="/images/minus-2.png" style="height: 38rpx; width: 38rpx;padding-top: 5rpx; padding-right: 20rpx; "></image>
         <view class="foodinput" style="background: #D9D9D9; border: 2rpx solid #D9D9D9; border-radius: 30rpx; padding: 4rpx 30rpx; margin-top: 10rpx; font-weight: 200; height: 130rpx;">
           <image src="/images/dot.png" style="height: 38rpx; width: 38rpx; padding-top: 10rpx; padding-right: 10rpx;"></image><text>vegetarian</text>
           <image src="/images/dot.png" style="height: 38rpx; width: 38rpx; padding-top: 10rpx; padding-right: 10rpx; padding-left: 100rpx;"></image><text>allergic to</text>
@@ -43,10 +40,9 @@
       </view>
     </view>
 
-    <view class="options" bindtap="selectQuestion" data-index="3" data-tag="pickup"> 
-      <view class="h2"><image src="/images/addsurvey.png" style="height: 38rpx; width: 38rpx; padding-top: 5rpx; padding-right: 20rpx; "></image><text>Do you need pickup?</text></view>
+    <view class="option-pickup" bindtap="selectQuestion" data-index="3" data-tag="pickup"> 
+      <view class="h2"><image src="{{questions.pickup.active?'/images/minus-2.png':'/images/addsurvey.png'}}" style="height: 38rpx; width: 38rpx; padding-top: 5rpx; padding-right: 20rpx; "></image><text>Do you need pickup?</text></view>
       <view wx:if="{{questions.pickup.active}}">
-        <image src="/images/minus-2.png" style="height: 38rpx; width: 38rpx;padding-top: 5rpx; padding-right: 20rpx; "></image>
         <view class="pickinput" style="background: #D9D9D9; border: 2rpx solid #D9D9D9; border-radius: 30rpx; padding: 10rpx 30rpx; margin-top: 10rpx; font-weight: 200; height: 55rpx;">
           <image src="/images/dot.png" style="height: 38rpx; width: 38rpx; padding-top: 5rpx; padding-right: 10rpx;"></image><text>yes</text>
           <image src="/images/dot.png" style="height: 38rpx; width: 38rpx; padding-top: 5rpx; padding-right: 10rpx; padding-left: 200rpx;"></image><text>no</text>

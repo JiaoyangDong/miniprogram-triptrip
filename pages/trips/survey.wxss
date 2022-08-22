@@ -10,6 +10,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 0rpx;
 }
 
 .h1 {
@@ -28,11 +29,16 @@ form {
   font-weight: bold;
 }
 
-.form-item {
+.form-item-name {
   margin-bottom: 10rpx;
   margin-top: 30rpx;
   font-weight: 400;
-  /* font-size: 10pt; */
+}
+
+.form-item-add {
+  margin-bottom: 0rpx;
+  margin-top: 50rpx;
+  font-weight: 400;
 }
 
 .hidesurvey {
@@ -53,10 +59,28 @@ button {
   color: #FFFFFF;
 }
 
-.options {
+.option-room {
   height: 100rpx;
   width: 600rpx;
-  margin: 30rpx 30rpx 30rpx 30rpx;
+  margin: 0rpx 30rpx;
+  padding: 70rpx;
+  font-size: 35rpx;
+  color: black;
+}
+
+.option-food {
+  height: 100rpx;
+  width: 600rpx;
+  margin: 0rpx 30rpx;
+  padding: 70rpx;
+  font-size: 35rpx;
+  color: black;
+}
+
+.option-pickup {
+  height: 100rpx;
+  width: 600rpx;
+  margin: 0rpx 30rpx;
   padding: 70rpx;
   font-size: 35rpx;
   color: black;

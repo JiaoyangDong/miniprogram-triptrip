@@ -8,9 +8,9 @@ Page({
   data: {
     resetForm: true,
     questions: {
-      "room": {name: "Room type", active: true},
+      "room": {name: "Room type", active: false},
       "food": {name: "Food preference", active: false},
-      "pickup": {name: "Do you need pick up?", active: false}
+      "pickup": {name: "Do you need pickup?", active: false}
     }
   },
 
