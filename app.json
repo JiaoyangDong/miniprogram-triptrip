@@ -7,7 +7,9 @@
     "pages/logs/logs", 
     "pages/trips/show", 
     "pages/trips/form",
-    "pages/trips/admin"
+    "pages/trips/admin",
+    "pages/trips/survey",
+    "pages/bookings/form"
   ],
   "window":{
     "backgroundTextStyle":"light",
