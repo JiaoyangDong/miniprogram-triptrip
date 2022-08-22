@@ -61,11 +61,6 @@ Page({
     console.log(page.data)
   },
  
-
-  submitSurvey: function (event) {
-    var status = event.detail.value.status;
-
-  },
   // this page is not a usual form. maybe it's better to use custom function rather than form-type="submit" functions. replace
   submitSurveyCustom(){
     let page = this

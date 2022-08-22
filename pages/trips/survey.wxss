@@ -88,7 +88,7 @@ form {
 
 button {
   position: fixed; 
-  left: 240rpx;
+  left: 230rpx;
   bottom: 50rpx; 
   background-color: #E15B99;
   border: 1px solid #E15B99;
