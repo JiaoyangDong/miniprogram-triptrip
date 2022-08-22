@@ -1,16 +1,15 @@
 // pages/trips/show.js
 const app = getApp()
-// const chooseLocation = requirePlugin('chooseLocation');
 Page({
   data: {
-    booking: {}
+    booking: {},
+    latitude: 0,
+    longitude: 0,
+    name: ""
   },
   onLoad(options) {
-
-
   },
   onReady() {
-
   },
   onShow() {
     if (app.globalData.header) {
@@ -43,7 +42,10 @@ Page({
             trip: trip,
             isBooker: isBooker, 
             isSaved: isSaved,
-            bookmarkId: res.data.bookmark_id
+            bookmarkId: res.data.bookmark_id, 
+            longitude: parseFloat(trip.longitude),
+            latitude: parseFloat(trip.latitude), 
+            name: trip.location
           });
           console.log("From show.js: status code is", res.statusCode)
         }
@@ -222,5 +224,18 @@ Page({
     wx.switchTab({
         url: `/pages/users/mytrips`,
       })
+  }, 
+  openMap(e) {
+    console.log("from open map", e)
+    const page = this
+    const latitude = page.data.latitude
+    const longitude = page.data.longitude
+    const name = page.data.name
+
+    wx.openLocation({
+      latitude,
+      longitude,
+      name
+    })
   }
 })

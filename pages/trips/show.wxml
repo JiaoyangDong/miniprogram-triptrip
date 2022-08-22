@@ -3,11 +3,9 @@
   <!-- Trip-image  -->
   <image class="poster" mode="aspectFill" src="{{trip.image}}">
     <view class="navigation">
-      <image src="/images/homeempty-pink.png" style="height: 60rpx; width: 60rpx; position: fixed; top: 50px; left: 30px;" bindtap="goToHome"></image>
+      <image src="/images/homeempty-pink.png" style="height: 50rpx; width: 50rpx; position: fixed; top: 96rpx; left: 60rpx; background-color: rgba(255, 255, 255, 1); border-radius: 50%; padding: 8rpx;" bindtap="goToHome"></image>
     </view>
   </image>
-
-
 
   <!-- Trip-info -->
   <view class="trip-card">
@@ -28,10 +26,14 @@
       {{trip.start_date}} ~ {{trip.end_date}}
     </view>
 
-    <view class="map">
-      <image class="icon" style="width: 40rpx; height: 40rpx;" src="/images/map.png">location{{trip.location}} </image>
-      {{trip.location}}
+    <!-- MAP -->
+    <view class="map" style="margin-top: 16rpx;">
+    <view bindtap="openMap" style="display: flex; align-items: center;">
+      <image class="icon" style="width: 50rpx; height: 50rpx;" src="/images/map.png"></image>
+      <text style="margin-left: 12rpx">{{trip.location}}</text>
     </view>
+    </view>
+
 
     <view class="tags">
       <view class="tag" wx:for="{{trip.tags}}" wx:key="*this">{{item}}</view>
@@ -42,8 +44,8 @@
       {{trip.description}}
     </text>
 
-    <!-- Wanna go!-->
-    <button wx:if="{{!isBooker}}" class="btn btn-primary" bindtap="submitBooking">Wanna Go!</button>
+    <!--I Wanna go!-->
+    <button wx:if="{{!isBooker}}" class="btn btn-primary" bindtap="submitBooking">I Wanna Go!</button>
     <button wx:if="{{isBooker}}" bindtap="goToMyTrip" class="btn btn-secondary">
       <view>Signed up!</view> 
       <view> Go to my trips.</view>
