@@ -29,6 +29,7 @@ page {
 
 .scroll-view-box-box {
   margin: 0 40rpx;
+  position: relative;
 }
 
 .tags-scroll-view {
@@ -38,6 +39,17 @@ page {
   /* gap: 40rpx 40rpx; */
   /* display: flex; */
   font-family: Fira Sans;
+}
+
+.tag-scroll-filter {
+  position: absolute;
+  right: 0;
+  /* background-image: linear-gradient(to right, transparent, rgba(255, 214, 224, 0.5)); */
+  /* opacity: 50%; */
+  width: 30%;
+  height: 100%;
+  z-index: 1;
+  /* border-radius: 5px; */
 }
 
 .inner-tag-view {
