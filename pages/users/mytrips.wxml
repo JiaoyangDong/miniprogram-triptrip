@@ -9,7 +9,7 @@
 </view>
 
 <view class="container">
-  <image class="logo-img" src="/images/mytrips-pink.png"></image>
+  <image class="logo-img" src="/images/profile-kiwibird.png"></image>
   <text class="page-title">my trips</text>
 
   <view class="option">
