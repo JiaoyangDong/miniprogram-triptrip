@@ -36,7 +36,7 @@
 
 
     <view class="tags">
-      <view class="tag" wx:for="{{trip.tags}}">{{item}}</view>
+      <view class="tag" wx:for="{{trip.tags}}" wx:key="*this">{{item}}</view>
     </view>
 
     <text class="h2">Description</text>
@@ -45,7 +45,7 @@
     </text>
 
     <!--I Wanna go!-->
-    <button wx:if="{{!isBooker}}" class="btn btn-primary" open-type="getUserInfo" bindgetuserinfo="submitBooking">I Wanna Go!</button>
+    <button wx:if="{{!isBooker}}" class="btn btn-primary" bindtap="submitBooking">I Wanna Go!</button>
     <button wx:if="{{isBooker}}" bindtap="goToMyTrip" class="btn btn-secondary">
       <view>Signed up!</view> 
       <view> Go to my trips.</view>

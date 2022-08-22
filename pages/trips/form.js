@@ -16,9 +16,12 @@ Page({
     // formData: {tags: []}
   },
   onLoad(options) {
-    let tags = app.globalData.tagList.map(function(tag) {
+    let tags = app.globalData.tags.
+      filter(tag => tag.name).
+      map(function(tag) {
       return {
-        name: tag, 
+        name: tag.name, 
+        show: tag.show,
         active: false
       }
     })
@@ -42,20 +45,22 @@ Page({
       page.setData({formData})
     }
     // if (page.data.resetForm) page.resetForm();
-    const id = wx.getStorageSync('editedId')
+    const id = wx.getStorageSync('tripId')
     if (id) {
       console.log('id found -> update')
+      // page.data.resetForm = false
       wx.request({
         header: app.globalData.header,
         url: `${app.globalData.baseURL}/trips/${id}`,
         success(res) {
-          let data = page.data
+          let data = res.data
+          console.log(data)
           page.setData({
             // locationsIndex: data.locations.findIndex(el => (el === res.data.locations)),
-            formData: res.data,
-            editedId: id
+            formData: res.data.trip,
+            tripId: id
           })
-          wx.removeStorageSync('editedId')
+          wx.removeStorageSync('tripId')
         }
       })
     } 
@@ -118,6 +123,7 @@ Page({
     console.log("Update: trip", trip)
     this.setData({trip})
     if (this.data.editedId !== undefined && this.data.editedId !== null) {
+      // edit form
       wx.request({
         header: app.globalData.header,
         url: `${app.globalData.baseURL}/trips/${page.data.editedId}`,
@@ -132,6 +138,7 @@ Page({
         }
       })
     } else {
+      // new form
       console.log("Create: trip", trip)
       wx.request({
         header: app.globalData.header,
@@ -156,7 +163,7 @@ Page({
             const id = res.data.trip.id
             page.setData({resetForm: true})
             page.upload(id)
-              wx.switchTab({
+            wx.switchTab({
                 url: 'landing'
             })
           }

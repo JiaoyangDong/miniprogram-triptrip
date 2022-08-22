@@ -47,9 +47,9 @@ button {
 
 .tags{
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(3, 1fr); 
   gap: 20rpx; 
-  margin-top: 5rpx;
+  margin-top: 10rpx;
 	/* column-gap: 10px; */
 	/* grid-gap: 10px; */
 }

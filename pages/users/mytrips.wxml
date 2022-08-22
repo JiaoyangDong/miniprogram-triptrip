@@ -20,7 +20,7 @@
 
   <!-- upcoming -->
   <view wx:if="{{active_tab === 'upcoming'}}">
-    <view class="notrip" wx:if="{{!upcoming_trips.length}}"><text>waiting to add your next trip!</text></view>
+    <view class="notrip" wx:if="{{!upcoming_trips.length}}"><text>you haven't joined any trips yet 😔</text></view>
     <swiper indicator-dots="{{indicatorDots}}" indicator-active-color='#E786B4' indicator-color='#fff' class="trips-swiper" wx:if="{{upcoming_trips.length}}" next-margin="40rpx">
       <block wx:for="{{upcoming_trips}}" wx:key="*this">
         <swiper-item class="swiper-item" bindtap="goToTrip" data-id="{{item.id}}">
@@ -60,8 +60,8 @@
 
 
   <!-- bookmark -->
-  <text class="header-bookmark">my bookmarks</text>
-  <view class="notrip" wx:if="{{!bookmarked_trips.length}}">no bookmarked trips yet</view>
+  <text class="header-bookmark">my saved trips</text>
+  <view class="notrip" wx:if="{{!bookmarked_trips.length}}">you haven't saved any trips yet 😔</view>
 
   <swiper indicator-dots="{{indicatorDots}}" indicator-active-color='#E786B4' indicator-color='#fff' class="trips-swiper" wx:if="{{bookmarked_trips.length}}" next-margin="40rpx">
     <block wx:for="{{bookmarked_trips}}" wx:key="*this">
