@@ -14,9 +14,12 @@ Page({
     // formData: {tags: []}
   },
   onLoad(options) {
-    let tags = app.globalData.tagList.map(function(tag) {
+    let tags = app.globalData.tags.
+      filter(tag => tag.name).
+      map(function(tag) {
       return {
-        name: tag, 
+        name: tag.name, 
+        show: tag.show,
         active: false
       }
     })

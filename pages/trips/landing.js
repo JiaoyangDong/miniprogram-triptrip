@@ -63,6 +63,7 @@ Page({
     }
     page.setData({
       // loadingHidden: true
+      tags: app.globalData.tags
     })
   },
 

@@ -37,7 +37,7 @@
         },
         {
           "name": "",
-          "pathName": "pages/trips/landing",
+          "pathName": "pages/users/mytrips",
           "query": "",
           "launchMode": "default",
           "scene": null

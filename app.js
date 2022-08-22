@@ -34,7 +34,72 @@ App({
     userInfo: null, 
     header: null, 
     user: null,
-    tagList: ["oneday", "weekend", "petfriendly", "hiking", "relaxing", "family", "adventure", "biking"],
+    tags: [
+      {
+        index: 0,
+        name: "",
+        show: "All",
+        icon: "/images/tags/all.png",
+        style: "height:70rpx;width:70rpx;margin-top: 11rpx;"
+      },
+      {
+        index: 1,
+        name: "oneday",
+        show: "Day trips",
+        icon: "/images/tags/oneday.png",
+        style: ""
+      },
+      {
+        index: 2,
+        name: "weekend",
+        show: "Weekend",
+        icon: "/images/tags/weekend.png",
+        style: ""
+      },
+      {
+        index: 3,
+        name: "petfriendly",
+        show: "Pet-friendly",
+        icon: "/images/tags/petfriendly.png",
+        style: ""
+      },
+      {
+        index: 4,
+        name: "hiking",
+        show: "Hiking",
+        icon: "/images/tags/hiking.png",
+        style: "height:70rpx;width:70rpx;margin-top: 11rpx;"
+      },
+      {
+        index: 5,
+        name: "relaxing",
+        show: "Relaxing",
+        icon: "/images/tags/relaxing.png",
+        style: "height:65rpx;width:65rpx;margin-top:17rpx;"
+      },
+      {
+        index: 6,
+        name: "family",
+        show: "Family",
+        icon: "/images/tags/family.png",
+        style: "height:70rpx;width:70rpx;margin-top: 11rpx;"
+      },
+      {
+        index: 7,
+        name: "adventure",
+        show: "Adventure",
+        icon: "/images/tags/adventure.png",
+        style: "height:70rpx;width:70rpx;margin-top: 11rpx;"
+      },
+      {
+        index: 8,
+        name: "biking",
+        show: "Biking",
+        icon: "/images/tags/biking.png",
+        style: "height:70rpx;width:70rpx;margin-top: 11rpx;"
+      }
+    ],
+    // tagList: ["oneday", "weekend", "petfriendly", "hiking", "relaxing", "family", "adventure", "biking"],
     // baseURL: "http://localhost:3000/api/v1",
     baseURL: "https://triptrip.wogengapp.cn/api/v1"
   }
