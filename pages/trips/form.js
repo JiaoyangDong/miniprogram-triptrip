@@ -14,8 +14,14 @@ Page({
     // formData: {tags: []}
   },
   onLoad(options) {
-    // const eventChannel = this.getOpenerEventChannel()
-    // eventChannel.emit('acceptDataFromOpenedPage', {data: 'test'})
+    let tags = app.globalData.tagList.map(function(tag) {
+      return {
+        name: tag, 
+        active: false
+      }
+    })
+    console.log({tags})
+    this.setData({tags})
   },
   onReady() {
   },
@@ -37,7 +43,7 @@ Page({
       console.log('id found -> update')
       wx.request({
         header: app.globalData.header,
-        url: `${app.globalData.baseURL}/pets/${id}`,
+        url: `${app.globalData.baseURL}/trips/${id}`,
         success(res) {
           let data = page.data
           page.setData({
@@ -48,15 +54,7 @@ Page({
           wx.removeStorageSync('editedId')
         }
       })
-    }
-    let tags = app.globalData.tagList.map(function(tag) {
-      return {
-        name: tag, 
-        active: false
-      }
-    })
-    page.setData({tags})
-    // console.log(tags)
+    } 
   },
   setInputData(e) {
     let { formData } = this.data
@@ -113,7 +111,7 @@ Page({
     console.log('from create button --->',e)
     const page = this
     let trip = this.data.formData
-    console.log(trip)
+    console.log("Update: trip", trip)
     this.setData({trip})
     if (this.data.editedId !== undefined && this.data.editedId !== null) {
       wx.request({
@@ -130,6 +128,7 @@ Page({
         }
       })
     } else {
+      console.log("Create: trip", trip)
       wx.request({
         header: app.globalData.header,
         url: `${app.globalData.baseURL}/trips`,
@@ -145,6 +144,10 @@ Page({
               confirmText: 'OK'
             })
           } else {
+            wx.showToast({
+              title: "Trip created successfully",
+              duration: 2000
+            })  
             // call the upload
             const id = res.data.trip.id
             page.setData({resetForm: true})
@@ -183,7 +186,6 @@ Page({
       // });
     wx.navigateTo({
       url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer + '&location=',
-      
     })
 
     // let { formData } = this.data
@@ -207,5 +209,14 @@ Page({
       if (tag.name === currentTag) tag.active = !tag.active
       page.setData({tags})
     })
+    let { formData } = this.data
+    formData = {...formData, tags}
+    page.setData({formData})
+  },
+  goToSurvey(e) {
+    console.log('From form.js - goToSurvey: e', e)
+    wx.navigateTo({
+        url: `/pages/trips/survey`,
+      })
   }
 })

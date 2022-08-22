@@ -6,7 +6,8 @@
     "pages/index/index",
     "pages/logs/logs", 
     "pages/trips/show", 
-    "pages/trips/form"
+    "pages/trips/form",
+    "pages/trips/survey"
   ],
   "window":{
     "backgroundTextStyle":"light",

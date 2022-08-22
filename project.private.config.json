@@ -16,7 +16,7 @@
         },
         {
           "name": "",
-          "pathName": "pages/trips/form",
+          "pathName": "pages/trips/survey",
           "query": "",
           "launchMode": "default",
           "scene": null
@@ -38,6 +38,13 @@
         {
           "name": "",
           "pathName": "pages/trips/landing",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/trips/form",
           "query": "",
           "launchMode": "default",
           "scene": null

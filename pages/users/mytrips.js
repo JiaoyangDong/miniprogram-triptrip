@@ -7,9 +7,16 @@ Page({
    */
   data: {
     loadingHidden: false,
-    active_tab: "upcoming"
+    active_tab: "upcoming",
+    indicatorDots: false,
+    activeIndex: 0,
   },
 
+  // changeIndicatorDots() {
+  //   this.setData({
+  //     indicatorDots: !this.data.indicatorDots
+  //   })
+  // }
   /**
    * Lifecycle function--Called when page load
    */
@@ -121,5 +128,9 @@ Page({
     wx.navigateTo({
         url: `/pages/trips/show?id=${e.currentTarget.dataset.id}`,
       })
+  },
+  switchCard(e) {
+    let current = e.detail.current;
+    this.setData({ activeIndex: current });
   }
 })

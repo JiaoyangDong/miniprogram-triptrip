@@ -61,6 +61,9 @@ Page({
       // wait until loginFinished, then fetch API
       wx.event.on('loginFinished', this, this.getNewData)
     }
+    page.setData({
+      // loadingHidden: true
+    })
   },
 
   /**

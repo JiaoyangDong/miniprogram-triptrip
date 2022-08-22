@@ -3,6 +3,7 @@
 }
 .main {
   padding: 20rpx 80rpx;
+  padding-bottom: 200rpx;
 }
 
 .form-item {
@@ -47,7 +48,8 @@ button {
 .tags{
   display: grid;
   grid-template-columns: repeat(4, 1fr); 
-  gap: 10rpx; 
+  gap: 20rpx; 
+  margin-top: 5rpx;
 	/* column-gap: 10px; */
 	/* grid-gap: 10px; */
 }
@@ -57,7 +59,8 @@ button {
   border-radius: 10rpx;
   text-align: center;
   padding: 3rpx;
-  font-size:20rpx;
+  font-size:24rpx;
+  height: 40rpx;
   /* width: 20%; */
 }
 
