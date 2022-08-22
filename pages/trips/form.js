@@ -223,5 +223,11 @@ Page({
     let { formData } = this.data
     formData = {...formData, tags}
     page.setData({formData})
+  },
+  goToSurvey(e) {
+    console.log('From form.js - goToSurvey: e', e)
+    wx.navigateTo({
+        url: `/pages/trips/survey`,
+      })
   }
 })
