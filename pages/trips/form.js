@@ -207,9 +207,9 @@ Page({
     // const { field } = e.currentTarget.dataset
     // this.setData({ formData, location: e.detail.value })
   },
-  goToHome() {
-    wx.switchTab({
-      url: 'landing',
+  goBack() {
+    wx.navigateBack({
+      delta: 1,
     })
   },
   selectTag(e) {
