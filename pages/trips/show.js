@@ -3,8 +3,8 @@ const app = getApp()
 Page({
   data: {
     booking: {},
-    latitude: 31,
-    longitude: 32,
+    latitude: 0,
+    longitude: 0,
   },
   onLoad(options) {
   },
@@ -41,7 +41,9 @@ Page({
             trip: trip,
             isBooker: isBooker, 
             isSaved: isSaved,
-            bookmarkId: res.data.bookmark_id
+            bookmarkId: res.data.bookmark_id, 
+            longitude: parseFloat(trip.longitude),
+            latitude: parseFloat(trip.latitude)
           });
           console.log("From show.js: status code is", res.statusCode)
         }
@@ -195,6 +197,7 @@ Page({
   openMap(e) {
     console.log("from open map", e)
     const page = this
+    console.log(page)
     const latitude = page.data.latitude
     const longitude = page.data.longitude
     const name = page.data.title
