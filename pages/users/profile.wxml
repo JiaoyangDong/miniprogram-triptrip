@@ -29,7 +29,7 @@
     <view class="notrip" wx:if="{{!upcoming_trips.length}}">i dont have any trips yet 😔</view>
     <view class="notrip-create" bindtap="goToNewTrip" wx:if="{{!upcoming_trips.length}}">Plan a trip!</view>
     <!-- <view class="trip-cards-box"> -->
-    <view class="trip-card" wx:for="{{upcoming_trips}}" data-id="{{item.id}}" bindtap="goToTrip">
+    <view class="trip-card" wx:for="{{upcoming_trips}}" data-id="{{item.id}}" bindtap="goToAdmin">
       <image mode="widthFix" src="{{item.image}}" class="trip-img"></image>
       <view class="trip-info">
         <view class="trip-title">{{item.title}}</view>
