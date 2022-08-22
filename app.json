@@ -7,7 +7,9 @@
     "pages/logs/logs", 
     "pages/trips/show", 
     "pages/trips/form",
-    "pages/trips/survey"
+    "pages/trips/admin",
+    "pages/trips/survey",
+    "pages/bookings/form"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -22,7 +24,6 @@
     "selectedColor": "#E15B99",
     "backgroundColor": "#ffffff",
     "list": [{
-      "custom": true,
       "pagePath": "pages/trips/landing",
       "text": "Explore",
       "iconPath": "images/explorefill-pink.png",

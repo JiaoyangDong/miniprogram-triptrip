@@ -7,7 +7,7 @@ Page({
    */
   data: {
     resetForm: true,
-    // tripId: , // testing only
+    // tripId:  74, // testing only
     yes:'/images/minus-2.png',
     no:'/images/addsurvey.png',
     questions: {

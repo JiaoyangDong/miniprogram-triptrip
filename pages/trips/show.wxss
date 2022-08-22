@@ -23,7 +23,7 @@
   font-weight: 800;
   font-size: 50rpx;
   margin: 20 40rpx;
-  padding: 20rpx 20rpx;
+  padding: 20rpx 20rpx 0rpx 0;
   /* margin-top: 30rpx; */
   /* margin-left: 60rpx; */
 }

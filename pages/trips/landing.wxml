@@ -18,68 +18,13 @@
 </view>
 
 <view class="scroll-view-box-box">
+  <view class="tag-scroll-filter"></view>
   <scroll-view scroll-x="true" style="width: 100%; white-space: nowrap;" class="tags-scroll-view">
-    <view class="tag-button tag0" bindtap="selectTag" data-index="0" data-tag="" style="background: {{tag === '' ? 'rgba(225, 91, 153, .1)' : 'white'}};">
-      <image class="selected-tag-img" src="/images/tags/selected.png" style="visibility: {{tag === '' ? 'visible' : 'hidden'}};"></image>
+    <view class="tag-button" bindtap="selectTag" wx:for="{{tags}}" wx:key="*this" data-index="{{item.index}}" data-tag="{{item.name}}" style="background: {{tag === item.name ? 'rgba(225, 91, 153, .1)' : 'white'}};">
+      <image class="selected-tag-img" src="/images/tags/selected.png" style="visibility: {{tag === item.name ? 'visible' : 'hidden'}};"></image>
       <view class="inner-tag-view">
-        <image class="tag-img" src="/images/tags/all.png" style="height:70rpx;width:70rpx;margin-top: 11rpx;"></image>
-        <view>All</view>
-      </view>
-    </view>
-    <view class="tag-button tag1" bindtap="selectTag" data-index="1" data-tag="oneday" style="background: {{tag === 'oneday' ? 'rgba(225, 91, 153, .1)' : 'white'}};">
-      <image class="selected-tag-img" src="/images/tags/selected.png" style="visibility: {{tag === 'oneday' ? 'visible' : 'hidden'}};"></image>
-      <view class="inner-tag-view">
-        <image class="tag-img" src="/images/tags/oneday.png"></image>
-        <view>Day trips</view>
-      </view>
-    </view>
-    <view class="tag-button tag2" bindtap="selectTag" data-index="2" data-tag="weekend" style="background: {{tag === 'weekend' ? 'rgba(225, 91, 153, .1)' : 'white'}};">
-      <image class="selected-tag-img" src="/images/tags/selected.png" style="visibility: {{tag === 'weekend' ? 'visible' : 'hidden'}};"></image>
-      <view class="inner-tag-view">
-        <image class="tag-img" src="/images/tags/weekend.png"></image>
-        <view>Weekend</view>
-      </view>
-    </view>
-    <view class="tag-button tag3" bindtap="selectTag" data-index="3" data-tag="petfriendly" style="background: {{tag === 'petfriendly' ? 'rgba(225, 91, 153, .1)' : 'white'}};">
-      <image class="selected-tag-img" src="/images/tags/selected.png" style="visibility: {{tag === 'petfriendly' ? 'visible' : 'hidden'}};"></image>
-      <view class="inner-tag-view">
-        <image class="tag-img" src="/images/tags/petfriendly.png"></image>
-        <view>Pet-friendly</view>
-      </view>
-    </view>
-    <view class="tag-button tag4" bindtap="selectTag" data-index="4" data-tag="hiking" style="background: {{tag === 'hiking' ? 'rgba(225, 91, 153, .1)' : 'white'}};">
-      <image class="selected-tag-img" src="/images/tags/selected.png" style="visibility: {{tag === 'hiking' ? 'visible' : 'hidden'}};"></image>
-      <view class="inner-tag-view">
-        <image class="tag-img" src="/images/tags/hiking.png" style="height:70rpx;width:70rpx;margin-top: 11rpx;"></image>
-        <view>Hiking</view>
-      </view>
-    </view>
-    <view class="tag-button tag5" bindtap="selectTag" data-index="5" data-tag="relaxing" style="background: {{tag === 'relaxing' ? 'rgba(225, 91, 153, .1)' : 'white'}};">
-      <image class="selected-tag-img" src="/images/tags/selected.png" style="visibility: {{tag === 'relaxing' ? 'visible' : 'hidden'}};"></image>
-      <view class="inner-tag-view">
-        <image class="tag-img" src="/images/tags/relaxing.png" style="height:65rpx;width:65rpx;margin-top:17rpx;"></image>
-        <view>Relaxing</view>
-      </view>
-    </view>
-    <view class="tag-button tag6" bindtap="selectTag" data-index="6" data-tag="family" style="background: {{tag === 'family' ? 'rgba(225, 91, 153, .1)' : 'white'}};">
-      <image class="selected-tag-img" src="/images/tags/selected.png" style="visibility: {{tag === 'family' ? 'visible' : 'hidden'}};"></image>
-      <view class="inner-tag-view">
-        <image class="tag-img" src="/images/tags/family.png" style="height:70rpx;width:70rpx;margin-top: 11rpx;"></image>
-        <view>Family</view>
-      </view>
-    </view>
-    <view class="tag-button tag7" bindtap="selectTag" data-index="7" data-tag="adventure" style="background: {{tag === 'adventure' ? 'rgba(225, 91, 153, .1)' : 'white'}};">
-      <image class="selected-tag-img" src="/images/tags/selected.png" style="visibility: {{tag === 'adventure' ? 'visible' : 'hidden'}};"></image>
-      <view class="inner-tag-view">
-        <image class="tag-img" src="/images/tags/adventure.png" style="height:70rpx;width:70rpx;margin-top: 11rpx;"></image>
-        <view>Adventure</view>
-      </view>
-    </view>
-    <view class="tag-button tag8" bindtap="selectTag" data-index="8" data-tag="biking" style="background: {{tag === 'biking' ? 'rgba(225, 91, 153, .1)' : 'white'}};">
-      <image class="selected-tag-img" src="/images/tags/selected.png" style="visibility: {{tag === 'biking' ? 'visible' : 'hidden'}};"></image>
-      <view class="inner-tag-view">
-        <image class="tag-img" src="/images/tags/biking.png" style="height:70rpx;width:70rpx;margin-top: 11rpx;"></image>
-        <view>Biking</view>
+        <image class="tag-img" src="{{item.icon}}" style="{{item.style}}"></image>
+        <view>{{item.show}}</view>
       </view>
     </view>
   </scroll-view>
@@ -90,7 +35,7 @@
     <view class="no-trips-message">Oops, there aren't any trips listed yet!</view>
   </block> -->
   <!-- <block wx:else> -->
-  <view wx:for="{{trips}}" wx:for-item="trip" bindtap="goToTrip" data-id="{{trip.id}}" class="trip-card">
+  <view wx:for="{{trips}}" wx:key="*this" wx:for-item="trip" bindtap="goToTrip" data-id="{{trip.id}}" class="trip-card">
     <!-- <view class="filter"></view> -->
     <view class="image-box">
       <image class="trip-image" src="{{trip.image}}" mode="aspectFill"></image>

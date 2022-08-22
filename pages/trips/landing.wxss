@@ -29,6 +29,7 @@ page {
 
 .scroll-view-box-box {
   margin: 0 40rpx;
+  position: relative;
 }
 
 .tags-scroll-view {
@@ -38,6 +39,17 @@ page {
   /* gap: 40rpx 40rpx; */
   /* display: flex; */
   font-family: Fira Sans;
+}
+
+.tag-scroll-filter {
+  position: absolute;
+  right: 0;
+  /* background-image: linear-gradient(to right, transparent, rgba(255, 214, 224, 0.5)); */
+  /* opacity: 50%; */
+  width: 30%;
+  height: 100%;
+  z-index: 1;
+  /* border-radius: 5px; */
 }
 
 .inner-tag-view {
@@ -97,7 +109,7 @@ page {
   /* width: 45%;  */
   border-radius: 24rpx;
   width: 300rpx;
-  height: 460rpx;
+  height: 500rpx;
   /* padding: 20rpx; */
   box-shadow: 0 0 15rpx rgba(0,0,0,0.2);
   font-family:'Fira Sans', sans-serif;
@@ -126,8 +138,7 @@ page {
   /* position: absolute; */
   color: black;
   font-weight: bold;
-  margin-top: 18rpx;
-  margin-left: 18rpx;
+  margin: 18rpx;
   /* width: 210rpx; */
   display: flex;
   flex-direction: column;
@@ -142,6 +153,7 @@ page {
 .trip-start {
   margin-top: 6rpx;
   font-size: 24rpx;
+  font-weight: 500;
 }
 
 .trip-location-box {
@@ -168,6 +180,7 @@ page {
   height: 30rpx;
   width: 30rpx;
   margin-right: 5rpx;
+  min-width: 30rpx;
 }
 
 .favorite-icon {
