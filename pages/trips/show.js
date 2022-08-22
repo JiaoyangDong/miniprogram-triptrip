@@ -5,6 +5,7 @@ Page({
     booking: {},
     latitude: 0,
     longitude: 0,
+    name: ""
   },
   onLoad(options) {
   },
@@ -43,7 +44,8 @@ Page({
             isSaved: isSaved,
             bookmarkId: res.data.bookmark_id, 
             longitude: parseFloat(trip.longitude),
-            latitude: parseFloat(trip.latitude)
+            latitude: parseFloat(trip.latitude), 
+            name: trip.location
           });
           console.log("From show.js: status code is", res.statusCode)
         }
@@ -197,10 +199,9 @@ Page({
   openMap(e) {
     console.log("from open map", e)
     const page = this
-    console.log(page)
     const latitude = page.data.latitude
     const longitude = page.data.longitude
-    const name = page.data.title
+    const name = page.data.name
 
     wx.openLocation({
       latitude,
