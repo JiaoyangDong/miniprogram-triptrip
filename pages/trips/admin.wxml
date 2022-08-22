@@ -1,2 +1,106 @@
-<!--pages/trips/admin.wxml-->
-<text>pages/trips/admin.wxml</text>
+<!--pages/trips/show.wxml-->
+<view class="container">
+  <!-- <view class="header"> -->
+    <view class="navigation">
+      <image class="home-btn"src="/images/homeempty-pink.png" bindtap="goToHome"></image>
+      <view class="h1">{{trip.title}}</view>
+    </view>
+    <view class="poster-filter"></view>
+    <image class="poster" mode="aspectFill" src="{{trip.image}}"></image>
+  <!-- </view> -->
+
+  <!-- Trip-info -->
+  <view class="trip-card">
+
+    <!-- HEAD -->
+    <!-- <view class="head"> -->
+      <!-- <view class="h1">{{trip.title}}</view> -->
+      <!-- <view class="icons">
+        <image class="icon" src="{{ isSaved ? '/images/likefill-pink.png' : '/images/like-pink.png'}} " bindtap="toggleBookmark">{{trip.end_date - trip.start_date}} days</image>
+        <button open-type="share" class="nostyle icon">
+          <image class="icon" mode="aspectFit" src="/images/share.png">Share</image>
+        </button>
+      </view> -->
+    <!-- </view> -->
+
+    <!-- TEXT MAIN -->
+    <!-- <view>
+      {{trip.start_date}} ~ {{trip.end_date}}
+    </view>
+
+    <view class="map">
+      <image class="icon" style="width: 40rpx; height: 40rpx;" src="/images/map.png">location{{trip.location}} </image>
+      {{trip.location}}
+    </view> -->
+<!-- 
+    <view class="tags">
+      <view class="tag" wx:for="{{trip.tags}}">{{item}}</view>
+    </view> -->
+
+    <!-- <text class="h2">Description</text> -->
+    <view class="description">
+      {{trip.description}}
+    </view>
+
+    <view class="btn-box">
+      <view class="btn" bindtap="goToEdit" data-id="{{trip.id}}">
+        <image src="/images/admin/edit.png"class="btn-img"></image>
+        <view class="btn-text">Edit</view>
+      </view>
+      <view class="btn" bindtap="goToShow" data-id="{{trip.id}}">
+        <image src="/images/admin/preview.png"class="btn-img"></image>
+        <view class="btn-text">Preview</view>
+      </view>
+    </view>
+
+    <view class="attendees-box">
+      <view class="attendees-box-txt">attendees:</view>
+      <view class="scroll-view-box-box">
+
+        <scroll-view scroll-x="true" style="width: 100%; white-space: nowrap;" class="attendees-scroll-view">  
+          <view class="attendee">
+            <image class="attendee-img" src="/images/kiwibird-pink.png"></image>
+          </view>
+          <view class="attendee">
+            <image class="attendee-img" src="/images/kiwibird-pink.png"></image>
+          </view>
+          <view class="attendee">
+            <image class="attendee-img" src="/images/kiwibird-pink.png"></image>
+          </view>
+          <view class="attendee">
+            <image class="attendee-img" src="/images/kiwibird-pink.png"></image>
+          </view>
+          <view class="attendee">
+            <image class="attendee-img" src="/images/kiwibird-pink.png"></image>
+          </view>
+          <view class="attendee">
+            <image class="attendee-img" src="/images/kiwibird-pink.png"></image>
+          </view>
+          <view class="attendee">
+            <image class="attendee-img" src="/images/kiwibird-pink.png"></image>
+          </view>
+          <view class="attendee">
+            <image class="attendee-img" src="/images/kiwibird-pink.png"></image>
+          </view>
+          <view class="attendee">
+            <image class="attendee-img" src="/images/kiwibird-pink.png"></image>
+          </view>
+          <view class="attendee">
+            <image class="attendee-img" src="/images/kiwibird-pink.png"></image>
+          </view>
+          <view class="attendee">
+            <image class="attendee-img" src="/images/kiwibird-pink.png"></image>
+          </view>
+          <view class="attendee">
+            <image class="attendee-img" src="/images/kiwibird-pink.png"></image>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+
+    <view class="stats-box">stats go here!!</view>
+
+    <!-- Edit and preview buttons-->
+
+  </view>
+</view>

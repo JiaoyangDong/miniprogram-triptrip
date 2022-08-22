@@ -1,1 +1,190 @@
-/* pages/trips/admin.wxss */
+.container{
+  padding: 0;
+  /* padding-bottom: 80rpx; */
+  font-family: Fira Sans;
+}
+
+.poster{
+  z-index: 1;
+  width: 100vw;
+  height:400rpx;
+  position: relative;
+  top: 0;
+}
+
+/* .head{
+  display: flex;
+  justify-content: space-between;
+
+} */
+
+.poster-filter {
+  position: absolute;
+  background-color: black;
+  opacity: 20%;
+  height:400rpx;
+  width: 100%;
+  z-index: 2;
+}
+
+.navigation {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  /* background-color: red; */
+  z-index: 111;
+  width: 100%;
+  height: 400rpx;
+  /* background-color: red; */
+}
+
+.home-btn {
+  height: 60rpx;
+  width: 60rpx;
+  position: absolute;
+  top: 100rpx;
+  left: 30px;
+  z-index: 5;
+}
+
+.navigation .h1 {
+  /* position: absolute; */
+  /* bottom: 30px; */
+  /* left: 30px; */
+  z-index: 5;
+  margin-bottom: 60rpx;
+  margin-left: 10rpx;
+  /* color: red; */
+}
+
+.h1 {
+  font-weight: 800;
+  font-size: 40rpx;
+  margin: 20 40rpx;
+  padding: 20rpx 20rpx;
+  color: white;
+  /* margin-top: 30rpx; */
+  /* margin-left: 60rpx; */
+  /* position: absolute;
+  bottom: 40rpx; */
+}
+
+.h2{
+  font-weight: 500;
+  font-size: 30rpx;
+}
+.icons{
+  padding: 20rpx;
+}
+
+.description {
+  font-size: 34rpx;
+  margin-bottom: 30rpx;
+}
+
+.icon{
+  width: 70rpx;
+  height: 70rpx;
+}
+.nostyle{
+  width: 70rpx ! important; 
+  padding: 0 ;
+  background-color: transparent;
+}
+
+.trip-card{
+  z-index: 4;
+  border-radius: 50rpx;
+  margin-top: -60rpx;
+  background-color: white;
+  /* border: solid 3px #E15B99; */
+
+  padding: 30rpx 50rpx;
+  /* padding-bottom: 90rpx; */
+  min-height: 70vh;
+  /* width: 90vw; */
+}
+
+
+
+/* button */
+
+.btn-box {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20rpx;
+}
+
+.btn {
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  /* padding: 10rpx; */
+  margin-left: 40rpx;
+  border-radius: 32rpx;
+  font-family: Fira Sans;
+  font-size: 32rpx;
+  color: #E15B99;
+  /* line-height: 60rpx; */
+  /* text-align: center; */
+  /* margin-top: 220rpx; */
+}
+
+.btn-img {
+  height: 50rpx;
+  width: 50rpx;
+  margin: 0 auto;
+}
+
+.btn-primary {
+  background: #E15B99;
+  color: #FFFFFF; 
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.btn-secondary{
+  padding-top: 10rpx;
+  background: #fce1ee;
+  /* border: #E15B99 solid 1px; */
+  color: #E15B99; 
+  font-size: 30rpx;
+  /* box-shadow: 2px 2px 8px #e15b9965; */
+}
+
+.attendees-box-txt {
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-left: 16rpx;
+}
+
+.scroll-view-box-box {
+  width: 86vw;
+}
+
+.attendees-scroll-view {
+  margin-top: 10rpx;
+  height: 140rpx;
+}
+
+.attendee {
+  display: inline-block;
+  margin-left: -20rpx;
+}
+
+.attendee:nth-child(1) {
+  margin-left: 0rpx;
+}
+
+.attendee-img {
+  height: 100rpx;
+  width: 100rpx;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.stats-box {
+  height: 600rpx;
+  background-color: rgba(225, 91, 153, .3);
+  margin-top: 40rpx;
+  border-radius: 20rpx;
+  padding: 20rpx;
+}
