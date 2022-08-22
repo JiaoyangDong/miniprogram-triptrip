@@ -6,7 +6,8 @@
     "pages/index/index",
     "pages/logs/logs", 
     "pages/trips/show", 
-    "pages/trips/form"
+    "pages/trips/form",
+    "pages/trips/admin"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -21,7 +22,6 @@
     "selectedColor": "#E15B99",
     "backgroundColor": "#ffffff",
     "list": [{
-      "custom": true,
       "pagePath": "pages/trips/landing",
       "text": "Explore",
       "iconPath": "images/explorefill-pink.png",
