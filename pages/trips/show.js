@@ -1,16 +1,14 @@
 // pages/trips/show.js
 const app = getApp()
-// const chooseLocation = requirePlugin('chooseLocation');
 Page({
   data: {
-    booking: {}
+    booking: {},
+    latitude: 31,
+    longitude: 32,
   },
   onLoad(options) {
-
-
   },
   onReady() {
-
   },
   onShow() {
     if (app.globalData.header) {
@@ -193,5 +191,18 @@ Page({
     wx.switchTab({
         url: `/pages/users/mytrips`,
       })
+  }, 
+  openMap(e) {
+    console.log("from open map", e)
+    const page = this
+    const latitude = page.data.latitude
+    const longitude = page.data.longitude
+    const name = page.data.title
+
+    wx.openLocation({
+      latitude,
+      longitude,
+      name
+    })
   }
 })

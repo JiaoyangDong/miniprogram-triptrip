@@ -8,7 +8,9 @@ Page({
     end_date: '',
     address: '',
     location: '',
-    formData: {},
+    formData: {}, 
+    longitude: '',
+    latitude: ''
     // TODO: set tags into form data
     // tags: []
     // formData: {tags: []}
@@ -34,7 +36,9 @@ Page({
     if(current_location){
       const address = current_location.address
       const location = current_location.name
-      formData = {...formData, address, location}
+      const longitude = current_location.longitude
+      const latitude = current_location.latitude
+      formData = {...formData, address, location, longitude, latitude}
       page.setData({formData})
     }
     // if (page.data.resetForm) page.resetForm();
