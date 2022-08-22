@@ -117,6 +117,7 @@ Page({
     console.log("Update: trip", trip)
     this.setData({trip})
     if (this.data.editedId !== undefined && this.data.editedId !== null) {
+      // edit form
       wx.request({
         header: app.globalData.header,
         url: `${app.globalData.baseURL}/trips/${page.data.editedId}`,
@@ -131,6 +132,7 @@ Page({
         }
       })
     } else {
+      // new form
       console.log("Create: trip", trip)
       wx.request({
         header: app.globalData.header,
@@ -155,7 +157,7 @@ Page({
             const id = res.data.trip.id
             page.setData({resetForm: true})
             page.upload(id)
-              wx.switchTab({
+            wx.switchTab({
                 url: 'landing'
             })
           }

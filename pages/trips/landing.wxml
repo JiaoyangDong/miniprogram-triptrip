@@ -19,7 +19,7 @@
 
 <view class="scroll-view-box-box">
   <scroll-view scroll-x="true" style="width: 100%; white-space: nowrap;" class="tags-scroll-view">
-    <view class="tag-button" bindtap="selectTag" wx:for="{{tags}}" data-index="{{item.index}}" data-tag="{{item.name}}" style="background: {{tag === item.name ? 'rgba(225, 91, 153, .1)' : 'white'}};">
+    <view class="tag-button" bindtap="selectTag" wx:for="{{tags}}" wx:key="*this" data-index="{{item.index}}" data-tag="{{item.name}}" style="background: {{tag === item.name ? 'rgba(225, 91, 153, .1)' : 'white'}};">
       <image class="selected-tag-img" src="/images/tags/selected.png" style="visibility: {{tag === item.name ? 'visible' : 'hidden'}};"></image>
       <view class="inner-tag-view">
         <image class="tag-img" src="{{item.icon}}" style="{{item.style}}"></image>
@@ -34,7 +34,7 @@
     <view class="no-trips-message">Oops, there aren't any trips listed yet!</view>
   </block> -->
   <!-- <block wx:else> -->
-  <view wx:for="{{trips}}" wx:for-item="trip" bindtap="goToTrip" data-id="{{trip.id}}" class="trip-card">
+  <view wx:for="{{trips}}" wx:key="*this" wx:for-item="trip" bindtap="goToTrip" data-id="{{trip.id}}" class="trip-card">
     <!-- <view class="filter"></view> -->
     <view class="image-box">
       <image class="trip-image" src="{{trip.image}}" mode="aspectFill"></image>

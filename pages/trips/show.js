@@ -54,47 +54,76 @@ Page({
   submitBooking(e){
     console.log("From show.js - submitBooking: e", e)
     let page = this
-    wx.request({
-      url: `${app.globalData.baseURL}/trips/${this.data.trip.id}/bookings`,
-      header: app.globalData.header,
-      method: "POST",
-      data: {
-        // date_and_time: dateAndTime
-      },
-      success(res){
-        console.log("From show.js - submit booking: res",res)
-        if (res.statusCode === 201) {
-          console.log("From show.js - booking submit successfully!")
-          console.log("From show.js : res.data", res.data)
-          const booking = res.data.booking;
-          console.log(page)
-          page.setData({
-            isBooker: true
-          })
-          // wx.redirectTo({
-          //   url: `/pages/users/profile?id=${page.options.id}`,
-          // })
-        } else {
-          console.log("From show.js: status code is", res.statusCode)
-          console.log("From show.js: error message", res.data.errors)
-          // const bookingId = res.data.booking.id
-          wx.showModal({
-            title: 'Error!',
-            content: res.data.errors.join(', '),
-            cancelText: "OK",
-            confirmText: 'Details',
-            success(res) {
-              console.log(res)
-              if (res.confirm) {
-                wx.redirectTo({
-                  url: `../booking/show?id=${bookingId}`,
-                })
-              }
+    // get user profile and update user info in the backend
+    wx.getUserProfile({
+      desc: 'User Profile for submitting',
+      lang: 'en',
+      success: (res) => {
+        page.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+        wx.request({
+          url: `${app.globalData.baseURL}/users/${app.globalData.user.id}`,
+          method: 'PUT',
+          header: app.globalData.header,
+          data: {name: res.userInfo.nickName, image: res.userInfo.avatarUrl},
+          success(res) {
+            console.log('user info update success?', res)
+          }
+        })
+        console.log("getUserProfile complete res:",res)
+        wx.request({
+          url: `${app.globalData.baseURL}/trips/${this.data.trip.id}/bookings`,
+          header: app.globalData.header,
+          method: "POST",
+          data: {
+            // date_and_time: dateAndTime
+          },
+          success(res){
+            console.log("From show.js - submit booking: res",res)
+            if (res.statusCode === 201) {
+              console.log("From show.js - booking submit successfully!")
+              console.log("From show.js : res.data", res.data)
+              const booking = res.data.booking;
+              // console.log(page)
+              page.setData({
+                isBooker: true
+              })
+              // wx.redirectTo({
+              //   url: `/pages/users/profile?id=${page.options.id}`,
+              // })
+            } else {
+              console.log("From show.js: status code is", res.statusCode)
+              console.log("From show.js: error message", res.data.errors)
+              // const bookingId = res.data.booking.id
+              wx.showModal({
+                title: 'Error!',
+                content: res.data.errors.join(', '),
+                cancelText: "OK",
+                confirmText: 'Details',
+                success(res) {
+                  console.log(res)
+                  if (res.confirm) {
+                    wx.redirectTo({
+                      url: `../booking/show?id=${bookingId}`,
+                    })
+                  }
+                }
+              })
             }
-          })
-        }
-      }
+          }
+        })
+      },
+      fail(res){
+        page.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: false
+        })
+        console.log("getUserProfile fails")
+      },
     })
+
   },
   onHide() {
 
