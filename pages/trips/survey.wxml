@@ -1,6 +1,6 @@
 <!--pages/trips/survey.wxml-->
 <view class="navigation">
-  <image src="/images/homeempty-pink.png" style="height: 60rpx; width: 60rpx; position: fixed; top: 50px; left: 30px;" ></image>
+  <image class="goback-btn" src="/images/go-back-left-arrow.png" bindtap="goBack"></image>
 </view>
 
 <view class="main">

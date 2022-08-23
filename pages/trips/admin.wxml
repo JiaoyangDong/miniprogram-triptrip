@@ -1,8 +1,7 @@
-<!--pages/trips/show.wxml-->
 <view class="container">
   <!-- <view class="header"> -->
     <view class="navigation">
-      <image class="home-btn"src="/images/homeempty-pink.png" bindtap="goToHome"></image>
+      <image class="goback-btn" src="/images/go-back-left-arrow.png" bindtap="goBack"></image>
       <view class="h1">{{trip.title}}</view>
     </view>
     <view class="poster-filter"></view>
@@ -98,8 +97,11 @@
       </view>
     </view>
 
-    <view class="stats-box">stats go here!!</view>
-
+    <view class="stats-box">
+      <button bindtap="goToSurvey">Add survey</button>
+      stats go here!!
+    </view>
+      
     <!-- Edit and preview buttons-->
 
   </view>

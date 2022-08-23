@@ -116,5 +116,15 @@ Page({
    */
   onShareAppMessage() {
 
+  }, 
+  goBack() {
+    wx.navigateBack({
+      delta: 1,
+    })
+  },
+  goToSurvey() {
+    wx.navigateTo({
+      url: 'survey',
+    })
   }
 })

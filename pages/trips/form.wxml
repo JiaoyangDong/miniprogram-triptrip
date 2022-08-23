@@ -1,5 +1,5 @@
 <view class="navigation">
-  <image src="/images/pull_left.png" style="height: 60rpx; width: 60rpx; position: fixed; top: 100rpx; left: 50rpx;" bindtap="goBack"></image>
+  <image class="goback-btn" src="/images/go-back-left-arrow.png" bindtap="goBack"></image>
 </view>
 
 <view class="main">

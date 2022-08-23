@@ -3,7 +3,7 @@
   <!-- Trip-image  -->
   <image class="poster" mode="aspectFill" src="{{trip.image}}">
     <view class="navigation">
-      <image src="/images/homeempty-pink.png" style="height: 50rpx; width: 50rpx; position: fixed; top: 96rpx; left: 60rpx; background-color: rgba(255, 255, 255, 1); border-radius: 50%; padding: 8rpx;" bindtap="goToHome"></image>
+      <image class="home-btn" src="/images/homeempty-pink.png" bindtap="goToHome"></image>
     </view>
   </image>
 
