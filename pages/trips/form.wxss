@@ -28,14 +28,11 @@
 }
 
 button {
-  position: fixed; 
-  left: 240rpx;
-  bottom: 130rpx; 
   background-color: #E15B99;
   border: 1px solid #E15B99;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-family: 'Inter';
-  line-height: 60rpx;
+  /* line-height: 20rpx; */
   color: #FFFFFF;
 }
 
