@@ -61,6 +61,6 @@
     </view> -->
 
     <!-- Submit button -->
-    <button class="form-item" form-type="submit" style="font-weight: 700; font-size: 40rpx; width: 280rpx; border-radius: 32rpx;">Create</button>
+    <button class="form-item" form-type="submit" style="font-weight: 700; font-size: 40rpx; width: 280rpx; border-radius: 32rpx;">Save</button>
   </form>
 </view>

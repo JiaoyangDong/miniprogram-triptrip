@@ -214,15 +214,15 @@ Page({
       menus: ['shareAppMessage', 'shareTimeline']
     })
   },
-  goToHome() {
-    wx.switchTab({
-      url: 'landing',
+  goBack() {
+    wx.navigateBack({
+      delta: 1,
     })
   },
-  goToMyTrip(e) {
-    wx.switchTab({
-        url: `/pages/users/mytrips`,
-      })
+  goToTripSurvey(e) {
+    wx.redirectTo({
+      url: '/pages/bookings/form',
+    })
   }, 
   openMap(e) {
     console.log("from open map", e)
