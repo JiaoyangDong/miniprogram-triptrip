@@ -23,7 +23,12 @@ App({
             console.log("Hello from app.js: loginRes",loginRes) 
             app.globalData.user = loginRes.data.user // save in globalData, so we can use them throughout the MP
             app.globalData.header = loginRes.data.headers
-            console.log("Hello from app.js: app.globalData",app.globalData)
+            console.log('tags', loginRes.data.tags)
+            app.globalData.showTags = loginRes.data.tags
+            loginRes.data.tags.forEach((tag) => {
+              app.globalData.tags.push(tag)
+            })
+            // console.log("Hello from app.js: app.globalData",app.globalData)
             event.emit('loginFinished')
           }
         })
@@ -41,66 +46,9 @@ App({
         show: "All",
         icon: "/images/tags/all.png",
         style: "height:70rpx;width:70rpx;margin-top: 11rpx;"
-      },
-      {
-        index: 1,
-        name: "oneday",
-        show: "Day trips",
-        icon: "/images/tags/oneday.png",
-        style: ""
-      },
-      {
-        index: 2,
-        name: "weekend",
-        show: "Weekend",
-        icon: "/images/tags/weekend.png",
-        style: ""
-      },
-      {
-        index: 3,
-        name: "petfriendly",
-        show: "Pet-friendly",
-        icon: "/images/tags/petfriendly.png",
-        style: ""
-      },
-      {
-        index: 4,
-        name: "hiking",
-        show: "Hiking",
-        icon: "/images/tags/hiking.png",
-        style: "height:70rpx;width:70rpx;margin-top: 11rpx;"
-      },
-      {
-        index: 5,
-        name: "relaxing",
-        show: "Relaxing",
-        icon: "/images/tags/relaxing.png",
-        style: "height:65rpx;width:65rpx;margin-top:17rpx;"
-      },
-      {
-        index: 6,
-        name: "family",
-        show: "Family",
-        icon: "/images/tags/family.png",
-        style: "height:70rpx;width:70rpx;margin-top: 11rpx;"
-      },
-      {
-        index: 7,
-        name: "adventure",
-        show: "Adventure",
-        icon: "/images/tags/adventure.png",
-        style: "height:70rpx;width:70rpx;margin-top: 11rpx;"
-      },
-      {
-        index: 8,
-        name: "biking",
-        show: "Biking",
-        icon: "/images/tags/biking.png",
-        style: "height:70rpx;width:70rpx;margin-top: 11rpx;"
-      }
-    ],
+      }],
     // tagList: ["oneday", "weekend", "petfriendly", "hiking", "relaxing", "family", "adventure", "biking"],
-    // baseURL: "http://localhost:3000/api/v1",
-    baseURL: "https://triptrip.wogengapp.cn/api/v1"
+    baseURL: "http://localhost:3000/api/v1",
+    // baseURL: "https://triptrip.wogengapp.cn/api/v1"
   }
 })
