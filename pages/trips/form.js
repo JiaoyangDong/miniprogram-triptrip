@@ -154,9 +154,15 @@ Page({
               showCancel: false,
               confirmText: 'OK'
             })
+          } else if (res.statusCode === 500) {
+            wx.showModal({
+              title: "Trip cannot be empty!",
+              showCancel: false,
+              confirmText: 'OK'
+            })
           } else {
             wx.showToast({
-              title: "Trip created successfully",
+              title: "Trip created!",
               duration: 2000
             })  
             // call the upload
