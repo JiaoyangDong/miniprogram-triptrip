@@ -1,4 +1,48 @@
-const app = getApp()
+import * as echarts from '../../ec-canvas/echarts';
+
+const app = getApp();
+
+function initChart(canvas, width, height, dpr) {
+  const chart = echarts.init(canvas, null, {
+    width: width,
+    height: height,
+    devicePixelRatio: dpr // new
+  });
+  canvas.setChart(chart);
+
+  var option = {
+    backgroundColor: "#ffffff",
+    series: [{
+      label: {
+        normal: {
+          fontSize: 14
+        }
+      },
+      type: 'pie',
+      center: ['50%', '50%'],
+      radius: ['20%', '40%'],
+      data: [{
+        value: 55,
+        name: '北京'
+      }, {
+        value: 20,
+        name: '武汉'
+      }, {
+        value: 10,
+        name: '杭州'
+      }, {
+        value: 20,
+        name: '广州'
+      }, {
+        value: 38,
+        name: '上海'
+      }]
+    }]
+  };
+
+  chart.setOption(option);
+  return chart;
+}
 
 // pages/trips/admin.js
 Page({
@@ -7,7 +51,9 @@ Page({
    * Page initial data
    */
   data: {
-
+    ec: {
+      onInit: initChart
+    }
   },
 
   /**
@@ -46,7 +92,7 @@ Page({
       header: app.globalData.header,
       url: `${app.globalData.baseURL}/trips/${id}`,
       success(res) {
-        console.log("From show.js - onshow: res",res)
+        console.log("From show.js - onshow: res", res)
         if (res.statusCode === 200) {
           // console.log("From show.js - onshow: booking", res.data.my_booking);
           // console.log("From show.js - onshow: trip's user_id", res.data.trip.user_id)
@@ -56,7 +102,7 @@ Page({
           // const booking = res.data.my_booking;
           page.setData({
             trip: trip,
-            isBooker: isBooker, 
+            isBooker: isBooker,
             isSaved: isSaved,
             bookmarkId: res.data.bookmark_id
           });
@@ -73,7 +119,7 @@ Page({
       url: `/pages/trips/show?id=${tripId}`,
     })
   },
-  
+
   goToEdit(e) {
     const tripId = e.currentTarget.dataset.id
     wx.setStorageSync('tripId', tripId)

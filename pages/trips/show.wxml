@@ -36,7 +36,7 @@
 
 
     <view class="tags">
-      <view class="tag" wx:for="{{trip.tags}}" wx:key="*this">{{item}}</view>
+      <view class="tag"  wx:for="{{trip.tags}}" wx:key="*this">{{item}}</view>
     </view>
 
     <text class="h2">Description</text>

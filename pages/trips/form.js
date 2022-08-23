@@ -2,6 +2,7 @@ const app = getApp()
 const chooseLocation = requirePlugin('chooseLocation');
 Page({
   data: {
+    // tags: app.globalData.showTags,
     resetForm: true,
     src: "/images/image-icon.png", 
     start_date: '',
@@ -16,17 +17,17 @@ Page({
     // formData: {tags: []}
   },
   onLoad(options) {
-    let tags = app.globalData.tags.
-      filter(tag => tag.name).
-      map(function(tag) {
-      return {
-        name: tag.name, 
-        show: tag.show,
-        active: false
-      }
-    })
-    console.log({tags})
+    this.loadTags()
+  },
+  loadTags() {
+    const id = wx.getStorageSync('tripId')
+    if (!id) {
+      let tags = app.globalData.showTags
+      tags.forEach((tag) => { tag.active = false})
     this.setData({tags})
+    } else {
+
+    }
   },
   onReady() {
   },
@@ -119,7 +120,9 @@ Page({
   create(e) {
     console.log('from create button --->',e)
     const page = this
+    console.log('header:', app.globalData.header)
     let trip = this.data.formData
+    // console.log('trip:', trip)
     console.log("Update: trip", trip)
     this.setData({trip})
     if (this.data.editedId !== undefined && this.data.editedId !== null) {
@@ -227,7 +230,10 @@ Page({
       page.setData({tags})
     })
     let { formData } = this.data
-    formData = {...formData, tags}
+    let tagsToAdd = []
+    tags.forEach((tag) => { if (tag.active === true) {tagsToAdd = [...tagsToAdd, tag.id]}})
+    console.log('tagstoadd)', tagsToAdd)
+    formData = {...formData, tags: tagsToAdd}
     page.setData({formData})
   },
   goToSurvey(e) {
