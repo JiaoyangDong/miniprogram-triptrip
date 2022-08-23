@@ -55,6 +55,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/trips/landing",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/trips/admin",
+          "query": "id=128",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
