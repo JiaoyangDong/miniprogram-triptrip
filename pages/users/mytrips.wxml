@@ -48,7 +48,7 @@
             <view class="card-view card-view-filter"></view>
             <image class="card-view" src="{{item.image}}" mode="aspectFill"></image>
             <view class="trip-info">
-              <view class="join-card-title">{{item.title}}</view>
+              <view class="card-title">{{item.title}}</view>
               <view class="card-description">{{item.start_date}}</view>
               <view class="card-description">📍 {{item.location}}</view>
             </view>

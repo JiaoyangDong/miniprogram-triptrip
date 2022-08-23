@@ -1,15 +1,15 @@
 {
   "pages":[
     "pages/trips/landing",
-    "pages/users/profile",
-    "pages/users/mytrips",
-    "pages/index/index",
-    "pages/logs/logs", 
     "pages/trips/show", 
     "pages/trips/form",
     "pages/trips/admin",
     "pages/trips/survey",
-    "pages/bookings/form"
+    "pages/users/profile",
+    "pages/users/mytrips",
+    "pages/bookings/form",
+    "pages/index/index",
+    "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
