@@ -49,12 +49,18 @@ Page({
 
     } else {
       // wait until loginFinished, then fetch API
-      wx.event.on('loginFinished', this, this.getNewData)
+      wx.event.on('loginFinished', this, this.pleaseShowTags)
     }
     // page.setData({
     //   // loadingHidden: true
     //   tags: app.globalData.tags
     // })
+  },
+
+  pleaseShowTags(){
+    const tags = app.globalData.tags
+    this.setData({tags})
+    this.getNewData()
   },
 
   /**
