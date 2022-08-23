@@ -59,7 +59,6 @@ Page({
 
   pleaseShowTags(){
     const tags = app.globalData.tags
-
     this.setData({tags})
     this.getNewData()
   },
