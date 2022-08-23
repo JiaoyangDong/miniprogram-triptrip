@@ -172,8 +172,8 @@ Page({
             const id = res.data.trip.id
             page.setData({resetForm: true})
             page.upload(id)
-            wx.switchTab({
-                url: 'landing'
+            wx.navigateTo({
+              url: `/pages/trips/admin?id=${id}`,
             })
           }
         },

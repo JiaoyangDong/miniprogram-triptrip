@@ -12,6 +12,18 @@
   font-size: 10pt;
 }
 
+.goback-btn {
+  height: 35rpx;
+  width: 35rpx;
+  position: absolute;
+  top: 90rpx;
+  left: 30rpx;
+  z-index: 5;
+  background-color: rgba(255, 255, 255, 1); 
+  border-radius: 50%; 
+  padding: 15rpx
+}
+
 .h1 {
   font-family: 'Inter';
   font-style: normal;
