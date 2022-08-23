@@ -118,7 +118,7 @@ Page({
   goToAdmin(e) {
     const tripId = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: `/pages/trips/admin?id=${tripId}`,
+      url: `/pages/trips/admin?tripId=${tripId}`,
     })
   }
 })
