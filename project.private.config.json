@@ -51,7 +51,14 @@
         },
         {
           "name": "",
-          "pathName": "pages/bookings/form",
+          "pathName": "pages/trips/admin",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/trips/landing",
           "query": "",
           "launchMode": "default",
           "scene": null
