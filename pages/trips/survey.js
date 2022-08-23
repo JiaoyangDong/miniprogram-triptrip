@@ -7,7 +7,7 @@ Page({
    */
   data: {
     resetForm: true,
-    tripId:  126, // testing only
+    tripId:  137, // testing only
     yes:'/images/minus-2.png',
     no:'/images/addsurvey.png',
     questions: {
@@ -85,6 +85,7 @@ Page({
   submitSurveyCustom(){
     let page = this
     console.log(page.data.finalSurvey)
+    const finalSurvey = page.data.finalSurvey.filter(question => question)
     wx.request({
       header: app.globalData.header,
       url: `${app.globalData.baseURL}/trips/${page.data.tripId}/survey`,
@@ -92,7 +93,7 @@ Page({
       data: {
         "trip_id": page.data.tripId,
         // finalSurvey
-        "questions": page.data.finalSurvey
+        "questions": finalSurvey
         // "questions": finalSurvey
       },
       success(res) {
