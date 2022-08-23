@@ -5,7 +5,7 @@
 
 <view class="main">
   <view class="h1"> Sign up for my next trip</view>
-  <view>Booking ID: {{booking_id}}</view>
+  <view>Booking ID: {{bookingId}}</view>
   <form bindsubmit="formSubmit">
   <!-- required field -->
     <!-- <view class="form-item">

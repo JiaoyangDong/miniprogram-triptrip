@@ -22,7 +22,7 @@ Page({
   }, 
   getData() {
     let page = this
-    console.log('From show.js - onshow: options ', page.options)
+    console.log('From show.js - onshow: options trip_id ', page.options)
     let id = page.options.id
     // console.log('From show.js - onshow: options ', page.options)
     // let id = this.data.id
@@ -43,6 +43,8 @@ Page({
             isBooker: isBooker, 
             isSaved: isSaved,
             bookmarkId: res.data.bookmark_id, 
+            bookingId: res.data.booking_id, 
+            hasSurvey: res.data.has_survey,
             longitude: parseFloat(trip.longitude),
             latitude: parseFloat(trip.latitude), 
             name: trip.location
@@ -87,10 +89,10 @@ Page({
             if (res.statusCode === 201) {
               console.log("From show.js - booking submit successfully!")
               console.log("From show.js : res.data", res.data)
-              const booking = res.data.booking;
               // console.log(page)
               page.setData({
-                isBooker: true
+                isBooker: true,
+                bookingId: res.data.id
               })
               // wx.redirectTo({
               //   url: `/pages/users/profile?id=${page.options.id}`,
@@ -220,10 +222,17 @@ Page({
     })
   },
   goToTripSurvey(e) {
+    let page = this
+    console.log("bookingid:",page.data.bookingId)
     wx.redirectTo({
-      url: '/pages/bookings/form',
+      url: `/pages/bookings/form?bookingId=${page.data.bookingId}&tripId=${page.data.trip.id}`,
     })
   }, 
+  goToMyTrip(e) {
+    wx.switchTab({
+      url: `/pages/users/mytrips`,
+    })
+  },
   openMap(e) {
     console.log("from open map", e)
     const page = this
