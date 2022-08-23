@@ -7,7 +7,9 @@ Page({
    * Page initial data
    */
   data: {
+    // tripId:  126,
     // tripId:  74, // testing only
+
   },
 
   /**
@@ -28,7 +30,31 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
+    const page = this
+    if (app.globalData.header) {
+      // proceed to fetch api
+      this.getData()
+    } else {
+      // wait until loginFinished, then fetch API
+      wx.event.on('loginFinished', this, this.getData)
+    }
+  },
 
+  getData() {
+    let page = this
+    wx.request({
+      header: app.globalData.header,
+      url: `${app.globalData.baseURL}/trips/${page.data.tripId}/survey`,
+      success(res) {
+        console.log("From booking/form.js - getSurveyCustom: res",res)
+        // if (res.statusCode === 200) {
+        // }
+        
+        const questions = res.data
+        page.setData({questions})
+        console.log(questions[0].options[0])
+      }
+    })
   },
 
   /**
@@ -76,5 +102,10 @@ Page({
         // }
       }
     })
-  }
+  },
+  goToHome() {
+    wx.switchTab({
+      url: 'landing',
+    })
+  },
 })

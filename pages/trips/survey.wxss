@@ -63,7 +63,13 @@ form {
 
 .dot-point {
   display: flex; 
-  padding: 10rpx;
+  padding: 5rpx;
+}
+
+.add-msg {
+  color: grey;
+  font-style: italic;
+  margin-left: 55rpx;
 }
 
 .nameinput, .roominput, .pickinput {
@@ -83,13 +89,13 @@ form {
   padding: 12rpx 20rpx; 
   margin-top: 10rpx; 
   font-weight: 200; 
-  height: 130rpx;
+  height: 110rpx;
 }
 
 button {
   position: fixed; 
   left: 230rpx;
-  bottom: 50rpx; 
+  bottom: 70rpx; 
   background-color: #E15B99;
   border: 1px solid #E15B99;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -110,7 +116,7 @@ button {
 .option-food {
   height: 100rpx;
   width: 600rpx;
-  margin: 30rpx 30rpx;
+  margin: 70rpx 30rpx;
   padding: 20rpx 20rpx 70rpx 70rpx;
   font-size: 35rpx;
   color: black;

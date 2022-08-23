@@ -7,7 +7,7 @@ Page({
    */
   data: {
     resetForm: true,
-    // tripId:  74, // testing only
+    tripId:  126, // testing only
     yes:'/images/minus-2.png',
     no:'/images/addsurvey.png',
     questions: {
@@ -15,6 +15,8 @@ Page({
       "food": {name: "Food preference", active: false},
       "pickup": {name: "Do you need pick up?", active: false}
     },
+
+    finalSurvey : ['','',''],
     // This is a data structure example to build while submitting to the back end.
     questionsToSubmit: [
       {
@@ -24,7 +26,7 @@ Page({
           "Private Room",
           "Shared Room",
           "no preference"
-        ]
+        ],
       },
       {
         "content": "Dietary requirements?",
@@ -53,27 +55,51 @@ Page({
   selectQuestion(e) {
     console.log("toggle questions:", e)
     const page = this
-    const currentTag = e.currentTarget.dataset.tag
-    console.log("toggle questions ", currentTag)
+    // const tag = e.currentTarget.dataset.tag
+
+    const { tag, index } = e.currentTarget.dataset
+    // console.log("toggle questions ", tag)
     let questions = page.data.questions
-    questions[currentTag].active = !questions[currentTag].active
+    // questions[tag].active = !questions[tag].active
     page.setData({questions})
+    // const index = e.currentTarget.dataset.index
+    // let finalSurvey = page.data.finalSurvey
+    // const questionsToSubmit = page.data.questionsToSubmit
+
+    let { finalSurvey, questionsToSubmit } = page.data
+    if (!questions[tag].active) {
+      // if its inactive -> make it active -> add it to finalSurvey
+      questions[tag].active = true
+      finalSurvey[index] = questionsToSubmit[index]
+      page.setData({finalSurvey, questions})
+    } else {
+      // if its active -> removing from finalSurvey -> make inactive
+      finalSurvey[index] = ''
+      questions[tag].active = false
+      page.setData({finalSurvey, questions})
+    }
     console.log(page.data)
   },
  
   // this page is not a usual form. maybe it's better to use custom function rather than form-type="submit" functions. replace
   submitSurveyCustom(){
     let page = this
+    console.log(page.data.finalSurvey)
     wx.request({
       header: app.globalData.header,
       url: `${app.globalData.baseURL}/trips/${page.data.tripId}/survey`,
       method: "POST",
       data: {
         "trip_id": page.data.tripId,
-        "questions": page.data.questionsToSubmit
+        // finalSurvey
+        "questions": page.data.finalSurvey
+        // "questions": finalSurvey
       },
       success(res) {
         console.log("From survey.js - submitSurveyCustom: res",res)
+        wx.switchTab({
+          url: '/pages/users/profile',
+        })
         // if (res.statusCode === 201) {
         // }
       }
@@ -99,6 +125,24 @@ Page({
   onShow() {
     // TODO: 
     // need to page.setData tripId when first load
+    console.log('survey onShow')
+    const page = this
+    const tripId = wx.getStorageSync('id')
+    
+    // if (tripId) {
+    //   console.log('id found -> update')
+    //   wx.request({
+    //     header: app.globalData.header,
+    //     url: `${app.globalData.baseURL}/trips/${page.data.tripId}/survey`,
+    //     success(res) {
+    //       page.setData({
+    //         formData: res.data,
+    //         id: tripId
+    //       })
+    //       wx.removeStorageSync('id')
+    //     }
+    //   })
+    // }
   },
 
   /**
@@ -134,6 +178,12 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  goToHome() {
+    wx.switchTab({
+      url: 'landing',
+    })
   },
 
   goToForm(e) {
