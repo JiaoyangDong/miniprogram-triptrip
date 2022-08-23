@@ -23,6 +23,15 @@
   font-size: 30rpx;
 }
 
+.input-box {
+  border: 2rpx solid #E15B99; 
+  border-radius: 30rpx; 
+  padding: 4rpx 30rpx; 
+  margin-top: 10rpx; 
+  font-weight: 200; 
+  height: 55rpx;
+}
+
 .form-item {
   margin-top: 40rpx;
   margin-bottom: 20rpx;

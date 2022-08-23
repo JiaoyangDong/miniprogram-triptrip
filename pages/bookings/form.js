@@ -7,7 +7,8 @@ Page({
    * Page initial data
    */
   data: {
-    // tripId:  126,
+    tripId:  137,
+    formData: {}
     // tripId:  74, // testing only
 
   },
@@ -42,6 +43,7 @@ Page({
 
   getData() {
     let page = this
+    let options = page.options
     wx.request({
       header: app.globalData.header,
       url: `${app.globalData.baseURL}/trips/${page.data.tripId}/survey`,
@@ -49,7 +51,7 @@ Page({
         console.log("From booking/form.js - getSurveyCustom: res",res)
         // if (res.statusCode === 200) {
         // }
-        
+        // const booking_id = options.booking_id
         const questions = res.data
         page.setData({questions})
         console.log(questions[0].options[0])
@@ -91,18 +93,53 @@ Page({
   onShareAppMessage() {
 
   },
-  getSurveyCustom(){
-    let page = this
+
+  // formSubmit: function (e) {
+  //   console.loh('form is submitted: ', e.detail.value);
+  //   let { attendee } = e.detail.value
+  //   this.setData({
+  //     attendee
+  //   })
+  // },
+  radioChange(e) {
+    console.log('radio change ', e)
+    const questions = this.data.questions
+    // question = 
+    // questions.forEach((question) => {
+    // })
+    for (let i = 0, len = questions.length; i < len; ++i) {
+      questions[i].checked = questions[i].answer === e.detail.value
+    }
+    console.log(answers)
+    this.setData({answers})
+  },
+ 
+  formSubmit (e) {
+    const page = this
+    // let formData = this.data.questions
+    // let answer = this.data.formData
+    // console.log(page.data.answer)
+    // this.setData({questions})
+    // const finalSurvey = page.data.finalSurvey.filter(question => question)
     wx.request({
       header: app.globalData.header,
-      url: `${app.globalData.baseURL}/trips/${page.data.tripId}/survey`,
+      url: `${app.globalData.baseURL}/trips/${page.data.tripId}/answer`,
+      method: "POST",
+      data: {
+        "answer": answer
+
+      },
       success(res) {
-        console.log("From booking/form.js - getSurveyCustom: res",res)
-        // if (res.statusCode === 200) {
+        console.log("From survey.js - submitSurveyCustom: res",res)
+        wx.switchTab({
+          url: '/pages/users/profile',
+        })
+        // if (res.statusCode === 201) {
         // }
       }
     })
   },
+
   goToHome() {
     wx.switchTab({
       url: 'landing',
