@@ -140,9 +140,9 @@ Page({
     })
   },
 
-  goToHome() {
-    wx.switchTab({
-      url: 'landing',
+  goBack() {
+    wx.navigateBack({
+      delta: 1,
     })
   },
 })
