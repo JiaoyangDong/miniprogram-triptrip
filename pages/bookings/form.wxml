@@ -1,0 +1,4 @@
+<!--pages/bookings/form.wxml-->
+<text>pages/bookings/form.wxml</text>
+<button bindtap="getSurveyCustom">get survey (custom) </button>
+
