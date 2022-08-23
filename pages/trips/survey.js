@@ -98,11 +98,17 @@ Page({
       },
       success(res) {
         console.log("From survey.js - submitSurveyCustom: res",res)
-        wx.switchTab({
-          url: '/pages/users/profile',
-        })
-        // if (res.statusCode === 201) {
-        // }
+        if (res.statusCode === 201) {
+          wx.navigateBack({
+            delta: 0,
+          })
+        } else if (res.statusCode === 404)  {
+            wx.showModal({
+              title: "Survey cannot be empty!",
+              showCancel: false,
+              confirmText: 'OK'
+            })
+        }
       }
     })
   },
@@ -192,5 +198,10 @@ Page({
     wx.navigateTo({
         url: `/pages/trips/form`,
       })
-  }
+  }, 
+  goBack() {
+    wx.navigateBack({
+      delta: 1,
+    })
+  },
 })
