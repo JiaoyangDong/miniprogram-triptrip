@@ -193,15 +193,9 @@ Page({
     })
   },
 
-  goToForm(e) {
-    console.log('From survey.js - goToFrom: e', e)
-    wx.navigateTo({
-        url: `/pages/trips/form`,
-      })
-  }, 
   goBack() {
     wx.navigateBack({
-      delta: 1,
+      delta: 0,
     })
   },
 })
