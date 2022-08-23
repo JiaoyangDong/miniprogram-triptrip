@@ -29,14 +29,14 @@
     <!-- MAP -->
     <view class="map" style="margin-top: 16rpx;">
     <view bindtap="openMap" style="display: flex; align-items: center;">
-      <image class="icon" style="width: 50rpx; height: 50rpx;" src="/images/map.png"></image>
-      <text style="margin-left: 12rpx">{{trip.location}}</text>
+    <!-- <image class="icon" style="width: 50rpx; height: 50rpx;" src="/images/map.png"></image> -->
+      <text style="color:#5e5c5c; padding: 8rpx 0 4rpx 0;">{{trip.location}}</text>
     </view>
     </view>
 
 
     <view class="tags">
-      <view class="tag" wx:for="{{trip.tags}}" wx:key="*this">{{item}}</view>
+      <view class="tag"  wx:for="{{trip.tags}}" wx:key="*this">{{item}}</view>
     </view>
 
     <text class="h2">Description</text>
