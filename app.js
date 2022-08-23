@@ -48,7 +48,7 @@ App({
         style: "height:70rpx;width:70rpx;margin-top: 11rpx;"
       }],
     // tagList: ["oneday", "weekend", "petfriendly", "hiking", "relaxing", "family", "adventure", "biking"],
-    // baseURL: "http://localhost:3000/api/v1",
+    // baseURL: "http://localhost:3000/api/v1"
     baseURL: "https://triptrip.wogengapp.cn/api/v1"
   }
 })
