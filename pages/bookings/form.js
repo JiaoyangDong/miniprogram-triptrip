@@ -26,12 +26,12 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-    console.log("options->", options)
+    console.log("options-> ", options)
     this.setData({
-      tripId: options.tripId, 
+      tripId: options.tripId,
       name: options.tripTitle
-      // name: options.name
     })
+
   },
 
   /**
