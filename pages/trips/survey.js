@@ -119,6 +119,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
+    console.log('options ->', options)
   },
 
   /**
@@ -134,14 +135,24 @@ Page({
   onShow() {
     // TODO: 
     // need to page.setData tripId when first load
+    // const page = this
+    // if (app.globalData.header) {
+    //   // proceed to fetch api
+    //   page.getData()
+    // }
     console.log('survey onShow')
-    const page = this
-
+    // const page = this
+    // console.log(this)
+    // const tripId = this.data.
+    // page.setData({tripId : page})
   },
-
-  /**
-   * Lifecycle function--Called when page hide
-   */
+  getData() {
+    let page = this
+    let tripId = page.options.tripId
+    console.log(tripId)
+    console.log(page.options)
+  },
+  
   onHide() {
 
   },

@@ -63,7 +63,7 @@ Page({
   getData() {
     let page = this
     let tripId = page.options.tripId
-    console.log(page.options)
+    // console.log('page options ->', page.options)
     wx.request({
       header: app.globalData.header,
       url: `${app.globalData.baseURL}/trips/${tripId}/stats`,
@@ -152,8 +152,9 @@ Page({
     })
   },
   goToSurvey() {
+    const tripId = this.data.trip.id
     wx.navigateTo({
-      url: 'survey',
+      url: `survey?id=${tripId}`,
     })
   },
   init: function (data) {

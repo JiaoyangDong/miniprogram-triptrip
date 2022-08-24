@@ -33,7 +33,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-    console.log(options)
+    console.log("options->", options)
       this.setData({tripId: options.tripid})
   },
 
@@ -49,7 +49,6 @@ Page({
    */
   onShow() {
     this.getData()
-
   },
 
   getData() {
@@ -151,10 +150,16 @@ Page({
       url: `${app.globalData.baseURL}/trips/${page.data.tripId}/answer`,
       method: "POST",
       data: {
-        finalAnswer: finalAnswer
+        booking_id : bookingId,
+        questions: finalAnswer
       },
       success(res) {
         console.log("From survey.js - submitSurveyCustom: res",res)
+        wx.showModal({
+          title: 'Note',
+          content: 'Booking confirmed!', 
+          confirmText: 'OK'
+        })
         wx.switchTab({
           url: '/pages/users/mytrips',
         })
