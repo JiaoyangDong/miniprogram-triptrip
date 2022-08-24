@@ -20,6 +20,7 @@ Page({
   },
   onLoad(options) {
     this.loadTags()
+    wx.setStorageSync('new', true)
   },
   loadTags() {
     const id = wx.getStorageSync('tripId')
@@ -45,6 +46,10 @@ Page({
       const longitude = current_location.longitude
       const latitude = current_location.latitude
       formData = {...formData, address, location, longitude, latitude}
+      page.setData({formData})
+    } 
+    if(wx.getStorageSync('new')) {
+      formData['location'] = ''
       page.setData({formData})
     }
     // if (page.data.resetForm) page.resetForm();
@@ -136,6 +141,7 @@ Page({
   }, 
 
   create(e) {
+    wx.setStorageSync('new', true)
     console.log('from create button --->',e)
     const page = this
     console.log('header:', app.globalData.header)
@@ -160,8 +166,11 @@ Page({
           console.log('update success?', res)
           page.upload(page.data.tripId)
           page.setData({resetForm: true})
-          wx.switchTab({
-            url: '/pages/trips/landing',
+          // wx.switchTab({
+          //   url: '/pages/trips/landing',
+          // })
+          wx.navigateBack({
+            delta: 0,
           })
         }
       })
@@ -226,6 +235,7 @@ Page({
   }, 
 
   showMap(e) {
+    wx.setStorageSync('new', false)
     const key = 'VP6BZ-FMPCR-U4SWP-WQTQI-BGOQE-RLF3L'//使用在腾讯位置服务申请的key
     const referer = 'triptrip' //调用插件的app的名称
     // const location = JSON.stringify({
