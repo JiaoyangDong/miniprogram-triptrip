@@ -6,8 +6,10 @@ Page({
    * Page initial data
    */
   data: {
+    formData: {},
     resetForm: true,
-    tripId:  137, // testing only
+    // tripId: 117, // testing only
+    // tripId:  137, // testing only
     yes:'/images/minus-2.png',
     no:'/images/addsurvey.png',
     questions: {
@@ -134,22 +136,7 @@ Page({
     // need to page.setData tripId when first load
     console.log('survey onShow')
     const page = this
-    const tripId = wx.getStorageSync('id')
-    
-    // if (tripId) {
-    //   console.log('id found -> update')
-    //   wx.request({
-    //     header: app.globalData.header,
-    //     url: `${app.globalData.baseURL}/trips/${page.data.tripId}/survey`,
-    //     success(res) {
-    //       page.setData({
-    //         formData: res.data,
-    //         id: tripId
-    //       })
-    //       wx.removeStorageSync('id')
-    //     }
-    //   })
-    // }
+
   },
 
   /**
