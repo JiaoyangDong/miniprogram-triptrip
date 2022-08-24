@@ -128,11 +128,11 @@ Page({
     // console.log('trip:', trip)
     console.log("Update: trip", trip)
     page.setData({trip})
-    if (page.data.editedId !== undefined && page.data.editedId !== null) {
+    if (page.data.tripId !== undefined && page.data.tripId !== null) {
       // edit form
       wx.request({
         header: app.globalData.header,
-        url: `${app.globalData.baseURL}/trips/${page.data.editedId}`,
+        url: `${app.globalData.baseURL}/trips/${page.data.tripId}`,
         method: 'PUT',
         data: {
           trip: trip,

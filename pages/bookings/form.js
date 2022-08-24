@@ -130,7 +130,7 @@ Page({
     console.log('header:', app.globalData.header)
     let answer = this.data.finalAnswer
     let bookingId = this.data.bookingId
-
+    console.log("answer:", answer)
     wx.request({
       header: app.globalData.header,
       url: `${app.globalData.baseURL}/trips/${page.data.tripId}/answer`,
