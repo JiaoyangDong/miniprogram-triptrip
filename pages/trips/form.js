@@ -182,7 +182,7 @@ Page({
             page.setData({resetForm: true})
             page.upload(id)
             wx.navigateTo({
-              url: `/pages/trips/admin?id=${id}`,
+              url: `/pages/trips/admin?tripId=${id}`,
             })
           }
         },
