@@ -7,7 +7,7 @@ const app = getApp();
 function setOption(chart, data) {
   console.log("from setOptions")
   let options =  {
-    backgroundColor: "#ffffff",
+    backgroundColor: "#eee",
     series: [{
       label: {
         normal: {
@@ -94,7 +94,7 @@ Page({
           if (res.data.has_survey){
             let ecComponent = page.selectComponent('#mychart-dom-bar');
             page.init(ecComponent, questions[0].clean_answers)
-            // console.log()
+            console.log(questions[0].clean_answers)
             // for loop
             // page.data.questions.forEach((q,index)=> {
             //   let ecComponent = page.selectComponent(`#mychart-dom-bar-${index}`);
