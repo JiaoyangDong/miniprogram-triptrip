@@ -1,5 +1,6 @@
 const app = getApp()
 const chooseLocation = requirePlugin('chooseLocation');
+
 Page({
   data: {
     // tags: app.globalData.showTags,
@@ -27,7 +28,7 @@ Page({
       tags.map((tag) => { tag.active = false})
     this.setData({tags})
     } else {
-
+      
     }
   },
   onReady() {
@@ -59,10 +60,23 @@ Page({
           console.log(data)
           page.setData({
             // locationsIndex: data.locations.findIndex(el => (el === res.data.locations)),
-            formData: res.data.trip,
+            formData: {
+              title: res.data.trip.title,
+              address: res.data.trip.address,
+              location: res.data.trip.location,
+              longitude: res.data.trip.longitude,
+              latitude: res.data.trip.latitude,
+              description: res.data.trip.description,
+              start_date: res.data.trip.start_date,
+              end_date: res.data.trip.end_date,
+            },
             tripId: id,
+            src: res.data.trip.image,
             tags: res.data.trip.tags
           })
+          const startDateShow = wx.se.prettyDate(res.data.trip.start_date)
+          const endDateShow = wx.se.prettyDate(res.data.trip.end_date)
+          page.setData({startDateShow, endDateShow})
           wx.removeStorageSync('tripId')
         }
       })
@@ -81,11 +95,13 @@ Page({
     let { formData } = this.data
     const { field } = e.currentTarget.dataset
     if ( field == 'start_date') {
-      formData.start_date = e.detail.value,
-      this.setData({ formData, start_date: e.detail.value })
+      formData.start_date = e.detail.value
+      const startDateShow = wx.se.prettyDate(e.detail.value)
+      this.setData({ formData, startDateShow })
     } else if ( field == 'end_date') {
-      formData.end_date = e.detail.value,
-      this.setData({ formData, end_date: e.detail.value })
+      formData.end_date = e.detail.value
+      const endDateShow = wx.se.prettyDate(e.detail.value)
+      this.setData({ formData, endDateShow })
     }
   },
   listenerBtnChooseImage: function () {
@@ -130,11 +146,11 @@ Page({
     page.setData({trip})
     console.log("this data to send -> ", page.data.trip)
     // if (page.data.editedId !== undefined && page.data.editedId !== null) {
-      if (page.data.trip.id !== undefined && page.data.trip.id !== null) {
+      if (page.data.tripId !== undefined && page.data.tripId !== null) {
       // edit form
       wx.request({
         header: app.globalData.header,
-        url: `${app.globalData.baseURL}/trips/${page.data.trip.id}`,
+        url: `${app.globalData.baseURL}/trips/${page.data.tripId}`,
         method: 'PUT',
         data: {
           trip: trip,
@@ -142,6 +158,7 @@ Page({
         },
         success(res) {
           console.log('update success?', res)
+          page.upload(page.data.tripId)
           page.setData({resetForm: true})
           wx.switchTab({
             url: '/pages/trips/landing',
@@ -247,5 +264,5 @@ Page({
     wx.navigateTo({
         url: `/pages/trips/survey`,
       })
-  }
+  }, 
 })

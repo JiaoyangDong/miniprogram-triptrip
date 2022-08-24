@@ -22,12 +22,12 @@
       <view style="display: flex; justify-content: space-between; margin-top: 5rpx;">
         <picker mode="date" value="{{formData.start_date}}" data-field="start_date" bindchange="bindDateChange"> from:
           <view class="picker" style="border: 1px solid #E15B99; border-radius: 30px; padding: 0rpx 30rpx; min-width: 200rpx; display: flex; align-items: center;">
-            {{formData.start_date}}
+            {{startDateShow}}
           </view>
         </picker>
         <picker mode="date" data-field="end_date" value="{{formData.end_date}}" bindchange="bindDateChange"> to:
           <view class="picker" style="border: 1px solid #E15B99; border-radius: 30px; padding: 0rpx 30rpx; min-width: 200rpx; display: flex; align-items: center;">
-            {{formData.end_date}}
+            {{endDateShow}}
           </view>
         </picker>
       </view>
