@@ -2,46 +2,25 @@ import * as echarts from '../../ec-canvas/echarts';
 
 const app = getApp();
 
-function initChart(canvas, width, height, dpr) {
-  const chart = echarts.init(canvas, null, {
-    width: width,
-    height: height,
-    devicePixelRatio: dpr // new
-  });
-  canvas.setChart(chart);
-
-  var option = {
+//  testing only 
+// data = [{name: 'A1', value: 3}, {name: 'A2', value: 5}]
+function setOption(chart, data) {
+  console.log("from setOptions")
+  let options =  {
     backgroundColor: "#ffffff",
     series: [{
       label: {
         normal: {
-          fontSize: 14
+          fontSize: 18
         }
       },
       type: 'pie',
       center: ['50%', '50%'],
-      radius: ['20%', '40%'],
-      data: [{
-        value: 55,
-        name: '北京'
-      }, {
-        value: 20,
-        name: '武汉'
-      }, {
-        value: 10,
-        name: '杭州'
-      }, {
-        value: 20,
-        name: '广州'
-      }, {
-        value: 38,
-        name: '上海'
-      }]
+      radius: ['20%', '50%'],
+      data: data
     }]
-  };
-
-  chart.setOption(option);
-  return chart;
+  } 
+  chart.setOption(options);
 }
 
 // pages/trips/admin.js
@@ -52,8 +31,8 @@ Page({
    */
   data: {
     ec: {
-      onInit: initChart
-    }
+      lazyLoad: true
+    },
   },
 
   /**
@@ -67,7 +46,7 @@ Page({
    * Lifecycle function--Called when page is initially rendered
    */
   onReady() {
-
+    this.ecComponent = this.selectComponent('#mychart-dom-bar');
   },
 
   /**
@@ -84,33 +63,31 @@ Page({
   },
   getData() {
     let page = this
-    let id = page.options.id
-    console.log(id)
-    // console.log('From show.js - onshow: options ', page.options)
-    // let id = this.data.id
+    let tripId = page.options.tripId
+    console.log(page.options)
     wx.request({
       header: app.globalData.header,
-      url: `${app.globalData.baseURL}/trips/${id}`,
+      url: `${app.globalData.baseURL}/trips/${tripId}/stats`,
       success(res) {
-        console.log("From show.js - onshow: res", res)
+        console.log("From admin.js: res", res)
         if (res.statusCode === 200) {
-          // console.log("From show.js - onshow: booking", res.data.my_booking);
-          // console.log("From show.js - onshow: trip's user_id", res.data.trip.user_id)
-          const trip = res.data.trip;
-          const isBooker = res.data.is_booker;
-          const isSaved = res.data.is_saved;
-          // const booking = res.data.my_booking;
+          const questions = res.data.questions;
+          const attendees = res.data.attendees;
           page.setData({
-            trip: trip,
-            isBooker: isBooker,
-            isSaved: isSaved,
-            bookmarkId: res.data.bookmark_id
+            questions,
+            attendees
           });
-          console.log("From show.js: status code is", res.statusCode)
+          // page.setEC(questions[0].clean_answers)
+          console.log(questions[0].clean_answers)
+          page.init(questions[0].clean_answers)
+        } else {
+          console.log("request fails: res ",res)
+          console.log("From admin.js: status code is", res.statusCode)
         }
       }
     })
   },
+
 
   goToShow(e) {
     const tripId = e.currentTarget.dataset.id
@@ -172,5 +149,30 @@ Page({
     wx.navigateTo({
       url: 'survey',
     })
-  }
+  },
+  init: function (data) {
+    console.log("from page.init")
+    console.log("fthis.ecComponent",this.ecComponent)
+
+    this.ecComponent.init((canvas, width, height, dpr) => {
+      // 获取组件的 canvas、width、height 后的回调函数
+      // 在这里初始化图表
+      const chart = echarts.init(canvas, null, {
+        width: width,
+        height: height,
+        devicePixelRatio: dpr // new
+      });
+      setOption(chart, data);
+      // barChart.setOption(getRadioOptions(ecData))
+
+      // 将图表实例绑定到 this 上，可以在其他成员函数（如 dispose）中访问
+      this.chart = chart;
+      this.setData({
+        // isLoaded: true,
+        // isDisposed: false
+      });
+      // 注意这里一定要返回 chart 实例，否则会影响事件处理等
+      return chart;
+    });
+  },
 })

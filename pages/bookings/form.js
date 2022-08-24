@@ -7,7 +7,7 @@ Page({
    * Page initial data
    */
   data: {
-    tripId:  137,
+    // tripId:  137,
     formData: {}
     // tripId:  74, // testing only
 
@@ -44,17 +44,21 @@ Page({
   getData() {
     let page = this
     let options = page.options
+    const bookingId = page.options.bookingId
     wx.request({
       header: app.globalData.header,
-      url: `${app.globalData.baseURL}/trips/${page.data.tripId}/survey`,
+      url: `${app.globalData.baseURL}/trips/${options.tripId}/survey`,
       success(res) {
         console.log("From booking/form.js - getSurveyCustom: res",res)
-        // if (res.statusCode === 200) {
-        // }
-        // const booking_id = options.booking_id
-        const questions = res.data
-        page.setData({questions})
-        console.log(questions[0].options[0])
+        if (res.statusCode === 200) {
+          // const booking_id = options.booking_id
+          const questions = res.data
+          page.setData({
+            questions,
+            bookingId
+          })
+          // console.log(questions[0].options[0])
+        }
       }
     })
   },
@@ -140,9 +144,9 @@ Page({
     })
   },
 
-  goToHome() {
-    wx.switchTab({
-      url: 'landing',
+  goBack() {
+    wx.navigateBack({
+      delta: 1,
     })
   },
 })

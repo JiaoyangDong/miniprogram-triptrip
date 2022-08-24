@@ -1,11 +1,11 @@
 <!--pages/bookings/form.wxml-->
 <view class="navigation">
-  <image src="/images/homeempty-pink.png" style="height: 60rpx; width: 60rpx; position: fixed; top: 50px; left: 30px;" bindtap="goToHome"></image>
+  <image class="goback-btn" src="/images/go-back-left-arrow.png" bindtap="goBack"></image>
 </view>
 
 <view class="main">
   <view class="h1"> Sign up for my next trip</view>
-  <view>Booking ID: {{booking_id}}</view>
+  <view>Booking ID: {{bookingId}}</view>
   <form bindsubmit="formSubmit">
   <!-- required field -->
     <!-- <view class="form-item">
