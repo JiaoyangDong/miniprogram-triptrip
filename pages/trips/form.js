@@ -11,7 +11,8 @@ Page({
     location: '',
     formData: {}, 
     longitude: '',
-    latitude: ''
+    latitude: '',
+    formTags: {}
     // TODO: set tags into form data
     // tags: []
     // formData: {tags: []}
@@ -23,7 +24,7 @@ Page({
     const id = wx.getStorageSync('tripId')
     if (!id) {
       let tags = app.globalData.showTags
-      tags.forEach((tag) => { tag.active = false})
+      tags.map((tag) => { tag.active = false})
     this.setData({tags})
     } else {
 
@@ -59,7 +60,8 @@ Page({
           page.setData({
             // locationsIndex: data.locations.findIndex(el => (el === res.data.locations)),
             formData: res.data.trip,
-            tripId: id
+            tripId: id,
+            tags: res.data.trip.tags
           })
           wx.removeStorageSync('tripId')
         }
@@ -121,17 +123,21 @@ Page({
     console.log('from create button --->',e)
     const page = this
     console.log('header:', app.globalData.header)
-    let trip = this.data.formData
+    let trip = page.data.formData
+    const tags = page.data.formTags
     // console.log('trip:', trip)
     console.log("Update: trip", trip)
-    this.setData({trip})
-    if (this.data.editedId !== undefined && this.data.editedId !== null) {
+    page.setData({trip})
+    if (page.data.editedId !== undefined && page.data.editedId !== null) {
       // edit form
       wx.request({
         header: app.globalData.header,
         url: `${app.globalData.baseURL}/trips/${page.data.editedId}`,
         method: 'PUT',
-        data: {trip: trip},
+        data: {
+          trip: trip,
+          tags: tags
+        },
         success(res) {
           console.log('update success?', res)
           page.setData({resetForm: true})
@@ -147,7 +153,10 @@ Page({
         header: app.globalData.header,
         url: `${app.globalData.baseURL}/trips`,
         method: 'POST',
-        data: { trip: trip },
+        data: {
+          trip: trip,
+          tags: tags
+        },
         success(res) {
           console.log('update success?', res)
           if (res.statusCode === 422) {
@@ -229,12 +238,14 @@ Page({
       if (tag.name === currentTag) tag.active = !tag.active
       page.setData({tags})
     })
-    let { formData } = this.data
+    let { formData, formTags } = this.data
     let tagsToAdd = []
     tags.forEach((tag) => { if (tag.active === true) {tagsToAdd = [...tagsToAdd, tag.id]}})
     console.log('tagstoadd)', tagsToAdd)
-    formData = {...formData, tags: tagsToAdd}
-    page.setData({formData})
+    // formData = {...formData, tags: tagsToAdd}
+    // page.setData({formData})
+    formTags = {...formTags, tags: tagsToAdd}
+    page.setData({formTags})
   },
   goToSurvey(e) {
     console.log('From form.js - goToSurvey: e', e)
