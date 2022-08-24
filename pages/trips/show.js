@@ -230,7 +230,7 @@ Page({
     let page = this
     console.log("bookingid:",page.data.bookingId)
     wx.redirectTo({
-      url: `/pages/bookings/form?bookingId=${page.data.bookingId}&tripId=${page.data.trip.id}`,
+      url: `/pages/bookings/form?bookingId=${page.data.bookingId}&tripId=${page.data.trip.id}&tripTitle=${page.data.trip.title}`,
     })
   }, 
   goToMyTrip(e) {

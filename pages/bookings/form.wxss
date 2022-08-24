@@ -1,21 +1,24 @@
 /* pages/bookings/form.wxss */
 .navigation {
-  height: 160rpx;
+  height: 200rpx;
+  width: 100%;
+  /* background-color: royalblue; */
 }
-.main {
-  padding: 20rpx 80rpx;
-  padding-top: 50rpx;
-  padding-bottom: 200rpx;
+.container {
+  padding: 0;
+  background-color: #fce1ee
 }
 
 .h1 {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
-  font-size: 50rpx;
+  font-size: 45rpx;
   line-height: 60rpx;
   color: #000000;
   text-align: center;
+  margin-bottom: 100rpx;
+  
 }
 .goback-btn {
   height: 35rpx;
@@ -43,11 +46,14 @@
   height: 55rpx;
 }
 
-.form-item {
-  margin-top: 40rpx;
-  margin-bottom: 20rpx;
-  font-weight: 400;
-  font-size: 10pt;
+.form {
+  border-radius: 50rpx;
+  background-color: white;
+  min-height: 80vh;
+  padding: 60rpx 90rpx;
+  width: 76vw;
+  z-index: 4; 
+  margin-top: -60rpx;
 }
 
 .question {
@@ -70,4 +76,12 @@
   font-family: 'Inter';
   line-height: 60rpx;
   color: #FFFFFF;
+}
+.radio-group {
+  display: flex;
+  padding: 5rpx 5rpx 5rpx 0;
+}
+.radio {
+  display: block;
+  margin-right: 10rpx;
 }
