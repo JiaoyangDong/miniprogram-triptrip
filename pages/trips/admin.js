@@ -46,7 +46,6 @@ Page({
    * Lifecycle function--Called when page is initially rendered
    */
   onReady() {
-    this.ecComponent = this.selectComponent('#mychart-dom-bar');
   },
 
   /**
@@ -73,13 +72,20 @@ Page({
         if (res.statusCode === 200) {
           const questions = res.data.questions;
           const attendees = res.data.attendees;
+          const trip = res.data.trip;
           page.setData({
             questions,
-            attendees
+            attendees,
+            trip,
+            hasSurvey: res.data.has_survey
           });
           // page.setEC(questions[0].clean_answers)
-          console.log(questions[0].clean_answers)
-          page.init(questions[0].clean_answers)
+          if (res.data.has_survey){
+            page.ecComponent = page.selectComponent('#mychart-dom-bar');
+            console.log("init EC, question:", questions[0].clean_answers)
+            // console.log(page)
+            page.init(questions[0].clean_answers)
+          }
         } else {
           console.log("request fails: res ",res)
           console.log("From admin.js: status code is", res.statusCode)
@@ -152,7 +158,6 @@ Page({
   },
   init: function (data) {
     console.log("from page.init")
-    console.log("fthis.ecComponent",this.ecComponent)
 
     this.ecComponent.init((canvas, width, height, dpr) => {
       // 获取组件的 canvas、width、height 后的回调函数
