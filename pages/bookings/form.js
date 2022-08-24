@@ -33,8 +33,12 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-    console.log("options->", options)
-      this.setData({tripId: options.tripid})
+    console.log("options-> ", options)
+    this.setData({
+      tripId: options.tripId,
+      name: options.tripTitle
+    })
+
   },
 
   /**

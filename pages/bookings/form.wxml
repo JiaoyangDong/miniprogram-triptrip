@@ -4,7 +4,7 @@
 </view>
 
 <view class="main">
-  <view class="h1"> Sign up for my next trip</view>
+  <view class="h1"> Sign up for {{name}}</view>
   <view>Booking ID: {{bookingId}}</view>
   <form bindsubmit="formSubmit">
   <!-- required field -->
@@ -15,7 +15,7 @@
 
   <!-- survey field -->
     <view class="form-item">
-        <radio-group class="radio-group" bindchange="radioChange" wx:for="{{questions}}" wx:for-item="question" data-id="{{question.id}}">
+        <radio-group class="radio-group" wx:key="key" bindchange="radioChange" wx:for="{{questions}}" wx:for-item="question" data-id="{{question.id}}">
           {{question.id}}
           <view class="question">
             <view class="h2" wx:item="{{item}}">{{question.content}}</view>
