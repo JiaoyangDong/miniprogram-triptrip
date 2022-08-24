@@ -221,6 +221,11 @@ Page({
       delta: 1,
     })
   },
+  goBack() {
+    wx.navigateBack({
+      delta: 1,
+    })
+  },
   goToTripSurvey(e) {
     let page = this
     console.log("bookingid:",page.data.bookingId)
