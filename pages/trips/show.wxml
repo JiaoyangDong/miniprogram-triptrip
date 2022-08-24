@@ -50,5 +50,6 @@
       <view>Signed up!</view> 
       <view> Go to my trips.</view>
     </button>
+    <!-- <button bindtap="goToSurvey">go to survey(test)</button> -->
   </view>
 </view>

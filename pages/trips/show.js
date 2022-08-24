@@ -224,6 +224,12 @@ Page({
         url: `/pages/users/mytrips`,
       })
   }, 
+  goToSurvey(e) {
+    const id = this.options.id
+    wx.redirectTo({
+      url: `/pages/bookings/form?tripid=${id}`,
+    })
+  },
   openMap(e) {
     console.log("from open map", e)
     const page = this

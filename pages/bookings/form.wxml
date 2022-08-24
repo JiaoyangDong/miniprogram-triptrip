@@ -1,6 +1,6 @@
 <!--pages/bookings/form.wxml-->
 <view class="navigation">
-  <image src="/images/homeempty-pink.png" style="height: 60rpx; width: 60rpx; position: fixed; top: 50px; left: 30px;" bindtap="goToHome"></image>
+  <image src="/images/homeempty-pink.png" style="height: 60rpx; width: 60rpx; position: fixed; top: 50px; left: 30px;" bindtap="goBack"></image>
 </view>
 
 <view class="main">
@@ -17,12 +17,13 @@
     <view class="form-item">
         <radio-group class="radio-group" bindchange="radioChange" wx:for="{{questions}}" wx:for-item="question" data-id="{{question.id}}">
           {{question.id}}
-          <view class="question"><label class="h2" wx:item="{{item}}">{{question.content}}
-          </label></view>
+          <view class="question">
+            <view class="h2" wx:item="{{item}}">{{question.content}}</view>
+          </view>
 
           <view class="answer">
             <label wx:for="{{question.options}}" wx:for-item="option">
-              <radio value="{{option}}"/>{{option}}
+              <radio data-id="{{question.id}}" color="#E15B99" value="{{option}}"/>{{option}}
             </label>
           </view>
             <!-- <radio wx:item="{{item.options}}" value="{{item.options[0]}}" checked="false"/>{{item.options[0]}}
