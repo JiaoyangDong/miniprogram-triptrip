@@ -226,6 +226,11 @@ Page({
       delta: 1,
     })
   },
+  goToHome() {
+    wx.switchTab({
+      url: 'landing',
+    })
+  },
   goToTripSurvey(e) {
     let page = this
     console.log("bookingid:",page.data.bookingId)
