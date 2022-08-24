@@ -235,7 +235,13 @@ Page({
   }, 
   goToMyTrip(e) {
     wx.switchTab({
-      url: `/pages/users/mytrips`,
+        url: `/pages/users/mytrips`,
+      })
+  }, 
+  goToSurvey(e) {
+    const id = this.options.id
+    wx.redirectTo({
+      url: `/pages/bookings/form?tripid=${id}`,
     })
   },
   openMap(e) {

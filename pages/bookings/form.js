@@ -8,16 +8,33 @@ Page({
    */
   data: {
     // tripId:  137,
-    formData: {}
+    // tripId: 117, // testing only
+    finalAnswer: [],
+    answerSample: {
+      "booking_id": 15,
+      "questions":
+        [{
+            "id": 10,
+            "answer": "Private Room"
+          },
+          {
+            "id": 11,
+            "answer": "Vegetarian"
+          },
+          {
+            "id": 12,
+            "answer": "Yes"
+          }]
+    }
     // tripId:  74, // testing only
-
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-
+    console.log("options->", options)
+      this.setData({tripId: options.tripid})
   },
 
   /**
@@ -31,14 +48,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
-    const page = this
-    if (app.globalData.header) {
-      // proceed to fetch api
-      this.getData()
-    } else {
-      // wait until loginFinished, then fetch API
-      wx.event.on('loginFinished', this, this.getData)
-    }
+    this.getData()
   },
 
   getData() {
@@ -98,55 +108,59 @@ Page({
 
   },
 
-  // formSubmit: function (e) {
-  //   console.loh('form is submitted: ', e.detail.value);
-  //   let { attendee } = e.detail.value
-  //   this.setData({
-  //     attendee
-  //   })
-  // },
   radioChange(e) {
-    console.log('radio change ', e)
-    const questions = this.data.questions
-    // question = 
-    // questions.forEach((question) => {
-    // })
-    for (let i = 0, len = questions.length; i < len; ++i) {
-      questions[i].checked = questions[i].answer === e.detail.value
+    // console.log('radio change: ', e)
+    const answer = e.detail.value
+    const id = e.target.dataset.id
+    let { finalAnswer } = this.data
+    // console.log('answer: ', answer)
+    // console.log('id: ', id)
+
+    const oldAnswer = finalAnswer.find((answer) => answer.id === id)
+
+    if (oldAnswer) {
+      oldAnswer.answer = answer
+    } else {
+      let tempAnswer = { id: id, answer: answer }
+      finalAnswer = [...finalAnswer, tempAnswer]
     }
-    console.log(answers)
-    this.setData({answers})
+
+    this.setData({finalAnswer})
   },
  
-  formSubmit (e) {
+  formSubmit(e) {
+    console.log('from formSubmit --->',e)
     const page = this
-    // let formData = this.data.questions
-    // let answer = this.data.formData
-    // console.log(page.data.answer)
-    // this.setData({questions})
-    // const finalSurvey = page.data.finalSurvey.filter(question => question)
+    console.log('header:', app.globalData.header)
+    let answer = this.data.finalAnswer
+    let bookingId = this.data.bookingId
+
     wx.request({
       header: app.globalData.header,
       url: `${app.globalData.baseURL}/trips/${page.data.tripId}/answer`,
       method: "POST",
       data: {
-        "answer": answer
-
+        booking_id : bookingId,
+        questions: answer
       },
       success(res) {
         console.log("From survey.js - submitSurveyCustom: res",res)
+        wx.showModal({
+          title: 'Note',
+          content: 'Booking confirmed!', 
+          confirmText: 'OK'
+        })
         wx.switchTab({
-          url: '/pages/users/profile',
+          url: '/pages/users/mytrips',
         })
         // if (res.statusCode === 201) {
         // }
       }
     })
   },
-
   goBack() {
     wx.navigateBack({
       delta: 1,
     })
-  },
+  }
 })

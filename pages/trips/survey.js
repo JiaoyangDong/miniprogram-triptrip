@@ -6,8 +6,10 @@ Page({
    * Page initial data
    */
   data: {
+    formData: {},
     resetForm: true,
-    tripId:  137, // testing only
+    // tripId: 117, // testing only
+    // tripId:  137, // testing only
     yes:'/images/minus-2.png',
     no:'/images/addsurvey.png',
     questions: {
@@ -117,6 +119,8 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
+    console.log('options ->', options.id)
+    this.setData({tripId: options.id})
   },
 
   /**
@@ -132,29 +136,24 @@ Page({
   onShow() {
     // TODO: 
     // need to page.setData tripId when first load
-    console.log('survey onShow')
-    const page = this
-    const tripId = wx.getStorageSync('id')
-    
-    // if (tripId) {
-    //   console.log('id found -> update')
-    //   wx.request({
-    //     header: app.globalData.header,
-    //     url: `${app.globalData.baseURL}/trips/${page.data.tripId}/survey`,
-    //     success(res) {
-    //       page.setData({
-    //         formData: res.data,
-    //         id: tripId
-    //       })
-    //       wx.removeStorageSync('id')
-    //     }
-    //   })
+    // const page = this
+    // if (app.globalData.header) {
+    //   // proceed to fetch api
+    //   page.getData()
     // }
+    console.log('survey onShow')
+    // const page = this
+    // console.log(this)
+    // const tripId = this.data.
+    // page.setData({tripId : page})
   },
-
-  /**
-   * Lifecycle function--Called when page hide
-   */
+  getData() {
+    let page = this
+    let tripId = page.options.tripId
+    console.log(tripId)
+    console.log(page.options)
+  },
+  
   onHide() {
 
   },
@@ -193,15 +192,9 @@ Page({
     })
   },
 
-  goToForm(e) {
-    console.log('From survey.js - goToFrom: e', e)
-    wx.navigateTo({
-        url: `/pages/trips/form`,
-      })
-  }, 
   goBack() {
     wx.navigateBack({
-      delta: 1,
+      delta: 0,
     })
   },
 })
