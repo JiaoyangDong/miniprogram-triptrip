@@ -126,24 +126,14 @@ Page({
     }
 
     this.setData({finalAnswer})
-    // console.log({finalAnswer})
-
-    // const questions = this.data.questions
-    // question = 
-    // questions.forEach((question) => {
-    // })
-    // for (let i = 0, len = questions.length; i < len; ++i) {
-    //   questions[i].checked = questions[i].answer === e.detail.value
-    // }
-    // console.log(this.data)
-    // this.setData({answers})
   },
  
-  formSubmit (e) {
+  formSubmit(e) {
     console.log('from formSubmit --->',e)
     const page = this
     console.log('header:', app.globalData.header)
     let answer = this.data.finalAnswer
+    let bookingId = this.data.bookingId
 
     wx.request({
       header: app.globalData.header,
@@ -151,7 +141,7 @@ Page({
       method: "POST",
       data: {
         booking_id : bookingId,
-        questions: finalAnswer
+        questions: answer
       },
       success(res) {
         console.log("From survey.js - submitSurveyCustom: res",res)

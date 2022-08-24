@@ -119,7 +119,8 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-    console.log('options ->', options)
+    console.log('options ->', options.id)
+    this.setData({tripId: options.id})
   },
 
   /**

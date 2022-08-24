@@ -34,7 +34,7 @@
       <!-- </view> -->
     </view>
 
-    <button class="signup" style="font-weight: 700; font-size: 30rpx; width: 280rpx; border-radius: 32rpx;" form-type="formSubmit">Sign up</button>
+    <button class="signup" style="font-weight: 700; font-size: 30rpx; width: 280rpx; border-radius: 32rpx;" form-type="submit">Sign up</button>
 
   </form>
 </view>
