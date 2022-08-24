@@ -11,12 +11,12 @@ function setOption(chart, data) {
     series: [{
       label: {
         normal: {
-          fontSize: 18
+          fontSize: 14
         }
       },
       type: 'pie',
       center: ['50%', '50%'],
-      radius: ['20%', '50%'],
+      radius: ['10%', '40%'],
       data: data
     }]
   } 
@@ -33,6 +33,17 @@ Page({
     ec: {
       lazyLoad: true
     },
+    ecAll: {
+      ec1: {
+        lazyLoad: true
+      },
+      ec2: {
+        lazyLoad: true
+      },
+      ec3: {
+        lazyLoad: true
+      }
+    }
   },
 
   /**
@@ -81,10 +92,14 @@ Page({
           });
           // page.setEC(questions[0].clean_answers)
           if (res.data.has_survey){
-            page.ecComponent = page.selectComponent('#mychart-dom-bar');
-            console.log("init EC, question:", questions[0].clean_answers)
-            // console.log(page)
-            page.init(questions[0].clean_answers)
+            let ecComponent = page.selectComponent('#mychart-dom-bar');
+            page.init(ecComponent, questions[0].clean_answers)
+            // console.log()
+            // for loop
+            // page.data.questions.forEach((q,index)=> {
+            //   let ecComponent = page.selectComponent(`#mychart-dom-bar-${index}`);
+            //   page.init(ecComponent, q.clean_answers)
+            // })
           }
         } else {
           console.log("request fails: res ",res)
@@ -156,10 +171,10 @@ Page({
       url: 'survey',
     })
   },
-  init: function (data) {
+  init: function (ecComponent, data) {
     console.log("from page.init")
 
-    this.ecComponent.init((canvas, width, height, dpr) => {
+    ecComponent.init((canvas, width, height, dpr) => {
       // 获取组件的 canvas、width、height 后的回调函数
       // 在这里初始化图表
       const chart = echarts.init(canvas, null, {

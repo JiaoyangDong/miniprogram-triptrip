@@ -76,6 +76,9 @@
         <button bindtap="goToSurvey">Add survey</button>
       </block>
     </view>
+    <!-- <view wx:for="{{ecAll}}" wx:for-index="index">
+      <ec-canvas id="mychart-dom-bar-{{index}}" canvas-id="mychart-bar" ec="{{ item }}"></ec-canvas>
+    </view> -->
 
 
     <!-- Edit and preview buttons-->
