@@ -166,8 +166,8 @@ Page({
               bookmarkId: null
             })
             wx.showToast({
-              title: "remove successfully",
-              duration: 1000
+              title: "Removed :(",
+              duration: 500
             })  
           } else {
             console.log("bookmark remove failed")
@@ -198,8 +198,8 @@ Page({
               bookmarkId: bookmark.id
             })
             wx.showToast({
-              title: "save successfully",
-              duration: 1000
+              title: "Saved!",
+              duration: 500
             })            
           } else {
             console.log("bookmark saved failed")
@@ -235,7 +235,13 @@ Page({
   }, 
   goToMyTrip(e) {
     wx.switchTab({
-      url: `/pages/users/mytrips`,
+        url: `/pages/users/mytrips`,
+      })
+  }, 
+  goToSurvey(e) {
+    const id = this.options.id
+    wx.redirectTo({
+      url: `/pages/bookings/form?tripid=${id}`,
     })
   },
   openMap(e) {

@@ -29,10 +29,10 @@
 
     <!-- MAP -->
     <view class="map" style="margin-top: 16rpx;">
-    <view bindtap="openMap" style="display: flex; align-items: center;">
-    <!-- <image class="icon" style="width: 50rpx; height: 50rpx;" src="/images/map.png"></image> -->
-      <text style="color:#5e5c5c; padding: 8rpx 0 4rpx 0;">{{trip.location}}</text>
-    </view>
+      <view bindtap="openMap" style="display: flex; align-items: center;">
+      <image class="icon" style="width: 40rpx; height: 40rpx; margin-right: 10rpx;" src="/images/location.png"></image>
+        <view style="color:#5e5c5c; padding: 8rpx 0 4rpx 0;">{{trip.location}}</view>
+      </view>
     </view>
 
 
@@ -54,5 +54,6 @@
       <view>Signed up!</view> 
       <view> Go to my trips.</view>
     </button>
+    <!-- <button bindtap="goToSurvey">go to survey(test)</button> -->
   </view>
 </view>
