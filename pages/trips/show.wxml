@@ -3,7 +3,8 @@
   <!-- Trip-image  -->
   <image class="poster" mode="aspectFill" src="{{trip.image}}">
     <view class="navigation">
-      <image class="home-btn" src="/images/homeempty-pink.png" bindtap="goToHome"></image>
+      <!-- <image class="home-btn" src="/images/homeempty-pink.png" bindtap="goToHome"></image> -->
+      <image class="goback-btn" src="/images/go-back-left-arrow.png" bindtap="goBack"></image>
     </view>
   </image>
 

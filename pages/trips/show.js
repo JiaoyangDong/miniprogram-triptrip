@@ -219,11 +219,11 @@ Page({
       url: 'landing',
     })
   },
-  goToMyTrip(e) {
-    wx.switchTab({
-        url: `/pages/users/mytrips`,
-      })
-  }, 
+  goBack() {
+    wx.navigateBack({
+      delta: 1,
+    })
+  },
   openMap(e) {
     console.log("from open map", e)
     const page = this
