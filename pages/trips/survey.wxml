@@ -4,17 +4,17 @@
 </view>
 
 <view class="main">
-  <view class="h1">Add survey</view>
 <!-- required field -->
-  <view class="item-name">
+  <view class="h1">Choose questions to add</view>
+  <!-- <view class="item-name">
     <view class="h2">Full Name (required)</view>
     <view class="nameinput"></view>
-  </view>
+  </view> -->
 
 <!-- form field -->
-  <view class="item-add">
+  <!-- <view class="item-add">
     <view class="h2">add question to the survey:</view>
-  </view>
+  </view> -->
 
   <form bindsubmit="submitSurvey">
     <view class="option-room" bindtap="selectQuestion" data-index="0" data-tag="room">
@@ -61,7 +61,7 @@
     <!-- Submit button -->
     <!-- <button class="form-item" form-type="submit" style="font-weight: 700; font-size: 30rpx; width: 280rpx; border-radius: 32rpx;">add survey</button> -->
  
-    <button style="font-weight: 700; font-size: 30rpx; width: 280rpx; border-radius: 32rpx;" bindtap="submitSurveyCustom">add survey</button>
+    <button style="font-weight: 700; font-size: 35rpx; width: 280rpx; border-radius: 32rpx;" bindtap="submitSurveyCustom">add survey</button>
   </form>
   
 </view>

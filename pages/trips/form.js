@@ -128,11 +128,13 @@ Page({
     // console.log('trip:', trip)
     console.log("Update: trip", trip)
     page.setData({trip})
-    if (page.data.editedId !== undefined && page.data.editedId !== null) {
+    console.log("this data to send -> ", page.data.trip)
+    // if (page.data.editedId !== undefined && page.data.editedId !== null) {
+      if (page.data.trip.id !== undefined && page.data.trip.id !== null) {
       // edit form
       wx.request({
         header: app.globalData.header,
-        url: `${app.globalData.baseURL}/trips/${page.data.editedId}`,
+        url: `${app.globalData.baseURL}/trips/${page.data.trip.id}`,
         method: 'PUT',
         data: {
           trip: trip,
@@ -217,13 +219,6 @@ Page({
       url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer + '&location=',
     })
 
-    // let { formData } = this.data
-    // let location = e.detail.value
-    // let address = e.detail.
-
-    // formData = {...formData, location, }
-    // const { field } = e.currentTarget.dataset
-    // this.setData({ formData, location: e.detail.value })
   },
   goBack() {
     wx.navigateBack({
