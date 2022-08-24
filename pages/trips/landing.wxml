@@ -42,8 +42,10 @@
     </view>
     <!-- <image class="favorite-icon" src="/images/like-red.png"></image> -->
     <view class="trip-info">
-      <view class="trip-title">{{trip.title}}</view>
-      <view class="trip-start">{{trip.start_date}}</view>
+      <view class="trip-title-and-start-box">
+        <view class="trip-title">{{trip.title}}</view>
+        <view class="trip-start">{{trip.start_date}}</view>
+      </view>
       <view class="trip-location-box">
         <image class="location-icon" src="/images/location.png"></image>
         <view class="trip-location-name">{{trip.location}}</view>

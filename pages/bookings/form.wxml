@@ -1,41 +1,31 @@
 <!--pages/bookings/form.wxml-->
-<view class="navigation">
-  <image src="/images/homeempty-pink.png" style="height: 60rpx; width: 60rpx; position: fixed; top: 50px; left: 30px;" bindtap="goBack"></image>
-</view>
+<view class="container">
+  <view class="navigation">
+    <image class="goback-btn" src="/images/go-back-left-arrow.png" bindtap="goBack"></image>
+  </view>
 
-<view class="main">
-  <view class="h1"> Sign up for {{name}}</view>
-  <view>Booking ID: {{bookingId}}</view>
-  <form bindsubmit="formSubmit">
-  <!-- required field -->
-    <!-- <view class="form-item">
-      <view class="title"><text class="h2">Enter your full name</text></view>
-      <input name="attendee" class="input-box" bindinput="setInputData" data-field="title" value="{{formData.title}}" />
-    </view> -->
-
+  <text class="h1"> {{name}}</text>
   <!-- survey field -->
-    <view class="form-item">
-        <radio-group class="radio-group" wx:key="key" bindchange="radioChange" wx:for="{{questions}}" wx:for-item="question" data-id="{{question.id}}">
-          {{question.id}}
+  <form bindsubmit="formSubmit">
+    <view class="form">
+        <radio-group  bindchange="radioChange" wx:for="{{questions}}" wx:for-item="question" data-id="{{question.id}}">
           <view class="question">
             <view class="h2" wx:item="{{item}}">{{question.content}}</view>
           </view>
 
           <view class="answer">
-            <label wx:for="{{question.options}}" wx:for-item="option">
-              <radio data-id="{{question.id}}" color="#E15B99" value="{{option}}"/>{{option}}
+            <label class="radio-group" wx:for="{{question.options}}" wx:for-item="option">
+              <radio class="radio" data-id="{{question.id}}" color="#E15B99" value="{{option}}"/>
+              <text>{{option}}</text>
             </label>
           </view>
             <!-- <radio wx:item="{{item.options}}" value="{{item.options[0]}}" checked="false"/>{{item.options[0]}}
             <radio value="{{item.options[1]}}"/>{{item.options[1]}}
             <radio value="{{item.options[2]}}"/>{{item.options[2]}} -->    
         </radio-group>
-      
-      <!-- </view> -->
     </view>
 
-    <button class="signup" style="font-weight: 700; font-size: 30rpx; width: 280rpx; border-radius: 32rpx;" form-type="submit">Sign up</button>
-
+    <button class="signup" style="font-weight: 700; font-size: 30rpx; width: 280rpx; border-radius: 32rpx;" form-type="submit">Done</button>
   </form>
 </view>
 

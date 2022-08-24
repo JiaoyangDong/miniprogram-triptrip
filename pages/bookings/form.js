@@ -2,13 +2,7 @@
 const app = getApp()
 
 Page({
-
-  /**
-   * Page initial data
-   */
   data: {
-    // tripId:  137,
-    // tripId: 117, // testing only
     finalAnswer: [],
     answerSample: {
       "booking_id": 15,
@@ -26,7 +20,6 @@ Page({
             "answer": "Yes"
           }]
     }
-    // tripId:  74, // testing only
   },
 
   /**
@@ -128,7 +121,6 @@ Page({
       let tempAnswer = { id: id, answer: answer }
       finalAnswer = [...finalAnswer, tempAnswer]
     }
-
     this.setData({finalAnswer})
   },
  
@@ -138,7 +130,7 @@ Page({
     console.log('header:', app.globalData.header)
     let answer = this.data.finalAnswer
     let bookingId = this.data.bookingId
-
+    console.log("answer:", answer)
     wx.request({
       header: app.globalData.header,
       url: `${app.globalData.baseURL}/trips/${page.data.tripId}/answer`,
@@ -163,8 +155,11 @@ Page({
     })
   },
   goBack() {
-    wx.navigateBack({
-      delta: 1,
+    let page = this
+    let options = page.options
+    const TripId = options.tripId
+    wx.navigateTo({
+      url: `/pages/trips/show?id=${TripId}`,
     })
   }
 })

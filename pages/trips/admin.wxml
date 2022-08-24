@@ -70,12 +70,16 @@
 
     <view class="stats-box">
       <block wx:if="{{hasSurvey}}">
+        <view>Q: {{questions[0].content}}</view>
         <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
       </block>
-      <block wx:else>
-        <button bindtap="goToSurvey">Add survey</button>
+      <block wx:if="{{!hasSurvey}}">
+        <button style="margin-top: 40rpx; background-color: #ccc;" bindtap="goToSurvey">Add survey</button>
       </block>
     </view>
+    <!-- <view wx:for="{{ecAll}}" wx:for-index="index">
+      <ec-canvas id="mychart-dom-bar-{{index}}" canvas-id="mychart-bar" ec="{{ item }}"></ec-canvas>
+    </view> -->
 
 
     <!-- Edit and preview buttons-->

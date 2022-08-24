@@ -166,8 +166,8 @@ Page({
               bookmarkId: null
             })
             wx.showToast({
-              title: "remove successfully",
-              duration: 1000
+              title: "Removed :(",
+              duration: 500
             })  
           } else {
             console.log("bookmark remove failed")
@@ -198,8 +198,8 @@ Page({
               bookmarkId: bookmark.id
             })
             wx.showToast({
-              title: "save successfully",
-              duration: 1000
+              title: "Saved!",
+              duration: 500
             })            
           } else {
             console.log("bookmark saved failed")
@@ -224,6 +224,11 @@ Page({
   goBack() {
     wx.navigateBack({
       delta: 1,
+    })
+  },
+  goToHome() {
+    wx.switchTab({
+      url: 'landing',
     })
   },
   goToTripSurvey(e) {
