@@ -1,11 +1,11 @@
 <view class="container">
   <!-- <view class="header"> -->
-    <view class="navigation">
-      <image class="goback-btn" src="/images/go-back-left-arrow.png" bindtap="goBack"></image>
-      <view class="h1">{{trip.title}}</view>
-    </view>
-    <view class="poster-filter"></view>
-    <image class="poster" mode="aspectFill" src="{{trip.image}}"></image>
+  <view class="navigation">
+    <image class="goback-btn" src="/images/go-back-left-arrow.png" bindtap="goBack"></image>
+    <view class="h1">{{trip.title}}</view>
+  </view>
+  <view class="poster-filter"></view>
+  <image class="poster" mode="aspectFill" src="{{trip.image}}"></image>
   <!-- </view> -->
 
   <!-- Trip-info -->
@@ -13,8 +13,8 @@
 
     <!-- HEAD -->
     <!-- <view class="head"> -->
-      <!-- <view class="h1">{{trip.title}}</view> -->
-      <!-- <view class="icons">
+    <!-- <view class="h1">{{trip.title}}</view> -->
+    <!-- <view class="icons">
         <image class="icon" src="{{ isSaved ? '/images/likefill-pink.png' : '/images/like-pink.png'}} " bindtap="toggleBookmark">{{trip.end_date - trip.start_date}} days</image>
         <button open-type="share" class="nostyle icon">
           <image class="icon" mode="aspectFit" src="/images/share.png">Share</image>
@@ -31,7 +31,7 @@
       <image class="icon" style="width: 40rpx; height: 40rpx;" src="/images/map.png">location{{trip.location}} </image>
       {{trip.location}}
     </view> -->
-<!-- 
+    <!-- 
     <view class="tags">
       <view class="tag" wx:for="{{trip.tags}}">{{item}}</view>
     </view> -->
@@ -43,17 +43,18 @@
 
     <view class="btn-box">
       <view class="btn" bindtap="goToEdit" data-id="{{trip.id}}">
-        <image src="/images/admin/edit.png"class="btn-img"></image>
+        <image src="/images/admin/edit.png" class="btn-img"></image>
         <view class="btn-text">Edit</view>
       </view>
       <view class="btn" bindtap="goToShow" data-id="{{trip.id}}">
-        <image src="/images/admin/preview.png"class="btn-img"></image>
+        <image src="/images/admin/preview.png" class="btn-img"></image>
         <view class="btn-text">Preview</view>
       </view>
     </view>
 
     <view class="attendees-box">
       <view class="attendees-box-txt">Attendees:</view>
+
       <view class="scroll-view-flex">
         <view class="scroll-view-box-box">
           <scroll-view scroll-x="true" style="width: 100%; white-space: nowrap;" class="attendees-scroll-view">  

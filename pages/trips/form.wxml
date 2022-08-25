@@ -6,9 +6,9 @@
   <view wx:if="{{!tripId}}"class="h1"> Create my next trip</view>
   <view style="margin-bottom: 20rpx;" wx:if="{{tripId}}" class="h1">Edit my trip</view>
   <form bindsubmit="create">
+    <view class="box" style="margin-bottom: 60rpx;">
     <view class="form-item" style="display: flex; flex-direction: column; align-items: center; margin-bottom: -20rpx;">
       <image style="height: 250rpx; width: 250rpx;" src="{{src}}" mode="aspectFill" bindtap="listenerBtnChooseImage" />
-      <!-- <text class="h2">Upload a beautiful photo</text> -->
     </view>
 
     <!-- Title -->
@@ -45,21 +45,15 @@
         <view wx:for="{{tags}}" bindtap="selectTag" data-tag="{{item.name}}">
           <view class="tag {{item.active? 'tag-active' : 'tag-inactive'}}">
             {{item.show}}
-            <!-- {{item.active?  'tag-active' : 'tag-inactive'}} -->
           </view>
         </view>
       </view>
     </view>
     <!-- Desctiption -->
     <view class="form-item"> <text class="h2">Description</text>
-
-      <textarea bindinput="setInputData" data-field="description" name="description" value="{{formData.description}}" rows="4" style="border: 1px solid #E15B99; border-radius: 20px; padding: 20rpx; width: 95%; height: 200rpx; margin-top: 10rpx; font-weight: 200;" placeholder="add more info about the trip ..."></textarea>
+      <textarea bindinput="setInputData" data-field="description" name="description" value="{{formData.description}}" rows="4" style="border: 1px solid #E15B99; border-radius: 20px; padding: 20rpx; width: 95%; height: 200rpx; margin-top: 10rpx; font-weight: 200; margin-bottom: 30rpx;" placeholder="add more info about the trip ..."></textarea>
     </view>
-
-    <!-- <view bindtap="goToSurvey" class="form-item" style="display: flex; justify-content: center; padding: 40rpx;">
-      <image src="/images/add.png" style="height: 50rpx; width: 50rpx; padding-right: 15rpx;"></image>
-      <text>add survey</text>
-    </view> -->
+  </view>
 
     <!-- Submit button -->
     <button class="form-item" form-type="submit" style="font-weight: 700; font-size: 40rpx; width: 280rpx; border-radius: 32rpx;">Save</button>
