@@ -62,6 +62,10 @@
     <button wx:if="{{isBooker && !hasSurvey}}" class="btn btn-secondary"> 
       <view>All set!</view> 
     </button>
+
+    <button wx:if="{{isBooker && hasAnswers}}" class="btn btn-secondary"> 
+      <view>All done!</view> 
+    </button>
     <!-- <button bindtap="goToSurvey">go to survey(test)</button> -->
   </view>
 </view>
