@@ -52,7 +52,7 @@
       </view>
       <view class="btn" data-id="{{trip.id}}">
         <!-- <image src="/images/admin/preview.png" class="btn-img"></image> -->
-        <switch color="#E15B99" style="height: 20rpx;" checked="{{trip.public}}" bindchange="togglePublic"></switch>
+        <switch color="#E15B99" style="height: 50rpx;" checked="{{trip.public}}" bindchange="togglePublic"></switch>
         <view class="btn-text">Public</view>
       </view>
     </view>

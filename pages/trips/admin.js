@@ -291,7 +291,7 @@ Page({
             trip,
           });
           wx.showToast({
-            title: `Set to ${res.data.status}`,
+            title: `Set as ${res.data.status}`,
             duration: 1000
           })  
         } else {
