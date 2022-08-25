@@ -51,7 +51,7 @@
     </view>
     <!-- Desctiption -->
     <view class="form-item"> <text class="h2">Description</text>
-      <textarea bindinput="setInputData" data-field="description" name="description" value="{{formData.description}}" rows="4" style="border: 1px solid #E15B99; border-radius: 20px; padding: 20rpx; width: 95%; height: 200rpx; margin-top: 10rpx; font-weight: 200; margin-bottom: 30rpx;" placeholder="add more info about the trip ..."></textarea>
+      <textarea bindinput="setInputData" data-field="description" name="description" value="{{formData.description}}" rows="4" style="border: 1px solid #E15B99; border-radius: 20px; padding: 20rpx; width: 95%; height: 200rpx; margin-top: 10rpx; font-weight: 200; margin-bottom: 30rpx;" placeholder="Tell us more about your trip!"></textarea>
     </view>
   </view>
 

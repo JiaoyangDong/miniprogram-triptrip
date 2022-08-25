@@ -57,7 +57,7 @@
 
       <view class="scroll-view-flex">
         <view class="scroll-view-box-box">
-          <scroll-view scroll-x="true" style="width: 100%; white-space: nowrap;" class="attendees-scroll-view">  
+          <scroll-view scroll-x="true" style="width: 100%; white-space: nowrap;" class="attendees-scroll-view">
             <view class="attendee" wx:for="{{attendees}}" wx:for-item="attendee">
               <image class="attendee-img" src="{{attendee.image? attendee.image :'/images/kiwibird-pink.png' }}"></image>
               <!-- MAYBE TODO: on hover {{attendee.name}} -->
@@ -65,25 +65,24 @@
             <view wx:if="{{!attendees.length}}" style="margin-top: 30rpx;">There are no attendees yet!</view>
           </scroll-view>
         </view>
-        <view wx:if="{{attendees.length === 1}}" class="attendee-number">{{attendees.length}} person signed up!</view> 
+        <view wx:if="{{attendees.length === 1}}" class="attendee-number">{{attendees.length}} person signed up!</view>
         <view wx:if="{{attendees.length > 1}}" class="attendee-number">{{attendees.length}} people signed up!</view>
       </view>
     </view>
 
     <view class="attendees-box-txt">Survey results:</view>
 
-    <view class="stats-box">
-      <block wx:if="{{hasSurvey}}">
-        <view style="margin-bottom: 60rpx;">Q: {{questions[0].content}}</view>
-        <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
-      </block>
-      <block wx:if="{{!hasSurvey}}">
-        <button style="margin-top: 50rpx; background-color:#e15b99; color: white; border-radius: 30rpx; padding: 20rpx 0;" bindtap="goToSurvey">Add survey</button>
-      </block>
-    </view>
-    <!-- <view wx:for="{{ecAll}}" wx:for-index="index">
-      index:{{index}}
-      <ec-canvas id="mychart-dom-bar-{{index}}" canvas-id="mychart-bar-{{index}}" ec="{{ item }}"></ec-canvas>
-    </view> -->
+    <block wx:if="{{hasSurvey}}">
+      <view wx:if="{{questions[0].answers.length === 0 }}" class="noinfo"> No body complete the survey yet.</view>
+      <view wx:else class="info-card"> <text style="color:#E15B99"> {{questions[0].answers.length}} / {{attendees.length}} </text> people have completed the survey:</view>
+      <view class="stats-box" wx:for="{{questions}}" wx:for-item="question" wx:for-index="index">
+        <!-- <view style="margin-bottom: 60rpx;">Q: {{question.content}}</view> -->
+        <ec-canvas id="mychart-dom-bar-{{index}}" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+      </view>
+
+    </block>
+    <block wx:if="{{!hasSurvey}}">
+      <button style="margin-top: 50rpx; background-color:#e15b99; color: white; border-radius: 30rpx; padding: 20rpx 0;" bindtap="goToSurvey">Add survey</button>
+    </block>
   </view>
 </view>
