@@ -5,7 +5,8 @@ Page({
     booking: {},
     latitude: 0,
     longitude: 0,
-    name: ""
+    name: "",
+    signedUp: false
   },
   onLoad(options) {
   },
@@ -62,6 +63,7 @@ Page({
   submitBooking(e){
     console.log("From show.js - submitBooking: e", e)
     let page = this
+    page.setData({signedUp: true})
     // get user profile and update user info in the backend
     wx.getUserProfile({
       desc: 'User Profile for submitting',
