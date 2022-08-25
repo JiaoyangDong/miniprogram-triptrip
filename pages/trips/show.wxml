@@ -46,7 +46,7 @@
     </text>
 
     <!--I Wanna go!-->
-    <button wx:if="{{!isBooker}}" class="btn btn-primary" bindtap="submitBooking">I wanna go!</button>
+    <button wx:if="{{!isBooker}}" disabled="{{signedUp}}" class="btn btn-primary" bindtap="submitBooking">I wanna go!</button>
     <button wx:if="{{isBooker && hasSurvey}}" bindtap="goToTripSurvey" class="btn btn-secondary">
       <view>Fill survey to confirm</view> 
     </button>
