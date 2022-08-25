@@ -38,6 +38,10 @@ Page({
           const isBooker = res.data.is_booker;
           const isSaved = res.data.is_saved;
           // const booking = res.data.my_booking;
+          const startDateShow = wx.se.prettyDate(res.data.trip.start_date)
+          const endDateShow = wx.se.prettyDate(res.data.trip.end_date)
+          trip.start_date = startDateShow
+          trip.end_date = endDateShow
           page.setData({
             trip: trip,
             isBooker: isBooker, 
@@ -47,7 +51,7 @@ Page({
             hasSurvey: res.data.has_survey,
             longitude: parseFloat(trip.longitude),
             latitude: parseFloat(trip.latitude), 
-            name: trip.location
+            name: trip.location,
           });
           console.log("From show.js: status code is", res.statusCode)
         }
@@ -214,11 +218,6 @@ Page({
       withShareTicket: true,
       // menus: [],
       menus: ['shareAppMessage', 'shareTimeline']
-    })
-  },
-  goBack() {
-    wx.navigateBack({
-      delta: 1,
     })
   },
   goBack() {
