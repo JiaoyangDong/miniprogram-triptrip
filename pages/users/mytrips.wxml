@@ -10,7 +10,7 @@
 
 <view class="container">
   <image class="logo-img" src="/images/profile-kiwibird.png"></image>
-  <text class="page-title">my trips</text>
+  <text class="page-title">My trips</text>
 
   <view class="option">
     <text class="title {{active_tab === 'upcoming' ? 'active': 'inactive'}}" bindtap="active_upcoming">upcoming</text>
@@ -20,7 +20,7 @@
 
   <!-- upcoming -->
   <view wx:if="{{active_tab === 'upcoming'}}">
-    <view class="notrip" wx:if="{{!upcoming_trips.length}}"><text>you haven't joined any trips yet 😔</text></view>
+    <view class="notrip" wx:if="{{!upcoming_trips.length}}"><text>I haven't joined any trips yet 😔</text></view>
     <swiper indicator-dots="{{indicatorDots}}" indicator-active-color='#E786B4' indicator-color='#fff' class="trips-swiper" wx:if="{{upcoming_trips.length}}" next-margin="40rpx">
       <block wx:for="{{upcoming_trips}}" wx:key="*this">
         <swiper-item class="swiper-item" bindtap="goToTrip" data-id="{{item.id}}">
@@ -40,7 +40,7 @@
 
   <!-- past -->
   <view wx:if="{{active_tab === 'past'}}">
-    <view class="notrip" wx:if="{{!past_trips.length}}">you have not joined any trip in the past</view>
+    <view class="notrip" wx:if="{{!past_trips.length}}">I haven't been on any trips yet</view>
     <swiper indicator-dots="{{indicatorDots}}" indicator-active-color='#E786B4' indicator-color='#fff' class="trips-swiper" wx:if="{{past_trips.length}}" next-margin="40rpx">
       <block wx:for="{{past_trips}}" wx:key="*this">
         <swiper-item class="swiper-item" bindtap="goToTrip" data-id="{{item.id}}">
@@ -60,8 +60,8 @@
 
 
   <!-- bookmark -->
-  <text class="header-bookmark">my saved trips</text>
-  <view class="notrip" wx:if="{{!bookmarked_trips.length}}">you haven't saved any trips yet 😔</view>
+  <text class="header-bookmark">My saved trips</text>
+  <view class="notrip" wx:if="{{!bookmarked_trips.length}}">I haven't saved any trips yet</view>
 
   <swiper indicator-dots="{{indicatorDots}}" indicator-active-color='#E786B4' indicator-color='#fff' class="trips-swiper" wx:if="{{bookmarked_trips.length}}" next-margin="40rpx">
     <block wx:for="{{bookmarked_trips}}" wx:key="*this">
