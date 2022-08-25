@@ -171,7 +171,7 @@ Page({
           // wx.switchTab({
           //   url: '/pages/trips/landing',
           // })
-          
+
           wx.navigateBack({
             delta: 0,
           })
@@ -212,9 +212,7 @@ Page({
             const id = res.data.trip.id
             page.setData({resetForm: true})
             page.upload(id)
-            wx.navigateTo({
-              url: `/pages/trips/admin?tripId=${id}`,
-            })
+            
           }
         },
         fail(error) {
@@ -231,6 +229,9 @@ Page({
       header: app.globalData.header,
       name: 'image',
       success (res){
+        wx.navigateTo({
+          url: `/pages/trips/admin?tripId=${id}`,
+        })
         page.setData({resetForm: true})
         console.log(res)
       }
