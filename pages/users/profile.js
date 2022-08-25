@@ -52,11 +52,19 @@ Page({
       success(res) {
         console.log("From profile.js: onshow request succesfully")
         console.log("From profile.js: res",res)
+          let upcoming_trips = res.data.upcoming
+          upcoming_trips.map((trip) => {
+            trip.start_date = wx.se.prettyDate(trip.start_date)
+          })
         if (res.statusCode === 200) {
+          let past_trips = res.data.past
+          past_trips.map((trip) => {
+            trip.start_date = wx.se.prettyDate(trip.start_date)
+          })
           page.setData({
             loadingHidden: true,
-            past_trips: res.data.past,
-            upcoming_trips: res.data.upcoming
+            past_trips,
+            upcoming_trips
             // user_id: user_id
           })
         } else {

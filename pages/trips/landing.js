@@ -39,10 +39,6 @@ Page({
         selectedTabIndex: 0
       })
     }
-    // const page = this
-    // const tags = app.globalData.tags
-    // tags[0]['activeindex'] = true
-    // this.setData({tags})
     if (app.globalData.header) {
       // proceed to fetch api
       this.getNewData()
@@ -51,10 +47,6 @@ Page({
       // wait until loginFinished, then fetch API
       wx.event.on('loginFinished', this, this.pleaseShowTags)
     }
-    // page.setData({
-    //   // loadingHidden: true
-    //   tags: app.globalData.tags
-    // })
   },
 
   pleaseShowTags(){
@@ -84,16 +76,9 @@ Page({
 
   },
 
-  /**
-   * Called when page reach bottom
-   */
   onReachBottom() {
 
   },
-
-  /**
-   * Called when user click on the top right corner to share
-   */
   onShareAppMessage() {
 
   },
@@ -104,12 +89,6 @@ Page({
       })
       this.getNewData()
     }
-    //   console.log(e.currentTarget)
-    //   this.setData({
-    //     tag: e.currentTarget.dataset.tag
-    //   })
-    // }
-    // this.getNewData()
   },
 
   getNewData() {
@@ -122,43 +101,16 @@ Page({
         header: app.globalData.header,
         data: { tag: `${searchTag}` },
         success(res) {
+          let trips = res.data
+          trips.map((trip) => {
+            trip.start_date = wx.se.prettyDate(trip.start_date)
+          })
           page.setData({
-            trips: res.data,  
-            loadingHidden: true
+            trips,
+            loadingHidden: true,
           })
         }
       })
-    // } else {
-  //     wx.request({
-  //       url: `${app.globalData.baseURL}/tags/${searchTag}`,
-  //       method: "get",
-  //       header: app.globalData.header,
-  //       success(res) {
-  //         // console.log('res from getting trips with tags: ', res)
-  //         const trips = res.data
-  //         // let filteredTrips = res.data.where({tag: ${selectedTagIndex}})
-  //         page.setData({
-  //           trips: res.data,
-  //           loadingHidden: true
-  //         })
-  //       }
-  //     })
-  //   }
-  // },
-  // getData(){
-  //   const page = this
-  //   wx.request({
-  //     url: `${app.globalData.baseURL}/trips`,
-  //     method: "GET",
-  //     header: app.globalData.header,
-  //     success(res) {
-  //       page.setData({
-  //         trips: res.data,
-  //         // loadingHidden: true,
-
-  //       })
-  //     }
-  //   })
   },
   goToTrip(e) {
     const tripId = e.currentTarget.dataset.id
