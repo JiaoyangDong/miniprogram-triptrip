@@ -147,8 +147,10 @@ Page({
           content: 'Booking confirmed!', 
           confirmText: 'OK'
         })
+
         wx.navigateTo({
           url: `/pages/trips/show?id=${page.data.tripId}`,
+
         })
         // if (res.statusCode === 201) {
         // }
