@@ -130,7 +130,7 @@ Page({
     page.setData({trip})
     console.log("this data to send -> ", page.data.trip)
     // if (page.data.editedId !== undefined && page.data.editedId !== null) {
-      if (page.data.trip.id !== undefined && page.data.trip.id !== null) {
+    if (page.data.trip.id !== undefined && page.data.trip.id !== null) {
       // edit form
       wx.request({
         header: app.globalData.header,
@@ -184,7 +184,7 @@ Page({
             page.setData({resetForm: true})
             page.upload(id)
             wx.navigateTo({
-              url: `/pages/trips/admin?id=${id}`,
+              url: `/pages/trips/admin?tripId=${id}`,
             })
           }
         },

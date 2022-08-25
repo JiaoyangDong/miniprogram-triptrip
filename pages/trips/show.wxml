@@ -3,8 +3,8 @@
   <!-- Trip-image  -->
   <image class="poster" mode="aspectFill" src="{{trip.image}}">
     <view class="navigation">
-      <!-- <image class="home-btn" src="/images/homeempty-pink.png" bindtap="goToHome"></image> -->
-      <image class="goback-btn" src="/images/go-back-left-arrow.png" bindtap="goBack"></image>
+      <image class="home-btn" src="/images/homeempty-black.png" bindtap="goToHome"></image>
+      <!-- <image class="goback-btn" src="/images/go-back-left-arrow.png" bindtap="goBack"></image> -->
     </view>
   </image>
 
@@ -37,7 +37,7 @@
 
 
     <view class="tags">
-      <view class="tag"  wx:if="{{item.active}}" wx:for="{{trip.tags}}" wx:key="*this">{{item}}</view>
+      <view class="tag"  wx:if="{{item.active}}" wx:for="{{trip.tags}}" wx:key="*this">{{item.show}}</view>
     </view>
 
     <text class="h2">Description</text>
