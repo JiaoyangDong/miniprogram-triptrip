@@ -74,6 +74,13 @@
             <view class="card-title">{{item.title}}</view>
             <view class="card-description">{{item.start_date}}</view>
             <view class="card-description">📍 {{item.location}}</view>
+
+            <!-- <view class="card-description location-box">
+              <view class="location-name">
+                <image class="location-icon" src="/images/locationfill-white.png" style="height:40rpx; width: 40rpx; min-width: 40rpx; margin-left: 10rpx;"></image>
+                {{item.location}}
+              </view>
+            </view> -->
           </view>
         </view>
       </swiper-item>
