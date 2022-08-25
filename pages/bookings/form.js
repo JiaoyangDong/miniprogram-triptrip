@@ -146,8 +146,11 @@ Page({
           content: 'Booking confirmed!', 
           confirmText: 'OK'
         })
-        wx.redirectTo({
-          url: '/pages/trips/show?tripId=${id}',
+        
+        let tripId = page.options.tripId
+        console.log(tripId)
+        wx.navigateTo({
+          url: `/pages/trips/show?id=${tripId}`,
         })
         // if (res.statusCode === 201) {
         // }
