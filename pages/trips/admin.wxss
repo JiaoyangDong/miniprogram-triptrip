@@ -188,7 +188,7 @@
 .attendee-img {
   height: 100rpx;
   width: 100rpx;
-  /* background-color: red; */
+  background-color: white;
   border: #ccc 1px solid;
   border-radius: 50%;
 }
