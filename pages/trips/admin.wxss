@@ -194,3 +194,15 @@
   border-radius: 20rpx;
   padding: 20rpx;
 }
+
+.noinfo {
+  /* background-color:#FFD6E0; */
+  background-color:#e4e4e4;
+  width: 590rpx;
+  text-align: center;
+  /* height: 90rpx; */
+  margin: 20rpx;
+  padding: 20rpx;
+  border-radius: 30rpx;
+  font-family: Fira Sans;
+}
