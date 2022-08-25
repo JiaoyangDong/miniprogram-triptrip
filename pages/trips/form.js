@@ -63,6 +63,7 @@ Page({
         success(res) {
           let data = res.data
           console.log(data)
+          let formTags = data.trip.tags.filter(tag=> tag.active).map(tag=>tag.id)
           page.setData({
             // locationsIndex: data.locations.findIndex(el => (el === res.data.locations)),
             formData: {
@@ -77,7 +78,8 @@ Page({
             },
             tripId: id,
             src: res.data.trip.image,
-            tags: res.data.trip.tags
+            tags: res.data.trip.tags,
+            formTags: {tags: formTags}
           })
           const startDateShow = wx.se.prettyDate(res.data.trip.start_date)
           const endDateShow = wx.se.prettyDate(res.data.trip.end_date)
