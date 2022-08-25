@@ -8,7 +8,8 @@
   z-index: 1;
   width: 100vw;
   height:400rpx;
-  position: relative;
+  /* position: relative; */
+  position: sticky;
   top: 0;
 }
 
@@ -96,16 +97,15 @@
 }
 
 .trip-card{
-  z-index: 4;
+  z-index: 2;
   border-radius: 50rpx;
   margin-top: -60rpx;
   background-color: white;
   /* border: solid 3px #E15B99; */
-
-  padding: 30rpx 50rpx;
+  padding: 40rpx;
   /* padding-bottom: 90rpx; */
   min-height: 70vh;
-  /* width: 90vw; */
+  width: 90vw;
 }
 
 
@@ -156,16 +156,24 @@
 .attendees-box-txt {
   font-size: 40rpx;
   font-weight: bold;
+  margin-top: 60rpx;
   margin-left: 16rpx;
 }
 
+.scroll-view-flex {
+  /* display: flex;
+  justify-content: space-between; */
+  width: 100%;
+}
+
 .scroll-view-box-box {
-  width: 86vw;
+  width: 600rpx;
+  padding: 20rpx 20rpx 10rpx 10rpx;
 }
 
 .attendees-scroll-view {
-  margin-top: 10rpx;
-  height: 140rpx;
+  margin: 10rpx;
+  height: 120rpx;
 }
 
 .attendee {
@@ -183,6 +191,16 @@
   /* background-color: red; */
   border: #ccc 1px solid;
   border-radius: 50%;
+}
+
+.attendee-number {
+  background-color: #fce1ee;
+  text-align: center;
+  width: 350rpx;
+  border-radius: 50rpx;
+  font-size: 30rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
 }
 
 .stats-box {
