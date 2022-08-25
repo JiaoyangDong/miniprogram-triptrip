@@ -102,7 +102,7 @@ Page({
               console.log("From show.js: error message", res.data.errors)
               // const bookingId = res.data.booking.id
               wx.showModal({
-                title: 'Error!',
+                title: 'Oops!',
                 content: res.data.errors.join(', '),
                 cancelText: "OK",
                 confirmText: 'Details',
