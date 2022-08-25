@@ -171,7 +171,7 @@ Page({
           // wx.switchTab({
           //   url: '/pages/trips/landing',
           // })
-          
+
           wx.navigateBack({
             delta: 0,
           })
@@ -212,9 +212,7 @@ Page({
             const id = res.data.trip.id
             page.setData({resetForm: true})
             page.upload(id)
-            wx.navigateTo({
-              url: `/pages/trips/admin?tripId=${id}`,
-            })
+            
           }
         },
         fail(error) {
@@ -231,6 +229,9 @@ Page({
       header: app.globalData.header,
       name: 'image',
       success (res){
+        wx.navigateTo({
+          url: `/pages/trips/admin?tripId=${id}`,
+        })
         page.setData({resetForm: true})
         console.log(res)
       }
@@ -278,4 +279,27 @@ Page({
         url: `/pages/trips/survey`,
       })
   }, 
+  deleteTrip(e) {
+    const id = e.currentTarget.dataset.tripid
+    wx.showModal({
+      title: 'Are you sure you want to delete this trip?',
+      content: "It'll be gone for good.",
+      cancelText: 'No',
+      confirmText: 'Yes',
+      success(res) {
+        if (res.confirm) {
+          wx.request({
+            header: app.globalData.header,
+            url: `${app.globalData.baseURL}/trips/${id}`,
+            method: 'DELETE',
+            success(res){
+              wx.switchTab({
+                url: '/pages/trips/landing',
+              })
+            }
+          })
+        }
+      }
+    })
+  }
 })
