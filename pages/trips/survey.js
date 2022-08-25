@@ -22,16 +22,16 @@ Page({
     // This is a data structure example to build while submitting to the back end.
     questionsToSubmit: [
       {
-        "content": "What room type do you want to live in?",
+        "content": "What kind of room do you want?",
         "question_type": "single-choice",
         "options": [
-          "Private Room",
-          "Shared Room",
-          "no preference"
+          "Private room",
+          "Shared room",
+          "No preference"
         ],
       },
       {
-        "content": "Dietary requirements?",
+        "content": "Any food preferences?",
         "question_type": "single-choice",
         "options": [
           "Vegetarian",
@@ -40,7 +40,7 @@ Page({
         ]
       },
       {
-        "content": "Do you need pick up?",
+        "content": "Do you need to be picked up?",
         "question_type": "single-choice",
         "options": [
           "Yes",
