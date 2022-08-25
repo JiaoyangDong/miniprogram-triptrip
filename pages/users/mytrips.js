@@ -61,10 +61,18 @@ Page({
         console.log("From mytrips.js: onshow request succesfully")
         console.log("From mytrips.js: res",res)
         if (res.statusCode === 200) {
+          let past_trips = res.data.past
+          past_trips.map((trip) => {
+            trip.start_date = wx.se.prettyDate(trip.start_date)
+          })
+          let upcoming_trips = res.data.upcoming
+          upcoming_trips.map((trip) => {
+            trip.start_date = wx.se.prettyDate(trip.start_date)
+          })
           page.setData({
-            past_trips: res.data.past,
+            past_trips,
             loadingHidden: true,
-            upcoming_trips: res.data.upcoming,
+            upcoming_trips,
             bookmarked_trips: res.data.bookmarks
             // pets: res.data.pets,
             // booked_pets: res.data.booked_pets,

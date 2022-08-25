@@ -50,6 +50,7 @@ Page({
             bookmarkId: res.data.bookmark_id, 
             bookingId: res.data.booking_id, 
             hasSurvey: res.data.has_survey,
+            hasAnswers: res.data.has_answers,
             longitude: parseFloat(trip.longitude),
             latitude: parseFloat(trip.latitude), 
             name: trip.location,
