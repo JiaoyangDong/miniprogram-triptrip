@@ -61,7 +61,7 @@
             <image class="attendee-img" src="{{attendee.image? attendee.image :'/images/kiwibird-pink.png' }}"></image>
             <!-- MAYBE TODO: on hover {{attendee.name}} -->
           </view>
-          <view wx:if="{{!attendees.length}}" style="margin-top: 10rpx;">There are no attendees yet!</view>
+          <view wx:if="{{!attendees.length}}" class="noinfo">There are no attendees yet!</view>
         </scroll-view>
       </view>
     </view>
@@ -74,15 +74,12 @@
         <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
       </block>
       <block wx:if="{{!hasSurvey}}">
-        <button style="margin-top: 40rpx; background-color:#e15b99; color: white; border-radius: 30rpx; padding: 20rpx 0; margin-top: -10rpx;" bindtap="goToSurvey">Add survey</button>
+        <button style="margin-top: 50rpx; background-color:#e15b99; color: white; border-radius: 30rpx; padding: 20rpx 0;" bindtap="goToSurvey">Add survey</button>
       </block>
     </view>
     <!-- <view wx:for="{{ecAll}}" wx:for-index="index">
-      <ec-canvas id="mychart-dom-bar-{{index}}" canvas-id="mychart-bar" ec="{{ item }}"></ec-canvas>
+      index:{{index}}
+      <ec-canvas id="mychart-dom-bar-{{index}}" canvas-id="mychart-bar-{{index}}" ec="{{ item }}"></ec-canvas>
     </view> -->
-
-
-    <!-- Edit and preview buttons-->
-
   </view>
 </view>
