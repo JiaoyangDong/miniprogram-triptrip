@@ -146,8 +146,8 @@ Page({
           content: 'Booking confirmed!', 
           confirmText: 'OK'
         })
-        wx.switchTab({
-          url: '/pages/users/mytrips',
+        wx.redirectTo({
+          url: '/pages/trips/show?tripId=${id}',
         })
         // if (res.statusCode === 201) {
         // }
