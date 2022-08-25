@@ -191,14 +191,14 @@ Page({
           console.log('update success?', res)
           if (res.statusCode === 422) {
             wx.showModal({
-              title: 'Error!',
+              title: 'Sorry, please try again!',
               content: res.data.errors.join(', '),
               showCancel: false,
               confirmText: 'OK'
             })
           } else if (res.statusCode === 500) {
             wx.showModal({
-              title: "Trip cannot be empty!",
+              title: "Sorry, please try again!",
               showCancel: false,
               confirmText: 'OK'
             })

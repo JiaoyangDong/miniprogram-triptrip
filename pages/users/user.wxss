@@ -38,7 +38,7 @@
 .inactive {
   font-weight: 400;
   color: #868686;
-  text-shadow: 2px 2px 5px rgb(160, 157, 159);
+  /* text-shadow: 2px 2px 5px rgb(160, 157, 159); */
 }
 
 .notrip {
