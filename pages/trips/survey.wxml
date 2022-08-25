@@ -8,7 +8,7 @@
 
 <!-- form field -->
   <view class="item-add">
-    <view class="h2">add question to the survey:</view>
+    <view class="h2">Add question to the survey:</view>
   </view>
 
   <form bindsubmit="submitSurvey">
@@ -56,7 +56,7 @@
     <!-- Submit button -->
     <!-- <button class="form-item" form-type="submit" style="font-weight: 700; font-size: 30rpx; width: 280rpx; border-radius: 32rpx;">add survey</button> -->
  
-    <button style="font-weight: 700; font-size: 30rpx; width: 280rpx; border-radius: 32rpx;" bindtap="submitSurveyCustom">add survey</button>
+    <button style="font-weight: 700; font-size: 30rpx; width: 280rpx; border-radius: 32rpx;" bindtap="submitSurveyCustom">Add survey</button>
   </form>
   
 </view>
