@@ -278,4 +278,27 @@ Page({
         url: `/pages/trips/survey`,
       })
   }, 
+  deleteTrip(e) {
+    const id = e.currentTarget.dataset.tripid
+    wx.showModal({
+      title: 'Are you sure you want to delete this trip?',
+      content: "It'll be gone for good.",
+      cancelText: 'No',
+      confirmText: 'Yes',
+      success(res) {
+        if (res.confirm) {
+          wx.request({
+            header: app.globalData.header,
+            url: `${app.globalData.baseURL}/trips/${id}`,
+            method: 'DELETE',
+            success(res){
+              wx.switchTab({
+                url: '/pages/trips/landing',
+              })
+            }
+          })
+        }
+      }
+    })
+  }
 })
