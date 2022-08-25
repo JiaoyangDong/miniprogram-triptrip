@@ -4,12 +4,7 @@
 </view>
 
 <view class="main">
-<!-- required field -->
-  <view class="h1">Choose questions to add</view>
-  <!-- <view class="item-name">
-    <view class="h2">Full Name (required)</view>
-    <view class="nameinput"></view>
-  </view> -->
+  <view class="h1">Add survey</view>
 
 <!-- form field -->
   <!-- <view class="item-add">

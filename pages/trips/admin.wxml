@@ -53,7 +53,7 @@
     </view>
 
     <view class="attendees-box">
-      <view class="attendees-box-txt">attendees:</view>
+      <view class="attendees-box-txt">Attendees:</view>
       <view class="scroll-view-box-box">
 
         <scroll-view scroll-x="true" style="width: 100%; white-space: nowrap;" class="attendees-scroll-view">  
@@ -66,7 +66,7 @@
       </view>
     </view>
 
-    <view class="attendees-box-txt">Survey stats:</view>
+    <view class="attendees-box-txt">Survey results:</view>
 
     <view class="stats-box">
       <block wx:if="{{hasSurvey}}">
