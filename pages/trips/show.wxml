@@ -46,16 +46,15 @@
     </text>
 
     <!--I Wanna go!-->
-    <!-- <button wx:if="{{!isBooker}}" class="btn btn-primary" >I Wanna Go!</button> -->
-    <button wx:if="{{!isBooker && hasSurvey}}" bindtap="submitBooking" bindtap="goToTripSurvey" class="btn btn-primary">
+    <button wx:if="{{!isBooker && hasSurvey}}" bindtap="submitBooking" class="btn btn-primary">
       <view>Sign me up!</view> 
     </button>
 
     <button wx:if="{{!isBooker && !hasSurvey}}" bindtap="submitBooking" class="btn btn-primary">
-      <view>I wanna go!</view> 
+      <view>Sign me up!</view> 
     </button>
 
-    <button wx:if="{{isBooker && hasSurvey}}" bindtap="goToTripSurvey" class="btn btn-secondary"> 
+    <button wx:if="{{isBooker && hasSurvey && !hasAnswers}}" bindtap="goToTripSurvey" class="btn btn-secondary"> 
       <view>Continue to survey</view> 
     </button>
 
@@ -64,7 +63,7 @@
     </button>
 
     <button wx:if="{{isBooker && hasAnswers}}" class="btn btn-secondary"> 
-      <view>All done!</view> 
+      <view>All set!</view> 
     </button>
     <!-- <button bindtap="goToSurvey">go to survey(test)</button> -->
   </view>

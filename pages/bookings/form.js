@@ -51,6 +51,7 @@ Page({
   getData() {
     let page = this
     let options = page.options
+    console.log({options})
     const bookingId = page.options.bookingId
     wx.request({
       header: app.globalData.header,
