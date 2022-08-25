@@ -99,6 +99,7 @@ Page({
                 isBooker: true,
                 bookingId: res.data.id
               })
+              page.goToTripSurvey()
               // wx.redirectTo({
               //   url: `/pages/users/profile?id=${page.options.id}`,
               // })
@@ -116,6 +117,7 @@ Page({
                   if (res.confirm) {
                     wx.redirectTo({
                       url: `../booking/show?id=${bookingId}`,
+                      // url: `../booking/show?bookingId=${bookingId}`,
                     })
                   }
                 }
@@ -234,6 +236,7 @@ Page({
   goToTripSurvey(e) {
     let page = this
     console.log("bookingid:",page.data.bookingId)
+    // console.log("bookingid:",page.data.id)
     wx.redirectTo({
       url: `/pages/bookings/form?bookingId=${page.data.bookingId}&tripId=${page.data.trip.id}&tripTitle=${page.data.trip.title}`,
     })
