@@ -8,47 +8,47 @@
 
 <!-- form field -->
   <view class="item-add">
-    <view class="h2">Add question to the survey:</view>
+    <view class="h2">Any questions you want to ask?</view>
   </view>
 
   <form bindsubmit="submitSurvey">
     <view class="option-room" bindtap="selectQuestion" data-index="0" data-tag="room">
-      <view class="h2"><image class="toggle-btn" src="{{questions.room.active?yes:no}}" ></image><text>Room type</text></view>
+      <view class="h2"><image class="toggle-btn" src="{{questions.room.active?yes:no}}" ></image><text>What kind of room do you want?</text></view>
       <view wx:if="{{questions.room.active}}">
-        <view class="add-msg">question added!</view>
+        <view class="add-msg">Question added!</view>
         <view class="roominput">
           <!-- <view class="form-option"> -->
-            <view class="dot-point"><image class="greydot" src="/images/dot.png"></image><text>individual room</text></view>
-            <view class="dot-point"><image class="greydot" src="/images/dot.png"></image><text>shared room</text></view>
-            <view class="dot-point"><image class="greydot" src="/images/dot.png"></image><text>no preference</text></view>
+            <view class="dot-point"><image class="greydot" src="/images/dot.png"></image><text>Private room</text></view>
+            <view class="dot-point"><image class="greydot" src="/images/dot.png"></image><text>Shared room</text></view>
+            <view class="dot-point"><image class="greydot" src="/images/dot.png"></image><text>No preference</text></view>
           <!-- </view> -->
         </view>
       </view>
     </view>
 
     <view class="option-food" bindtap="selectQuestion" data-index="1" data-tag="food">
-      <view class="h2"><image class="toggle-btn" src="{{questions.food.active?yes:no}}"></image><text>Food preference</text></view>
+      <view class="h2"><image class="toggle-btn" src="{{questions.food.active?yes:no}}"></image><text>Any food preferences?</text></view>
      
       <view wx:if="{{questions.food.active}}">
-        <view class="add-msg">question added!</view>
+        <view class="add-msg">Question added!</view>
         <view class="foodinput">
           <!-- <view class="form-option"> -->
-            <view class="dot-point"><image class="greydot"  src="/images/dot.png"></image><text>vegetarian</text></view>
-            <view class="dot-point"><image class="greydot"  src="/images/dot.png"></image><text>vegan</text></view>
+            <view class="dot-point"><image class="greydot"  src="/images/dot.png"></image><text>Vegetarian</text></view>
+            <view class="dot-point"><image class="greydot"  src="/images/dot.png"></image><text>Vegan</text></view>
           <!-- </view> -->
-          <view class="dot-point"><image class="greydot" src="/images/dot.png"></image><text>no preference</text></view>
+          <view class="dot-point"><image class="greydot" src="/images/dot.png"></image><text>No preference</text></view>
         </view>
       </view>
     </view>
 
     <view class="option-pickup" bindtap="selectQuestion" data-index="2" data-tag="pickup"> 
-      <view class="h2"><image class="toggle-btn" src="{{questions.pickup.active?yes:no}}"></image><text>Do you need pickup?</text></view>
+      <view class="h2"><image class="toggle-btn" src="{{questions.pickup.active?yes:no}}"></image><text>Do you need to be picked up?</text></view>
       <view wx:if="{{questions.pickup.active}}">
-        <view class="add-msg">question added!</view>
+        <view class="add-msg">Question added!</view>
         <view class="pickinput">
           <!-- <view class="form-option"> -->
-            <view class="dot-point"><image class="greydot" src="/images/dot.png" ></image><text>yes</text></view>
-            <view class="dot-point"><image class="greydot" src="/images/dot.png" ></image><text>no</text></view>
+            <view class="dot-point"><image class="greydot" src="/images/dot.png" ></image><text>Yes</text></view>
+            <view class="dot-point"><image class="greydot" src="/images/dot.png" ></image><text>No</text></view>
           <!-- </view> -->
         </view>
       </view>
