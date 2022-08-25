@@ -171,6 +171,7 @@ Page({
           // wx.switchTab({
           //   url: '/pages/trips/landing',
           // })
+          
           wx.navigateBack({
             delta: 0,
           })
