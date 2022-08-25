@@ -14,7 +14,7 @@
     <!-- Title -->
     <view class="form-item">
       <view class="title"><text class="h2">Title</text></view>
-      <input style="border: 2rpx solid #E15B99; border-radius: 30rpx; padding: 4rpx 30rpx; margin-top: 5rpx; font-weight: 200; height: 55rpx;" bindinput="setInputData" data-field="title" name="title" value="{{formData.title}}" />
+      <input maxlength="40" style="border: 2rpx solid #E15B99; border-radius: 30rpx; padding: 4rpx 30rpx; margin-top: 5rpx; font-weight: 200; height: 55rpx;" bindinput="setInputData" data-field="title" name="title" value="{{formData.title}}" />
     </view>
 
     <!-- Date -->
