@@ -2,6 +2,9 @@
 import event from './utils/event';
 wx.event = event;
 
+const SE = require('/libs/functions.js')
+wx.se = SE
+
 App({
   onLaunch() {
     // 展示本地存储能力

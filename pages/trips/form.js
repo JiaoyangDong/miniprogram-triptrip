@@ -1,5 +1,6 @@
 const app = getApp()
 const chooseLocation = requirePlugin('chooseLocation');
+
 Page({
   data: {
     // tags: app.globalData.showTags,
@@ -19,6 +20,7 @@ Page({
   },
   onLoad(options) {
     this.loadTags()
+    wx.setStorageSync('new', true)
   },
   loadTags() {
     const id = wx.getStorageSync('tripId')
@@ -27,7 +29,7 @@ Page({
       tags.map((tag) => { tag.active = false})
     this.setData({tags})
     } else {
-
+      
     }
   },
   onReady() {
@@ -45,6 +47,10 @@ Page({
       const latitude = current_location.latitude
       formData = {...formData, address, location, longitude, latitude}
       page.setData({formData})
+    } 
+    if(wx.getStorageSync('new')) {
+      formData['location'] = ''
+      page.setData({formData})
     }
     // if (page.data.resetForm) page.resetForm();
     const id = wx.getStorageSync('tripId')
@@ -59,10 +65,23 @@ Page({
           console.log(data)
           page.setData({
             // locationsIndex: data.locations.findIndex(el => (el === res.data.locations)),
-            formData: res.data.trip,
+            formData: {
+              title: res.data.trip.title,
+              address: res.data.trip.address,
+              location: res.data.trip.location,
+              longitude: res.data.trip.longitude,
+              latitude: res.data.trip.latitude,
+              description: res.data.trip.description,
+              start_date: res.data.trip.start_date,
+              end_date: res.data.trip.end_date,
+            },
             tripId: id,
+            src: res.data.trip.image,
             tags: res.data.trip.tags
           })
+          const startDateShow = wx.se.prettyDate(res.data.trip.start_date)
+          const endDateShow = wx.se.prettyDate(res.data.trip.end_date)
+          page.setData({startDateShow, endDateShow})
           wx.removeStorageSync('tripId')
         }
       })
@@ -81,11 +100,13 @@ Page({
     let { formData } = this.data
     const { field } = e.currentTarget.dataset
     if ( field == 'start_date') {
-      formData.start_date = e.detail.value,
-      this.setData({ formData, start_date: e.detail.value })
+      formData.start_date = e.detail.value
+      const startDateShow = wx.se.prettyDate(e.detail.value)
+      this.setData({ formData, startDateShow })
     } else if ( field == 'end_date') {
-      formData.end_date = e.detail.value,
-      this.setData({ formData, end_date: e.detail.value })
+      formData.end_date = e.detail.value
+      const endDateShow = wx.se.prettyDate(e.detail.value)
+      this.setData({ formData, endDateShow })
     }
   },
   listenerBtnChooseImage: function () {
@@ -120,6 +141,7 @@ Page({
   }, 
 
   create(e) {
+    wx.setStorageSync('new', true)
     console.log('from create button --->',e)
     const page = this
     console.log('header:', app.globalData.header)
@@ -128,6 +150,8 @@ Page({
     // console.log('trip:', trip)
     console.log("Update: trip", trip)
     page.setData({trip})
+    console.log("this data to send -> ", page.data.trip)
+    // if (page.data.editedId !== undefined && page.data.editedId !== null) {
     if (page.data.tripId !== undefined && page.data.tripId !== null) {
       // edit form
       wx.request({
@@ -140,9 +164,13 @@ Page({
         },
         success(res) {
           console.log('update success?', res)
+          page.upload(page.data.tripId)
           page.setData({resetForm: true})
-          wx.switchTab({
-            url: '/pages/trips/landing',
+          // wx.switchTab({
+          //   url: '/pages/trips/landing',
+          // })
+          wx.navigateBack({
+            delta: 0,
           })
         }
       })
@@ -207,6 +235,7 @@ Page({
   }, 
 
   showMap(e) {
+    wx.setStorageSync('new', false)
     const key = 'VP6BZ-FMPCR-U4SWP-WQTQI-BGOQE-RLF3L'//使用在腾讯位置服务申请的key
     const referer = 'triptrip' //调用插件的app的名称
     // const location = JSON.stringify({
@@ -217,13 +246,6 @@ Page({
       url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer + '&location=',
     })
 
-    // let { formData } = this.data
-    // let location = e.detail.value
-    // let address = e.detail.
-
-    // formData = {...formData, location, }
-    // const { field } = e.currentTarget.dataset
-    // this.setData({ formData, location: e.detail.value })
   },
   goBack() {
     wx.navigateBack({
@@ -252,5 +274,5 @@ Page({
     wx.navigateTo({
         url: `/pages/trips/survey`,
       })
-  }
+  }, 
 })
