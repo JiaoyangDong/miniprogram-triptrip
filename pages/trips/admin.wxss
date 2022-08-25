@@ -204,11 +204,10 @@
 }
 
 .stats-box {
-  height: 600rpx;
+  height: 500rpx;
   /* background-color: rgba(225, 91, 153, .3); */
   /* border: 1px solid #eee; */
   /* background-color:#eee; */
-  margin-top: 40rpx;
   border-radius: 20rpx;
   padding: 20rpx;
 }
@@ -223,4 +222,13 @@
   padding: 20rpx;
   border-radius: 30rpx;
   font-family: Fira Sans;
+}
+
+.info-card{
+  /* background-color:#e4e4e4; */
+  width: 590rpx;
+  margin: 10rpx 20rpx;
+  border-radius: 30rpx;
+  font-family: Fira Sans;
+
 }
