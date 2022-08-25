@@ -51,6 +51,12 @@
   left: 30rpx;
 }
 
+/* .location-box {
+  display: flex;
+
+  /* flex-direction: column; */
+/* } */
+
 /* swiper {
   width: 660rpx;
   height: 400rpx;
