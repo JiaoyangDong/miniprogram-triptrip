@@ -3,7 +3,8 @@
 </view>
 
 <view class="main">
-  <view class="h1"> Create my next trip</view>
+  <view wx:if="{{!tripId}}"class="h1"> Create my next trip</view>
+  <view style="margin-bottom: 20rpx;" wx:if="{{tripId}}" class="h1">Edit my trip</view>
   <form bindsubmit="create">
     <view class="form-item" style="display: flex; flex-direction: column; align-items: center; margin-bottom: -20rpx;">
       <image style="height: 250rpx; width: 250rpx;" src="{{src}}" mode="aspectFill" bindtap="listenerBtnChooseImage" />
