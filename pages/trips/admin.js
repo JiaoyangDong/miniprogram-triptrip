@@ -113,17 +113,6 @@ Page({
     ec: {
       lazyLoad: true
     },
-    // ecAll: [
-    //   {
-    //     lazyLoad: true
-    //   },
-    //   {
-    //     lazyLoad: true
-    //   },
-    //   {
-    //     lazyLoad: true
-    //   }
-    // ]
   },
 
   /**
@@ -287,4 +276,34 @@ Page({
       return chart;
     });
   },
+  togglePublic(e){
+    let page = this
+    wx.request({
+      header: app.globalData.header,
+      url: `${app.globalData.baseURL}/trips/${page.data.trip.id}/toggle_public`,
+      method: "POST",
+      success(res) {
+        console.log("From admin.js - togglePublic: res", res)
+        if (res.statusCode === 200) {
+          // const public = res.data.status === 'public';
+          const trip = res.data.trip;
+          page.setData({
+            trip,
+          });
+          wx.showToast({
+            title: `Set to ${res.data.status}`,
+            duration: 1000
+          })  
+        } else {
+          console.log(res.data.errors.join(" & "))
+          wx.showModal({
+            title: 'Note!',
+            content: res.data.errors.join(" & "), 
+            confirmText: 'OK',
+            showCancel: false
+          })
+        }
+      }
+    })
+  }
 })

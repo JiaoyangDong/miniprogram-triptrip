@@ -50,6 +50,11 @@
         <image src="/images/admin/preview.png" class="btn-img"></image>
         <view class="btn-text">Preview</view>
       </view>
+      <view class="btn" data-id="{{trip.id}}">
+        <!-- <image src="/images/admin/preview.png" class="btn-img"></image> -->
+        <switch color="#E15B99" style="height: 20rpx;" checked="{{trip.public}}" bindchange="togglePublic"></switch>
+        <view class="btn-text">Public</view>
+      </view>
     </view>
 
     <view class="attendees-box">
@@ -73,7 +78,7 @@
     <view class="attendees-box-txt">Survey results:</view>
 
     <block wx:if="{{hasSurvey}}">
-      <view wx:if="{{questions[0].answers.length === 0 }}" class="noinfo"> No body complete the survey yet.</view>
+      <view wx:if="{{questions[0].answers.length === 0 }}" class="noinfo"> Nobody complete the survey yet.</view>
       <view wx:else class="info-card"> <text style="color:#E15B99"> {{questions[0].answers.length}} / {{attendees.length}} </text> people have completed the survey:</view>
       <view class="stats-box" wx:for="{{questions}}" wx:for-item="question" wx:for-index="index">
         <!-- <view style="margin-bottom: 60rpx;">Q: {{question.content}}</view> -->
