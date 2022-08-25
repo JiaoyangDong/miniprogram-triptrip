@@ -4,21 +4,101 @@ const app = getApp();
 
 //  testing only 
 // data = [{name: 'A1', value: 3}, {name: 'A2', value: 5}]
-function setOption(chart, data) {
-  console.log("from setOptions")
+function setOption(chart, title, data) {
+  console.log("calling setOptions")
+  let name = data.map(item => item.name)
+  let value = data.map(item => item.value)
+  console.log("name", name)
+  console.log("value", value)
+  let backgroundColor = '#eee'
   let options =  {
-    backgroundColor: "#eee",
-    series: [{
-      label: {
-        normal: {
-          fontSize: 14
+    // For pie chart
+    // backgroundColor: "#eee",
+    // series: [{
+    //   label: {
+    //     normal: {
+    //       fontSize: 14
+    //     }
+    //   },
+    //   type: 'pie',
+    //   center: ['50%', '50%'],
+    //   radius: ['10%', '40%'],
+    //   data: data
+    // }]
+  // for bar chat
+    backgroundColor: backgroundColor,
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+        type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+      }
+    },
+    grid: {
+      left: 20,
+      right: 20,
+      bottom: 15,
+      top: 40,
+      containLabel: true
+    },
+    title: {
+      text: title
+    },
+    xAxis: [
+      {
+        type: 'value',
+        axisLine: {
+          lineStyle: {
+            color: backgroundColor,
+            width: 0 
+          }
+        },
+        axisLabel: {
+          color: backgroundColor
+        },
+        showGriid: false,
+        splitLine: {
+          show: false
         }
-      },
-      type: 'pie',
-      center: ['50%', '50%'],
-      radius: ['10%', '40%'],
-      data: data
-    }]
+      }
+    ],
+    yAxis: [
+      {
+        type: 'category',
+        axisTick: { show: false },
+        data: name,
+        axisLine: {
+          lineStyle: {
+            color: backgroundColor
+          }
+        },
+        axisLabel: {
+          color: '#666'
+        },
+        nameTextStyle: {
+          overflow: 'break'
+        },
+        nameRotate: 45,
+        splitNumber: 1,
+        minInterval: 1,
+        showGriid: false,
+        splitLine: {
+          show: false
+        }
+      }
+    ],
+    series: [
+      {
+        name: name,
+        type: 'bar',
+        label: {
+          normal: {
+            show: true,
+            position: 'inside'
+          }
+        },
+        data: value
+      }
+    ]
   } 
   chart.setOption(options);
 }
@@ -33,17 +113,17 @@ Page({
     ec: {
       lazyLoad: true
     },
-    ecAll: {
-      ec1: {
-        lazyLoad: true
-      },
-      ec2: {
-        lazyLoad: true
-      },
-      ec3: {
-        lazyLoad: true
-      }
-    }
+    // ecAll: [
+    //   {
+    //     lazyLoad: true
+    //   },
+    //   {
+    //     lazyLoad: true
+    //   },
+    //   {
+    //     lazyLoad: true
+    //   }
+    // ]
   },
 
   /**
@@ -92,12 +172,24 @@ Page({
           });
           // page.setEC(questions[0].clean_answers)
           if (res.data.has_survey){
-            let ecComponent = page.selectComponent('#mychart-dom-bar');
-            page.init(ecComponent, questions[0].clean_answers)
-            console.log(questions[0].clean_answers)
+            console.log("number of answers:" ,questions[0].clean_answers.length)
+            if (questions[0].clean_answers.length === 0) {
+              console.log("no answer yet")
+            } else {
+              console.log("has answers")
+              // let ecComponent = page.selectComponent('#mychart-dom-bar');
+              // console.log("ecComponent",ecComponent)
+              // page.init(ecComponent, questions[0].clean_answers)
+              questions.forEach((question, index) =>{
+                let ecComponent1 = page.selectComponent(`#mychart-dom-bar-${index}`);
+                page.init(ecComponent1, question.content, question.clean_answers)
+              })
+            }
             // for loop
             // page.data.questions.forEach((q,index)=> {
             //   let ecComponent = page.selectComponent(`#mychart-dom-bar-${index}`);
+            //   console.log(ecComponent)
+            //   console.log(q.clean_answers)
             //   page.init(ecComponent, q.clean_answers)
             // })
           }
@@ -172,9 +264,8 @@ Page({
       url: `survey?id=${tripId}`,
     })
   },
-  init: function (ecComponent, data) {
-    console.log("from page.init")
-
+  init: function (ecComponent, title, data) {
+    console.log("calling page.init")
     ecComponent.init((canvas, width, height, dpr) => {
       // 获取组件的 canvas、width、height 后的回调函数
       // 在这里初始化图表
@@ -183,7 +274,7 @@ Page({
         height: height,
         devicePixelRatio: dpr // new
       });
-      setOption(chart, data);
+      setOption(chart, title, data);
       // barChart.setOption(getRadioOptions(ecData))
 
       // 将图表实例绑定到 this 上，可以在其他成员函数（如 dispose）中访问

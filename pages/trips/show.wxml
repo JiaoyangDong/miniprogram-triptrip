@@ -46,13 +46,24 @@
     </text>
 
     <!--I Wanna go!-->
-    <button wx:if="{{!isBooker}}" class="btn btn-primary" bindtap="submitBooking">I Wanna Go!</button>
-    <button wx:if="{{isBooker && hasSurvey}}" bindtap="goToTripSurvey" class="btn btn-secondary">
-      <view>Fill survey to confirm</view> 
+    <button wx:if="{{!isBooker && hasSurvey}}" bindtap="submitBooking" class="btn btn-primary">
+      <view>Sign me up!</view> 
     </button>
-    <button wx:if="{{isBooker && !hasSurvey}}" bindtap="goToMyTrip" class="btn btn-secondary">
-      <view>Signed up!</view> 
-      <view> Go to my trips.</view>
+
+    <button wx:if="{{!isBooker && !hasSurvey}}" bindtap="submitBooking" class="btn btn-primary">
+      <view>Sign me up!</view> 
+    </button>
+
+    <button wx:if="{{isBooker && hasSurvey && !hasAnswers}}" bindtap="goToTripSurvey" class="btn btn-secondary"> 
+      <view>Continue to survey</view> 
+    </button>
+
+    <button wx:if="{{isBooker && !hasSurvey}}" class="btn btn-secondary"> 
+      <view>All set!</view> 
+    </button>
+
+    <button wx:if="{{isBooker && hasAnswers}}" class="btn btn-secondary"> 
+      <view>All set!</view> 
     </button>
     <!-- <button bindtap="goToSurvey">go to survey(test)</button> -->
   </view>

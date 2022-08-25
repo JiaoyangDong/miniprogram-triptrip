@@ -5,7 +5,8 @@ Page({
     booking: {},
     latitude: 0,
     longitude: 0,
-    name: ""
+    name: "",
+    signedUp: false
   },
   onLoad(options) {
   },
@@ -49,6 +50,7 @@ Page({
             bookmarkId: res.data.bookmark_id, 
             bookingId: res.data.booking_id, 
             hasSurvey: res.data.has_survey,
+            hasAnswers: res.data.has_answers,
             longitude: parseFloat(trip.longitude),
             latitude: parseFloat(trip.latitude), 
             name: trip.location,
@@ -62,6 +64,7 @@ Page({
   submitBooking(e){
     console.log("From show.js - submitBooking: e", e)
     let page = this
+    page.setData({signedUp: true})
     // get user profile and update user info in the backend
     wx.getUserProfile({
       desc: 'User Profile for submitting',
@@ -98,6 +101,7 @@ Page({
                 isBooker: true,
                 bookingId: res.data.id
               })
+              page.goToTripSurvey()
               // wx.redirectTo({
               //   url: `/pages/users/profile?id=${page.options.id}`,
               // })
@@ -106,7 +110,7 @@ Page({
               console.log("From show.js: error message", res.data.errors)
               // const bookingId = res.data.booking.id
               wx.showModal({
-                title: 'Error!',
+                title: 'Oops!',
                 content: res.data.errors.join(', '),
                 cancelText: "OK",
                 confirmText: 'Details',
@@ -115,6 +119,7 @@ Page({
                   if (res.confirm) {
                     wx.redirectTo({
                       url: `../booking/show?id=${bookingId}`,
+                      // url: `../booking/show?bookingId=${bookingId}`,
                     })
                   }
                 }
@@ -233,6 +238,7 @@ Page({
   goToTripSurvey(e) {
     let page = this
     console.log("bookingid:",page.data.bookingId)
+    // console.log("bookingid:",page.data.id)
     wx.redirectTo({
       url: `/pages/bookings/form?bookingId=${page.data.bookingId}&tripId=${page.data.trip.id}&tripTitle=${page.data.trip.title}`,
     })

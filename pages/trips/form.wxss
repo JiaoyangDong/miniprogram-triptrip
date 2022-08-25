@@ -81,3 +81,17 @@ button {
   color: white;
   background-color: #fc9bc8;
 }
+
+.delete-btn {
+  font-size: 26rpx;
+  width: 200rpx;
+  border-radius: 24rpx;
+  /* background-color: #e4e4e4; */
+  border: none;
+  color: black;
+  text-decoration: underline;
+  /* padding: 10rpx 40rpx; */
+  margin: 0 auto;
+  margin-top: 60rpx;
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+}

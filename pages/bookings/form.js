@@ -51,6 +51,7 @@ Page({
   getData() {
     let page = this
     let options = page.options
+    console.log({options})
     const bookingId = page.options.bookingId
     wx.request({
       header: app.globalData.header,
@@ -146,11 +147,10 @@ Page({
           content: 'Booking confirmed!', 
           confirmText: 'OK'
         })
-        
-        let tripId = page.options.tripId
-        console.log(tripId)
+
         wx.navigateTo({
-          url: `/pages/trips/show?id=${tripId}`,
+          url: `/pages/trips/show?id=${page.data.tripId}`,
+
         })
         // if (res.statusCode === 201) {
         // }

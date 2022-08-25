@@ -51,11 +51,12 @@
     </view>
     <!-- Desctiption -->
     <view class="form-item"> <text class="h2">Description</text>
-      <textarea bindinput="setInputData" data-field="description" name="description" value="{{formData.description}}" rows="4" style="border: 1px solid #E15B99; border-radius: 20px; padding: 20rpx; width: 95%; height: 200rpx; margin-top: 10rpx; font-weight: 200; margin-bottom: 30rpx;" placeholder="add more info about the trip ..."></textarea>
+      <textarea bindinput="setInputData" data-field="description" name="description" value="{{formData.description}}" rows="4" style="border: 1px solid #E15B99; border-radius: 20px; padding: 20rpx; width: 95%; height: 200rpx; margin-top: 10rpx; font-weight: 200; margin-bottom: 30rpx;" placeholder="Tell us more about your trip!"></textarea>
     </view>
   </view>
 
     <!-- Submit button -->
     <button class="form-item" form-type="submit" style="font-weight: 700; font-size: 40rpx; width: 280rpx; border-radius: 32rpx;">Save</button>
+    <view wx:if="{{tripId}}" class="form-item delete-btn" data-tripId="{{tripId}}" bindtap="deleteTrip">Delete this trip?</view>
   </form>
 </view>

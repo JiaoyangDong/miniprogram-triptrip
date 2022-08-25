@@ -10,7 +10,7 @@
 
 <view class="container">
   <image class="logo-img" src="/images/profile-kiwibird.png"></image>
-  <text class="page-title">trips I'm planning</text>
+  <text class="page-title">Trips I'm planning</text>
   <!-- <view class="create-cards"> -->
   <!-- <text class="title-create">trips i'm leading</text> -->
 
