@@ -3,7 +3,8 @@
 </view>
 
 <view class="main">
-  <view class="h1"> Create my next trip</view>
+  <view wx:if="{{!tripId}}"class="h1"> Create my next trip</view>
+  <view style="margin-bottom: 20rpx;" wx:if="{{tripId}}" class="h1">Edit my trip</view>
   <form bindsubmit="create">
     <view class="box" style="margin-bottom: 60rpx;">
     <view class="form-item" style="display: flex; flex-direction: column; align-items: center; margin-bottom: -20rpx;">
@@ -13,7 +14,7 @@
     <!-- Title -->
     <view class="form-item">
       <view class="title"><text class="h2">Title</text></view>
-      <input style="border: 2rpx solid #E15B99; border-radius: 30rpx; padding: 4rpx 30rpx; margin-top: 5rpx; font-weight: 200; height: 55rpx;" bindinput="setInputData" data-field="title" name="title" value="{{formData.title}}" />
+      <input maxlength="40" style="border: 2rpx solid #E15B99; border-radius: 30rpx; padding: 4rpx 30rpx; margin-top: 5rpx; font-weight: 200; height: 55rpx;" bindinput="setInputData" data-field="title" name="title" value="{{formData.title}}" />
     </view>
 
     <!-- Date -->

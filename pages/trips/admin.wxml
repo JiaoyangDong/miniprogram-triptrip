@@ -54,15 +54,19 @@
 
     <view class="attendees-box">
       <view class="attendees-box-txt">Attendees:</view>
-      <view class="scroll-view-box-box">
 
-        <scroll-view scroll-x="true" style="width: 100%; white-space: nowrap;" class="attendees-scroll-view">
-          <view class="attendee" wx:for="{{attendees}}" wx:for-item="attendee">
-            <image class="attendee-img" src="{{attendee.image? attendee.image :'/images/kiwibird-pink.png' }}"></image>
-            <!-- MAYBE TODO: on hover {{attendee.name}} -->
-          </view>
-          <view wx:if="{{!attendees.length}}" style="margin-top: 10rpx;">There are no attendees yet!</view>
-        </scroll-view>
+      <view class="scroll-view-flex">
+        <view class="scroll-view-box-box">
+          <scroll-view scroll-x="true" style="width: 100%; white-space: nowrap;" class="attendees-scroll-view">  
+            <view class="attendee" wx:for="{{attendees}}" wx:for-item="attendee">
+              <image class="attendee-img" src="{{attendee.image? attendee.image :'/images/kiwibird-pink.png' }}"></image>
+              <!-- MAYBE TODO: on hover {{attendee.name}} -->
+            </view>
+            <view wx:if="{{!attendees.length}}" style="margin-top: 30rpx;">There are no attendees yet!</view>
+          </scroll-view>
+        </view>
+        <view wx:if="{{attendees.length === 1}}" class="attendee-number">{{attendees.length}} person signed up!</view> 
+        <view wx:if="{{attendees.length > 1}}" class="attendee-number">{{attendees.length}} people signed up!</view>
       </view>
     </view>
 
@@ -70,19 +74,16 @@
 
     <view class="stats-box">
       <block wx:if="{{hasSurvey}}">
-        <view>Q: {{questions[0].content}}</view>
+        <view style="margin-bottom: 60rpx;">Q: {{questions[0].content}}</view>
         <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
       </block>
       <block wx:if="{{!hasSurvey}}">
-        <button style="margin-top: 40rpx; background-color:#e15b99; color: white; border-radius: 30rpx; padding: 20rpx 0; margin-top: -10rpx;" bindtap="goToSurvey">Add survey</button>
+        <button style="margin-top: 50rpx; background-color:#e15b99; color: white; border-radius: 30rpx; padding: 20rpx 0;" bindtap="goToSurvey">Add survey</button>
       </block>
     </view>
     <!-- <view wx:for="{{ecAll}}" wx:for-index="index">
-      <ec-canvas id="mychart-dom-bar-{{index}}" canvas-id="mychart-bar" ec="{{ item }}"></ec-canvas>
+      index:{{index}}
+      <ec-canvas id="mychart-dom-bar-{{index}}" canvas-id="mychart-bar-{{index}}" ec="{{ item }}"></ec-canvas>
     </view> -->
-
-
-    <!-- Edit and preview buttons-->
-
   </view>
 </view>

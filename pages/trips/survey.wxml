@@ -7,9 +7,9 @@
   <view class="h1">Add survey</view>
 
 <!-- form field -->
-  <!-- <view class="item-add">
-    <view class="h2">add question to the survey:</view>
-  </view> -->
+  <view class="item-add">
+    <view class="h2">Add question to the survey:</view>
+  </view>
 
   <form bindsubmit="submitSurvey">
     <view class="option-room" bindtap="selectQuestion" data-index="0" data-tag="room">
@@ -17,10 +17,11 @@
       <view wx:if="{{questions.room.active}}">
         <view class="add-msg">question added!</view>
         <view class="roominput">
-          <view class="form-option">
+          <!-- <view class="form-option"> -->
             <view class="dot-point"><image class="greydot" src="/images/dot.png"></image><text>individual room</text></view>
             <view class="dot-point"><image class="greydot" src="/images/dot.png"></image><text>shared room</text></view>
-          </view>
+            <view class="dot-point"><image class="greydot" src="/images/dot.png"></image><text>no preference</text></view>
+          <!-- </view> -->
         </view>
       </view>
     </view>
@@ -31,10 +32,10 @@
       <view wx:if="{{questions.food.active}}">
         <view class="add-msg">question added!</view>
         <view class="foodinput">
-          <view class="form-option">
+          <!-- <view class="form-option"> -->
             <view class="dot-point"><image class="greydot"  src="/images/dot.png"></image><text>vegetarian</text></view>
-            <view class="dot-point"><image class="greydot"  src="/images/dot.png" style="padding-left: 100rpx;"></image><text>allergic to</text></view>
-          </view>
+            <view class="dot-point"><image class="greydot"  src="/images/dot.png"></image><text>vegan</text></view>
+          <!-- </view> -->
           <view class="dot-point"><image class="greydot" src="/images/dot.png"></image><text>no preference</text></view>
         </view>
       </view>
@@ -45,10 +46,10 @@
       <view wx:if="{{questions.pickup.active}}">
         <view class="add-msg">question added!</view>
         <view class="pickinput">
-          <view class="form-option">
+          <!-- <view class="form-option"> -->
             <view class="dot-point"><image class="greydot" src="/images/dot.png" ></image><text>yes</text></view>
-            <view class="dot-point"><image class="greydot" src="/images/dot.png" style="padding-left: 200rpx;"></image><text>no</text></view>
-          </view>
+            <view class="dot-point"><image class="greydot" src="/images/dot.png" ></image><text>no</text></view>
+          <!-- </view> -->
         </view>
       </view>
     </view>
