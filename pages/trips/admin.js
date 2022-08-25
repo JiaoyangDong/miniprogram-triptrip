@@ -5,20 +5,95 @@ const app = getApp();
 //  testing only 
 // data = [{name: 'A1', value: 3}, {name: 'A2', value: 5}]
 function setOption(chart, data) {
-  console.log("from setOptions")
+  console.log("calling setOptions")
+  let name = data.map(item => item.name)
+  let value = data.map(item => item.value)
+  console.log("name", name)
+  console.log("value", value)
   let options =  {
-    backgroundColor: "#eee",
-    series: [{
-      label: {
-        normal: {
-          fontSize: 14
+    // For pie chart
+    // backgroundColor: "#eee",
+    // series: [{
+    //   label: {
+    //     normal: {
+    //       fontSize: 14
+    //     }
+    //   },
+    //   type: 'pie',
+    //   center: ['50%', '50%'],
+    //   radius: ['10%', '40%'],
+    //   data: data
+    // }]
+  // for bar chat
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+        type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+      }
+    },
+    grid: {
+      left: 20,
+      right: 20,
+      bottom: 15,
+      top: 40,
+      containLabel: true
+    },
+    xAxis: [
+      {
+        type: 'value',
+        axisLine: {
+          lineStyle: {
+            color: '#ffffff',
+            width: 0 
+          }
+        },
+        axisLabel: {
+          color: '#fff'
+        },
+        showGriid: false,
+        splitLine: {
+          show: false
         }
-      },
-      type: 'pie',
-      center: ['50%', '50%'],
-      radius: ['10%', '40%'],
-      data: data
-    }]
+      }
+    ],
+    yAxis: [
+      {
+        type: 'category',
+        axisTick: { show: false },
+        data: name,
+        axisLine: {
+          lineStyle: {
+            color: '#fff'
+          }
+        },
+        axisLabel: {
+          color: '#666'
+        },
+        nameTextStyle: {
+          overflow: 'break'
+        },
+        nameRotate: 45,
+        splitNumber: 1,
+        minInterval: 1,
+        showGriid: false,
+        splitLine: {
+          show: false
+        }
+      }
+    ],
+    series: [
+      {
+        name: '热度',
+        type: 'bar',
+        label: {
+          normal: {
+            show: true,
+            position: 'inside'
+          }
+        },
+        data: value
+      }
+    ]
   } 
   chart.setOption(options);
 }
@@ -33,17 +108,17 @@ Page({
     ec: {
       lazyLoad: true
     },
-    ecAll: {
-      ec1: {
-        lazyLoad: true
-      },
-      ec2: {
-        lazyLoad: true
-      },
-      ec3: {
-        lazyLoad: true
-      }
-    }
+    // ecAll: [
+    //   {
+    //     lazyLoad: true
+    //   },
+    //   {
+    //     lazyLoad: true
+    //   },
+    //   {
+    //     lazyLoad: true
+    //   }
+    // ]
   },
 
   /**
@@ -92,12 +167,21 @@ Page({
           });
           // page.setEC(questions[0].clean_answers)
           if (res.data.has_survey){
-            let ecComponent = page.selectComponent('#mychart-dom-bar');
-            page.init(ecComponent, questions[0].clean_answers)
-            console.log(questions[0].clean_answers)
+            console.log("number of answers:" ,questions[0].clean_answers.length)
+            if (questions[0].clean_answers.length === 0) {
+              console.log("no answer yet")
+            } else {
+              console.log("has answers")
+              let ecComponent = page.selectComponent('#mychart-dom-bar');
+              console.log("ecComponent",ecComponent)
+              page.init(ecComponent, questions[0].clean_answers)
+              console.log("ec:", page.data.ec)
+            }
             // for loop
             // page.data.questions.forEach((q,index)=> {
             //   let ecComponent = page.selectComponent(`#mychart-dom-bar-${index}`);
+            //   console.log(ecComponent)
+            //   console.log(q.clean_answers)
             //   page.init(ecComponent, q.clean_answers)
             // })
           }
@@ -173,8 +257,7 @@ Page({
     })
   },
   init: function (ecComponent, data) {
-    console.log("from page.init")
-
+    console.log("calling page.init")
     ecComponent.init((canvas, width, height, dpr) => {
       // 获取组件的 canvas、width、height 后的回调函数
       // 在这里初始化图表

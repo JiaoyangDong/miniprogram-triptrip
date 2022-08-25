@@ -3,7 +3,7 @@
 .main {
   padding: 20rpx 80rpx;
   padding-top: 100rpx;
-  padding-bottom: 200rpx;
+  padding-bottom: 400rpx;
 }
 
 form {
@@ -85,17 +85,17 @@ form {
   margin-left: 55rpx;
 }
 
-.roominput, .pickinput {
+.roominput, .foodinput {
   background-color: #D9D9D9; 
   border: 2rpx solid #D9D9D9; 
   border-radius: 30rpx; 
   padding: 12rpx 20rpx; 
   margin-top: 10rpx; 
   font-weight: 200; 
-  height: 60rpx;
+  height: 160rpx;
 }
 
-.foodinput {
+.pickinput {
   background-color: #D9D9D9; 
   border: 2rpx solid #D9D9D9; 
   border-radius: 30rpx; 
@@ -129,7 +129,7 @@ button {
 .option-food {
   height: 100rpx;
   width: 600rpx;
-  margin: 70rpx 30rpx;
+  margin: 140rpx 30rpx;
   padding: 20rpx 20rpx 70rpx 70rpx;
   font-size: 35rpx;
   color: black;
