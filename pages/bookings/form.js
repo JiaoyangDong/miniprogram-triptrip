@@ -142,18 +142,25 @@ Page({
       },
       success(res) {
         console.log("From survey.js - submitSurveyCustom: res",res)
-        wx.showModal({
-          title: 'Note',
-          content: 'Booking confirmed!', 
-          confirmText: 'OK'
-        })
-
-        wx.navigateTo({
-          url: `/pages/trips/show?id=${page.data.tripId}`,
-
-        })
-        // if (res.statusCode === 201) {
-        // }
+        if (res.statusCode === 201) {
+          wx.showToast({
+            title: 'Success!',
+            duration: 1000,
+            success(resolve) {
+             setTimeout(() => {
+              wx.navigateTo({
+                url: `/pages/trips/show?id=${page.data.tripId}`,
+              })
+              }, 1000)
+            }
+          })
+       } else if (res.statusCode === 404)  {
+           wx.showModal({
+             title: "Survey cannot be empty!",
+             showCancel: false,
+             confirmText: 'OK'
+           })
+       }
       }
     })
   },
