@@ -307,7 +307,7 @@ Page({
     })
   },
   onShareAppMessage() {
-    console.log(this.options)
+    console.log("options",this.options)
     return {
       title: this.data.trip.title,
       imgaUrl: this.data.trip.image,
