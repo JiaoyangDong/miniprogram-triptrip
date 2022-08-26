@@ -294,7 +294,7 @@ Page({
             method: 'DELETE',
             success(res){
               wx.switchTab({
-                url: '/pages/trips/landing',
+                url: '/pages/users/profile',
               })
             }
           })
