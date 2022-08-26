@@ -100,20 +100,28 @@ Page({
       },
       success(res) {
         console.log("From survey.js - submitSurveyCustom: res",res)
-        if (res.statusCode === 201) {
-          wx.navigateBack({
-            delta: 0,
-          })
-        } else if (res.statusCode === 404)  {
-            wx.showModal({
-              title: "Survey cannot be empty!",
-              showCancel: false,
-              confirmText: 'OK'
-            })
-        }
-      }
-    })
-  },
+        
+             if (res.statusCode === 201) {
+               wx.showToast({
+                 title: 'Success!',
+                 duration: 1000,
+                 success(resolve) {
+                  setTimeout(() => {
+                    wx.navigateBack({
+                      delta: 0,
+                    })
+
+                  }, 1000)
+                 }
+               })
+            } else if (res.statusCode === 404)  {
+                wx.showModal({
+                  title: "Survey cannot be empty!",
+                  showCancel: false,
+                  confirmText: 'OK'
+                })
+            }
+      }})},
 
   /**
    * Lifecycle function--Called when page load
