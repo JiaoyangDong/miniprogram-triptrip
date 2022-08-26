@@ -41,6 +41,8 @@ Page({
     }
     if (app.globalData.header) {
       // proceed to fetch api
+      const tags = app.globalData.tags
+      this.setData({tags})
       this.getNewData()
 
     } else {

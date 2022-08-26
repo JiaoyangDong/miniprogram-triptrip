@@ -19,7 +19,8 @@ Page({
             "id": 12,
             "answer": "Yes"
           }]
-    }
+    },
+    disabled: false
   },
 
   /**
@@ -128,6 +129,7 @@ Page({
   formSubmit(e) {
     console.log('from formSubmit --->',e)
     const page = this
+    page.setData({disabled: true})
     console.log('header:', app.globalData.header)
     let answer = this.data.finalAnswer
     let bookingId = this.data.bookingId
