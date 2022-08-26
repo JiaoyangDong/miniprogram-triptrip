@@ -97,6 +97,7 @@
 .trip-img {
   border-radius: 30rpx 30rpx 0 0;
   height: 400rpx;
+  width: 100%;
 }
 
 .trip-info {
