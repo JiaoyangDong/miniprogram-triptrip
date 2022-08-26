@@ -83,6 +83,7 @@
       </view>
     </view>
 
+
     <view class="attendees-box-txt">Survey results:</view>
 
     <block wx:if="{{hasSurvey}}">
