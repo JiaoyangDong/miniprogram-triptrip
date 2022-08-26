@@ -171,6 +171,7 @@
   font-weight: bold;
   margin-top: 60rpx;
   margin-left: 16rpx;
+  margin-bottom: 10rpx;
 }
 
 .scroll-view-flex {
@@ -228,11 +229,20 @@
 .noinfo {
   /* background-color:#FFD6E0; */
   background-color:#e4e4e4;
-  width: 590rpx;
-  text-align: center;
+  width: 560rpx;
+  text-align:start;
   /* height: 90rpx; */
-  margin: 20rpx;
-  padding: 20rpx;
+  margin-top: 50rpx;
+  padding: 30rpx;
+  border-radius: 30rpx;
+  font-family: Fira Sans;
+}
+
+.noattendee {
+  background-color:#e4e4e4;
+  width: 560rpx;
+  text-align:start;
+  padding: 30rpx;
   border-radius: 30rpx;
   font-family: Fira Sans;
 }

@@ -63,15 +63,14 @@
 
     <view class="attendees-box">
       <view class="attendees-box-txt">Attendees:</view>
-
       <view class="scroll-view-flex">
         <view class="scroll-view-box-box">
+          <view class="noattendee" wx:if="{{!attendees.length}}" style="margin-top: 30rpx;">There are no attendees yet!</view>
           <scroll-view scroll-x="true" style="width: 100%; white-space: nowrap;" class="attendees-scroll-view">
             <view class="attendee" wx:for="{{attendees}}" wx:for-item="attendee">
               <image class="attendee-img" src="{{attendee.image? attendee.image :'/images/kiwibird-pink.png' }}"></image>
               <!-- MAYBE TODO: on hover {{attendee.name}} -->
             </view>
-            <view wx:if="{{!attendees.length}}" style="margin-top: 30rpx;">There are no attendees yet!</view>
           </scroll-view>
         </view>
         <view wx:if="{{attendees.length === 1}}" class="attendee-number">{{attendees.length}} person signed up!</view>
@@ -82,7 +81,7 @@
     <view class="attendees-box-txt">Survey results:</view>
 
     <block wx:if="{{hasSurvey}}">
-      <view wx:if="{{questions[0].answers.length === 0 }}" class="noinfo"> No body complete the survey yet.</view>
+      <view wx:if="{{questions[0].answers.length === 0 }}" class="noinfo"> Nobody has completed the survey yet.</view>
       <view wx:else class="info-card"> <text style="color:#E15B99"> {{questions[0].answers.length}} / {{attendees.length}} </text> people have completed the survey:</view>
       <view class="stats-box" wx:for="{{questions}}" wx:for-item="question" wx:for-index="index">
         <!-- <view style="margin-bottom: 60rpx;">Q: {{question.content}}</view> -->
