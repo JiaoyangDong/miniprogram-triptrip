@@ -24,7 +24,7 @@
         {
           "name": "",
           "pathName": "pages/trips/show",
-          "query": "id=27",
+          "query": "id=229",
           "launchMode": "default",
           "scene": null
         },

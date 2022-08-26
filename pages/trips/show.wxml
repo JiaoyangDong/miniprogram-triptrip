@@ -46,11 +46,11 @@
     </text>
 
     <!--I Wanna go!-->
-    <button wx:if="{{!isBooker && hasSurvey}}" bindtap="submitBooking" class="btn btn-primary">
+    <button disabled="{{disabled}}" wx:if="{{!isBooker && hasSurvey}}" bindtap="submitBooking" class="btn btn-primary">
       <view>Sign me up!</view> 
     </button>
 
-    <button wx:if="{{!isBooker && !hasSurvey}}" bindtap="submitBooking" class="btn btn-primary">
+    <button disabled="{{disabled}}" wx:if="{{!isBooker && !hasSurvey}}" bindtap="submitBooking" class="btn btn-primary">
       <view>Sign me up!</view> 
     </button>
 
