@@ -310,8 +310,8 @@ Page({
     console.log("options",this.options)
     return {
       title: this.data.trip.title,
-      imgaUrl: this.data.trip.image,
-      path: `pages/trips/show?id=${this.options.id}`
+      imageUrl: this.data.trip.image,
+      path: `pages/trips/show?id=${this.data.trip.id}`
     }
   }, 
   share(e){

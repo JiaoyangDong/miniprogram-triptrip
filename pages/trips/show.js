@@ -154,7 +154,7 @@ Page({
     console.log(this.options)
     return {
       title: this.data.trip.title,
-      imgaUrl: this.data.trip.image,
+      imageUrl: this.data.trip.image,
       path: `pages/trips/show?id=${this.options.id}`
     }
   }, 
