@@ -21,8 +21,8 @@ form {
   line-height: 60rpx;
   color: #000000;
   text-align: center;
-  padding-top: 100rpx;
-  padding-bottom: 40rpx
+  padding-top: 40rpx;
+  padding-bottom: 30rpx
 }
 
 .h2 {
