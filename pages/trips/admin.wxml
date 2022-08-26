@@ -54,7 +54,6 @@
 
     <view class="attendees-box">
       <view class="attendees-box-txt">Attendees:</view>
-
       <view class="scroll-view-flex">
         <view class="scroll-view-box-box">
           <view class="noattendee" wx:if="{{!attendees.length}}" style="margin-top: 30rpx;">There are no attendees yet!</view>
