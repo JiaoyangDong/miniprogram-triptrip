@@ -41,6 +41,7 @@
       {{trip.description}}
     </view>
 
+    <!-- <view class="big-btn-box"> -->
     <view class="btn-box">
       <view class="btn" bindtap="goToEdit" data-id="{{trip.id}}">
         <image src="/images/admin/edit.png" class="btn-img"></image>
@@ -50,7 +51,15 @@
         <image src="/images/admin/preview.png" class="btn-img"></image>
         <view class="btn-text">Preview</view>
       </view>
+      <view class="share-btn" style="margin-left: 30rpx; margin-right: 10rpx;">
+        <button open-type="share" class="" style="width: fit-content;margin: 0;padding: 0;background-color: white;">     <!-- nostyle icon -->
+          <image class="btn-img" mode="aspectFill" src="/images/share-pink.png" style="width: 45rpx; height: 45rpx;"></image>
+        </button>
+        <view class="share-btn-text btn-text" style="margin-top: -7rpx;">Share</view>
+      </view>
     </view>
+    
+    <!-- </view> -->
 
     <view class="attendees-box">
       <view class="attendees-box-txt">Attendees:</view>
