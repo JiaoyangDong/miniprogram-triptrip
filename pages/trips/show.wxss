@@ -114,3 +114,8 @@
   font-size: 40rpx;
   /* box-shadow: 2px 2px 8px #e15b9965; */
 }
+
+.trip-host {
+  font-weight: bold;
+  margin-bottom: 8rpx;
+}

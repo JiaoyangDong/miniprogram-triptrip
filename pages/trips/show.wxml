@@ -23,6 +23,7 @@
     </view>
 
     <!-- TEXT MAIN -->
+    <view class="trip-host" >Trip host: {{tripHost}}</view>
     <view>
       {{trip.start_date}} ~ {{trip.end_date}}
     </view>
