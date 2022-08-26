@@ -293,8 +293,19 @@ Page({
             url: `${app.globalData.baseURL}/trips/${id}`,
             method: 'DELETE',
             success(res){
-              wx.switchTab({
-                url: '/pages/users/profile',
+              wx.showToast({
+                title: 'Deleted!',
+                duration: 1000,
+                success(resolve) {
+                 setTimeout(() => {
+                  wx.switchTab({
+                    url: '/pages/users/profile',
+                  })
+                 }, 1000)
+              // wx.switchTab({
+              //   url: '/pages/users/profile',
+              // })
+                }
               })
             }
           })
