@@ -110,7 +110,6 @@ Page({
                     wx.navigateBack({
                       delta: 0,
                     })
-
                   }, 1000)
                  }
                })
