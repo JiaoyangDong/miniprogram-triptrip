@@ -139,6 +139,19 @@
   margin: 0 auto;
 }
 
+
+.share-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.share-btn-text {
+  color: #E15B99;
+  font-family: Fira Sans;
+  font-size: 32rpx;
+}
+
 .btn-primary {
   background: #E15B99;
   color: #FFFFFF; 
@@ -230,5 +243,9 @@
   margin: 10rpx 20rpx;
   border-radius: 30rpx;
   font-family: Fira Sans;
+}
 
+.big-btn-box {
+  display: flex;
+  justify-content: space-between;
 }
