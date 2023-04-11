@@ -113,17 +113,6 @@ Page({
     ec: {
       lazyLoad: true
     },
-    // ecAll: [
-    //   {
-    //     lazyLoad: true
-    //   },
-    //   {
-    //     lazyLoad: true
-    //   },
-    //   {
-    //     lazyLoad: true
-    //   }
-    // ]
   },
 
   /**
@@ -286,5 +275,51 @@ Page({
       // 注意这里一定要返回 chart 实例，否则会影响事件处理等
       return chart;
     });
+  },
+  togglePublic(e){
+    let page = this
+    wx.request({
+      header: app.globalData.header,
+      url: `${app.globalData.baseURL}/trips/${page.data.trip.id}/toggle_public`,
+      method: "POST",
+      success(res) {
+        console.log("From admin.js - togglePublic: res", res)
+        if (res.statusCode === 200) {
+          // const public = res.data.status === 'public';
+          const trip = res.data.trip;
+          page.setData({
+            trip,
+          });
+          wx.showToast({
+            title: `Set as ${res.data.status}`,
+            duration: 1000
+          })  
+        } else {
+          console.log(res.data.errors.join(" & "))
+          wx.showModal({
+            title: 'Note!',
+            content: res.data.errors.join(" & "), 
+            confirmText: 'OK',
+            showCancel: false
+          })
+        }
+      }
+    })
+  },
+  onShareAppMessage() {
+    console.log("options",this.options)
+    return {
+      title: this.data.trip.title,
+      imageUrl: this.data.trip.image,
+      path: `pages/trips/show?id=${this.data.trip.id}`
+    }
+  }, 
+  share(e){
+    console.log("From share")
+    wx.showShareMenu({
+      withShareTicket: true,
+      // menus: [],
+      menus: ['shareAppMessage', 'shareTimeline']
+    })
   },
 })

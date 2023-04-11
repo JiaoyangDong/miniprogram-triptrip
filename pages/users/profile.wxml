@@ -49,9 +49,20 @@
       <image mode="aspectFill" src="{{item.image}}" class="trip-img"></image>
       <view class="trip-info">
         <view class="trip-title">{{item.title}}</view>
-        <view class="trip-location">📍 {{item.location}}</view>
+        <view class="trip-start-date">{{item.start_date}}</view>
+        <view class="trip-location-box">
+        <image class="location-icon" src="/images/location.png"></image>
+        <view class="trip-location-name">{{item.location}}</view>
+      </view>
       </view>
     </view>
+    <!-- <view class="trip-card" wx:for="{{past_trips}}" data-id="{{item.id}}" bindtap="goToAdmin">
+      <image mode="aspectFill" src="{{item.image}}" class="trip-img"></image>
+      <view class="trip-info">
+        <view class="trip-title">{{item.title}}</view>
+        <view class="trip-location">📍 {{item.location}}</view>
+      </view>
+    </view> -->
     <!-- </view> -->
   </view>
 </view>

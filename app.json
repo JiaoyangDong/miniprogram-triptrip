@@ -16,7 +16,8 @@
     "navigationStyle": "custom",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"black",
+    "backgroundColor": "#ffffff"
   },
   "tabBar": {
     "custom": true,

@@ -6,7 +6,8 @@ Page({
     latitude: 0,
     longitude: 0,
     name: "",
-    signedUp: false
+    signedUp: false,
+    disabled: false
   },
   onLoad(options) {
   },
@@ -18,9 +19,16 @@ Page({
       this.getData()
     } else {
       // wait until loginFinished, then fetch API
-      wx.event.on('loginFinished', this, this.getData)
+      wx.event.on('loginFinished', this, this.pleaseShowTags)
     }
   }, 
+
+  pleaseShowTags(){
+    const tags = app.globalData.tags
+    this.setData({tags})
+    this.getData()
+  },
+
   getData() {
     let page = this
     console.log('From show.js - onshow: options trip_id ', page.options)
@@ -64,6 +72,7 @@ Page({
   submitBooking(e){
     console.log("From show.js - submitBooking: e", e)
     let page = this
+    page.setData({disabled: true})
     page.setData({signedUp: true})
     // get user profile and update user info in the backend
     wx.getUserProfile({
@@ -154,7 +163,7 @@ Page({
     console.log(this.options)
     return {
       title: this.data.trip.title,
-      imgaUrl: this.data.trip.image,
+      imageUrl: this.data.trip.image,
       path: `pages/trips/show?id=${this.options.id}`
     }
   }, 
